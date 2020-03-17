@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.List;
 
 @Controller
@@ -21,18 +22,21 @@ public class GiftCardController {
         return "myCards";
     }
 
-    @GetMapping ("/addCard")
-    public String addGiftCard () {
+    @GetMapping("/addCard")
+    public String addGiftCard() {
         return "addGiftCard";
     }
 
-    @PostMapping ("/addCard")
-    public String saveGiftCard (@RequestParam String storeName, @RequestParam String cardCode, @RequestParam Double balance) {
+    @PostMapping("/addCard")
+    public String saveGiftCard(@RequestParam String storeName, @RequestParam String cardCode, @RequestParam Double balance, Principal principal) {
         GiftCard giftCard = new GiftCard(storeName, cardCode, balance);
 
         giftCardRepository.save(giftCard);
 
-        return "redirect:/{id}";
+//        String user = principal.getName();
+//        userRepository.findByName;
+//        return "redirect:/" + user.getId;
+        return "redirect:/1";
     }
 
 
