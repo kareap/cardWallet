@@ -10,8 +10,10 @@
 <form action="/saveuser" th:object="${appUser}" method="post" >
     Email <input  type="text" th:field="*{email}"/>
     <p th:if="${#fields.hasErrors('email')}">Please enter a valid email address.</p>
-    Password <input th:text="*{password}"/>
+    Password <input th:field="*{password}"/>
     <p th:if="${#fields.hasErrors('password')}">Please enter a password.</p>
+    Password <input th:field="*{repeatPassword}"/>
+    <p th:if="${#fields.hasErrors('repeatPassword')}">Passwords are not a match.</p>
     <input type="submit" value="Sign up"/>
 </form>
 

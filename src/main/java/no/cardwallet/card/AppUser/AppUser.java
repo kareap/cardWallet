@@ -1,23 +1,25 @@
 package no.cardwallet.card.AppUser;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.persistence.*;
 
 @Entity
 public class AppUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Email
-    @Size(min=3, max=100)
     private String email;
-    @Size(min=3, max=100)
     private String password;
+    @Transient
+    private String repeatPassword;
+
+
+    public AppUser() {}
+
+    public AppUser(String email, String password, String repeatPassword) {
+        this.email = email;
+        this.password = password;
+        this.repeatPassword = repeatPassword;
+    }
 
 
     public Long getId() {
@@ -42,5 +44,13 @@ public class AppUser {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getRepeatPassword() {
+        return repeatPassword;
+    }
+
+    public void setRepeatPassword(String repeatPassword) {
+        this.repeatPassword = repeatPassword;
     }
 }
