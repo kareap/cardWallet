@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Sign up</title>
@@ -7,14 +7,13 @@
 <body>
 <h1>Sign up</h1>
 
-<form action="/saveuser" method="post">
-    Email <input th:text="${appUser.email}">
-    Password <input th:text="${appUser.password}">
-    Confirm password <input th:text="${repeatPassword}">
+<form action="/saveuser" th:object="${appUser}" method="post" >
+    Email <input  type="text" th:field="*{email}"/>
+    <p th:if="${#fields.hasErrors('email')}">Please enter a valid email address.</p>
+    Password <input th:text="*{password}"/>
+    <p th:if="${#fields.hasErrors('password')}">Please enter a password.</p>
+    <input type="submit" value="Sign up"/>
 </form>
-<button>Sign up</button>
-
-<a href="/login">Login</a>
 
 </body>
 </html>
