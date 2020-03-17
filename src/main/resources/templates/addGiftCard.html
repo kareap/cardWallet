@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Gift Card</title>
+</head>
+<body>
+
+<form th:action="'/addCard'" method="post">
+    <span> Store Name: <input type="text" name="storeName"> </span>
+    <span> Card Code: <input type="text"  name="cardCode"> </span>
+    <span> Balance: <input type="number"  name="balance"></span>
+    <button type="submit">Save Card</button>
+
+</form>
+
+</body>
+</html>

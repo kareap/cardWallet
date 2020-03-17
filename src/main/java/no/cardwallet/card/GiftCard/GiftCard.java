@@ -15,6 +15,24 @@ public class GiftCard {
     private String logoImage;
     private Long appUserId;
 
+    public GiftCard(String storeName, String cardCode, Double balance) {
+        this.storeName = storeName;
+        this.cardCode = cardCode;
+        this.balance = balance;
+    }
+
+    public GiftCard() {
+    }
+
+
+    public Long getAppUserId() {
+        return appUserId;
+    }
+
+    public void setAppUserId(Long appUserId) {
+        this.appUserId = appUserId;
+    }
+
     public Long getId() {
         return id;
     }

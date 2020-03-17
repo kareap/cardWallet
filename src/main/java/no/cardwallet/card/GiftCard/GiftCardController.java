@@ -3,10 +3,7 @@ package no.cardwallet.card.GiftCard;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,6 +19,20 @@ public class GiftCardController {
         List<GiftCard> giftCardList = (List<GiftCard>) giftCardRepository.findGiftCardByAppUserId(id);
         model.addAttribute("giftCardList", giftCardList);
         return "myCards";
+    }
+
+    @GetMapping ("/addCard")
+    public String addGiftCard () {
+        return "addGiftCard";
+    }
+
+    @PostMapping ("/addCard")
+    public String saveGiftCard (@RequestParam String storeName, @RequestParam String cardCode, @RequestParam Double balance) {
+        GiftCard giftCard = new GiftCard(storeName, cardCode, balance);
+
+        giftCardRepository.save(giftCard);
+
+        return "redirect:/{id}";
     }
 
 
