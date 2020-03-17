@@ -1,5 +1,6 @@
 package no.cardwallet.card.GiftCard;
 
+import no.cardwallet.card.AppUser.AppUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,6 +15,9 @@ public class GiftCardController {
     @Autowired
     GiftCardRepository giftCardRepository;
 
+    @Autowired
+    AppUserRepository appUserRepository;
+
 
     @GetMapping("/{id}")
     public String getAllCards(Model model, @PathVariable Long id) {
@@ -27,15 +31,18 @@ public class GiftCardController {
         return "addGiftCard";
     }
 
+
     @PostMapping("/addCard")
     public String saveGiftCard(@RequestParam String storeName, @RequestParam String cardCode, @RequestParam Double balance, Principal principal) {
+
         GiftCard giftCard = new GiftCard(storeName, cardCode, balance);
 
         giftCardRepository.save(giftCard);
 
-//        String user = principal.getName();
-//        userRepository.findByName;
+//        String username = principal.getName();
+//        appUserRepository.fin
 //        return "redirect:/" + user.getId;
+
         return "redirect:/1";
     }
 
