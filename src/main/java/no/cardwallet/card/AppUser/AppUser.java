@@ -1,4 +1,4 @@
-package no.cardwallet.card.User;
+package no.cardwallet.card.AppUser;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.validation.constraints.Email;
 
 @Entity
-public class User {
+public class AppUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
