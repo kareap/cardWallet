@@ -1,9 +1,6 @@
 package no.cardwallet.card.GiftCard;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -16,6 +13,7 @@ public class GiftCard {
     private Date expiryDate;
     private Double balance;
     private String logoImage;
+    private Long appUserId;
 
     public Long getId() {
         return id;
