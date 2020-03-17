@@ -1,7 +1,7 @@
 CREATE TABLE app_user(
-id BIGINT AUTO_INCREMENT PRIMARY KEY
+id BIGINT AUTO_INCREMENT PRIMARY KEY,
 email VARCHAR(100) NOT NULL,
-password VARCHAR(100) NOT NULL,
+password VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE gift_card(
@@ -12,7 +12,7 @@ expiry_date DATE,
 balance DOUBLE,
 logo_image VARCHAR(100),
 app_user_id BIGINT,
-FOREIGN KEY (app_user_id) REFERENCES app_user(id)
+FOREIGN KEY (app_user_id) REFERENCES  app_user(id)
 );
 
 
