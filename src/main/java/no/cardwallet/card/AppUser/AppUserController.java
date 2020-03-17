@@ -24,23 +24,17 @@ public class AppUserController {
             return "signUp";
     }
 
-    /*There was an unexpected error (type=Internal Server Error, status=500).
-An Errors/BindingResult argument is expected to be declared immediately after the model attribute,
-the @RequestBody or the @RequestPart arguments to which they apply:
-public java.lang.String no.cardwallet.card.AppUser.AppUserController.validateUser(java.lang.String,java.lang.String,java.lang.String,org.springframework.ui.Model,
-org.springframework.validation.BindingResult)*/
     @PostMapping("/saveuser")
-    public String validateUser(Model model, BindingResult bindingResult, @RequestParam String email, @RequestParam String password, @RequestParam String repeatPassword) {
+    public String validateUser(@ModelAttribute AppUser appUser, BindingResult bindingResult, @RequestParam String email, @RequestParam String password, @RequestParam String repeatPassword) {
         AppUserValidator appUserValidator = new AppUserValidator();
-        AppUser appUser = new AppUser(email, password, repeatPassword);
+        appUser = new AppUser(email, password, repeatPassword);
         if (appUserValidator.supports(appUser.getClass())) {
             appUserValidator.validate(appUser, bindingResult);
         }
         if (bindingResult.hasErrors()) {
             return "signUp";
         }
-        model.addAttribute(appUser);
         appUserRepository.save(appUser);
-        return "redirect:/signup";//send to log in page
+        return "signUpSuccess";//send to log in page
     }
 }
