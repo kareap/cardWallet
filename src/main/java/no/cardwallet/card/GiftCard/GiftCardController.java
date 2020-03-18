@@ -42,7 +42,7 @@ public class GiftCardController {
         return "addGiftCard";
     }
 
-
+    //  Save gift card
     @PostMapping("/save")
     public String saveGiftCard(@ModelAttribute GiftCard giftCard) {
         giftCardRepository.save(giftCard);
@@ -55,11 +55,6 @@ public class GiftCardController {
         model.addAttribute(giftCard);
         return "editGiftCard";
     }
-
-//  Save gift card
-    @PostMapping("/addCard")
-    public String saveGiftCard(@RequestParam String storeName, @RequestParam String cardCode, @RequestParam Double balance, Principal principal) {
-
 
 /* @PostMapping("/save")
     public String saveGiftCard(@RequestParam String storeName, @RequestParam String cardCode, @RequestParam Double balance, Principal principal) {
