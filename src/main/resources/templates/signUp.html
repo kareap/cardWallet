@@ -8,11 +8,11 @@
 <h1>Sign up</h1>
 
 <form action="/saveuser" th:object="${appUser}" method="post" >
-    Email <input  type="text" th:field="*{email}"/>
+    <input  type="text" th:field="*{email}" placeholder="Email"/>
     <p th:if="${#fields.hasErrors('email')}">Please enter a valid email address.</p>
-    Password <input th:field="*{password}"/>
-    <p th:if="${#fields.hasErrors('password')}">Please enter a password.</p>
-    Confirm password <input th:field="*{repeatPassword}"/>
+    <input th:field="*{password}" placeholder="Password"/>
+    <p th:if="${#fields.hasErrors('password')}" >Please enter a password.</p>
+    <input th:field="*{repeatPassword}" placeholder="Confirm password"/>
     <p th:if="${#fields.hasErrors('repeatPassword')}">Passwords are not a match.</p>
     <input type="submit" value="Sign up"/>
 </form>
