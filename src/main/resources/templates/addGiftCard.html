@@ -6,10 +6,11 @@
 </head>
 <body>
 
-<form th:action="'/addCard'" method="post">
+<form th:action="'/savegiftcard'" method="post">
     <span> Store Name: <input type="text" name="storeName"> </span>
     <span> Card Code: <input type="text"  name="cardCode"> </span>
     <span> Balance: <input type="number"  name="balance"></span>
+    <span> Expiry Date: <input type="date"  name="expiryDate"></span>
     <input type="submit" value="Save Card">
 </form>
 
