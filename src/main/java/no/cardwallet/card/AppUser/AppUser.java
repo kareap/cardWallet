@@ -7,6 +7,7 @@ public class AppUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(nullable = false, unique = true)
     private String email;
     private String password;
     @Transient
@@ -20,7 +21,6 @@ public class AppUser {
         this.password = password;
         this.repeatPassword = repeatPassword;
     }
-
 
     public Long getId() {
         return id;

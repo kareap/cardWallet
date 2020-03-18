@@ -1,12 +1,8 @@
 package no.cardwallet.card.AppUser;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 
 @Controller
@@ -35,6 +31,18 @@ public class AppUserController {
             return "signUp";
         }
         appUserRepository.save(appUser);
-        return "signUpSuccess";//send to log in page
+        return "defaultView";//send to log in page
     }
+
+    @GetMapping("/login")
+    public String userLogin(){
+        return "login";
+    }
+
+    @GetMapping("/settings")
+    public String userSettings(@ModelAttribute AppUser appUser) {
+        return "userSettings";
+    }
+
+
 }
