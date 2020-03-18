@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Settings</title>
+</head>
+<body>
+    <h1>Settings</h1>
+
+    <a>Log out</a>
+    <form action="/SOMETHING" th:object="${appUser}" method="post" >
+        Email <input  type="text" th:field="*{email}"/>
+        <p th:if="${#fields.hasErrors('email')}">Please enter a valid email address.</p>
+        New password <input th:field="*{password}"/>
+        <p th:if="${#fields.hasErrors('password')}">Please enter a password.</p>
+        Confirm new password <input th:field="*{repeatPassword}"/>
+        <p th:if="${#fields.hasErrors('repeatPassword')}">Passwords are not a match.</p>
+        <input type="submit" value="Delete account"/>
+    </form>
+<a>Add card</a>
+<a>My cards</a>
+<a>Settings</a>
+</body>
+</html>
