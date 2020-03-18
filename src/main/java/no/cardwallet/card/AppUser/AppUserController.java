@@ -40,11 +40,10 @@ public class AppUserController {
         return "login";
     }
 
-//    @PostMapping("/loggedin")
-//    public String userLoggedin(@ModelAttribute GiftCard giftCard){
-//        return "redirect:/1";
-//    }
-
+    @GetMapping("/logout")
+    public String logout() {
+        return "login";
+    }
     @GetMapping("/settings")
     public String userSettings(@ModelAttribute AppUser appUser) {
         return "userSettings";

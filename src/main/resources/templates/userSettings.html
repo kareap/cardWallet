@@ -7,18 +7,8 @@
 <body>
     <h1>Settings</h1>
 
-    <a href="/login">Log out</a>
-
-    <form action="/SOMETHING" th:object="${appUser}" method="post" >
-        Email <input  type="text" th:field="*{email}"/>
-        <p th:if="${#fields.hasErrors('email')}">Please enter a valid email address.</p>
-        Confirm new email <input th:field="*{repeatEmail}"/>
-        <p th:if="${#fields.hasErrors('repeatPassword')}">Email address is not a match.</p>
-        New password <input th:field="*{password}"/>
-        <p th:if="${#fields.hasErrors('password')}">Please enter a password.</p>
-        Confirm new password <input th:field="*{repeatPassword}"/>
-        <p th:if="${#fields.hasErrors('repeatPassword')}">Passwords are not a match.</p>
-        <input type="submit" value="Delete account"/>
+    <form th:action="'/logout'" method="post">
+        <input type="submit" value="Log out"/>
     </form>
 <a>Add card</a>
 <a>My cards</a>

@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Log in</title>
 </head>
 <body>
 
-<form method="post" action="/login" >
+<form method="post" th:action="'/login'">
     <h2 class="form-heading">Log in</h2>
 
-    <input name="email" type="text" placeholder="Email">
+    <input name="username" type="text" placeholder="Email">
     <input name="password" type="password" placeholder="Password">
     <input type="submit" value="Log in">
 </form>
