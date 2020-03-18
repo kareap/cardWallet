@@ -7,9 +7,8 @@ public class AppUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(nullable = false, unique = true)
     private String email;
-    @Transient //spring hopper over variabelen når du lager tabell
-    private String repeatEmail;
     private String password;
     @Transient
     private String repeatPassword;
@@ -22,15 +21,6 @@ public class AppUser {
         this.password = password;
         this.repeatPassword = repeatPassword;
     }
-
-    //trenger vi denne controller??
-    public AppUser(String email, String repeatEmail, String password, String repeatPassword) {
-        this.email = email;
-        this.repeatEmail = repeatEmail;
-        this.password = password;
-        this.repeatPassword = repeatPassword;
-    }
-
 
     public Long getId() {
         return id;
@@ -46,14 +36,6 @@ public class AppUser {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getRepeatEmail() {
-        return repeatEmail;
-    }
-
-    public void setRepeatEmail(String repeatEmail) {
-        this.repeatEmail = repeatEmail;
     }
 
     public String getPassword() {

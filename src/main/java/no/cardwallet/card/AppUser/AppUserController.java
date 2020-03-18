@@ -39,15 +39,6 @@ public class AppUserController {
         return "login";
     }
 
-    @PostMapping("/login/{id}")
-    public String loggedInUser(@PathVariable Long id, @RequestParam String typedEmail, @ModelAttribute AppUser appUser){
-        appUser = appUserRepository.findByEmail(typedEmail);
-        if (appUser != null) {
-            return null;
-        }
-        return null;
-    }
-
     @GetMapping("/settings")
     public String userSettings(@ModelAttribute AppUser appUser) {
         return "userSettings";
