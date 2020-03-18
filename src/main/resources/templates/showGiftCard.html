@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>GiftCard</title>
+</head>
+<body>
+
+<div>
+
+    <p th:text="'Store Name: ' + ${giftCard.getStoreName()}"></p>
+    <p th:text="'Card Code: ' + ${giftCard.getCardCode()}"></p>
+    <p th:text="'Balance: ' + ${giftCard.getBalance()}"></p>
+
+</div>
+
+
+</body>
+</html>
