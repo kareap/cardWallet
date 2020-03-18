@@ -1,5 +1,6 @@
 package no.cardwallet.card.AppUser;
 
+import no.cardwallet.card.GiftCard.GiftCard;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -38,6 +39,11 @@ public class AppUserController {
     public String userLogin(){
         return "login";
     }
+
+//    @PostMapping("/loggedin")
+//    public String userLoggedin(@ModelAttribute GiftCard giftCard){
+//        return "redirect:/1";
+//    }
 
     @GetMapping("/settings")
     public String userSettings(@ModelAttribute AppUser appUser) {

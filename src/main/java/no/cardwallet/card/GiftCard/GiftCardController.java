@@ -27,7 +27,6 @@ public class GiftCardController {
         return "myCards";
     }
 
-
     //  Show gift card details
     @GetMapping("/giftcard/{giftCardId}")
     public String showGiftCard(Model model, @PathVariable Long giftCardId) {
@@ -46,7 +45,7 @@ public class GiftCardController {
     @PostMapping("/savegiftcard")
     public String saveGiftCard(@ModelAttribute GiftCard giftCard) {
         giftCardRepository.save(giftCard);
-                return "redirect:/";
+                return "redirect:/1";
     }
 
     @GetMapping("/edit/{id}")
