@@ -1,7 +1,7 @@
 package no.cardwallet.card.GiftCard;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Date;
 
 @Entity
 public class GiftCard {
@@ -15,10 +15,11 @@ public class GiftCard {
     private String logoImage;
     private Long appUserId;
 
-    public GiftCard(String storeName, String cardCode, Double balance) {
+    public GiftCard(String storeName, String cardCode, Double balance, Date expiryDate) {
         this.storeName = storeName;
         this.cardCode = cardCode;
         this.balance = balance;
+        this.expiryDate = expiryDate;
     }
 
     public GiftCard() {

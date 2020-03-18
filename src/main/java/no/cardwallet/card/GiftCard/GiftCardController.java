@@ -7,6 +7,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
+import java.sql.Date;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @Controller
@@ -43,9 +46,10 @@ public class GiftCardController {
 
 //  Save gift card
     @PostMapping("/addCard")
-    public String saveGiftCard(@RequestParam String storeName, @RequestParam String cardCode, @RequestParam Double balance, Principal principal) {
+    public String saveGiftCard(@RequestParam String storeName, @RequestParam String cardCode, @RequestParam Double balance, @RequestParam Date expiryDate, Principal principal) {
 
-        GiftCard giftCard = new GiftCard(storeName, cardCode, balance);
+//        Date newExpDate = expiryDate;
+        GiftCard giftCard = new GiftCard(storeName, cardCode, balance, expiryDate);
 
         giftCardRepository.save(giftCard);
 
