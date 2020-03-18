@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit GiftCard</title>
+</head>
+<body>
+<h1>Edit Gift Card Details</h1>
+<form th:action="'/save'" th:object="${giftCard}" method="post">
+    <span> Store Name: <input type="text" th:field="*{storeName}" > </span>
+    <span> Card Code: <input type="text"  th:field="*{cardCode}"> </span>
+    <span> Balance: <input type="number"  th:field="*{balance}"></span>
+    <span><input th:if="${id != null}" type="hidden" th:field="*{id}"/></span>
+    <input type="submit" value="Save Changes">
+</form>
+
+</body>
+</html>
