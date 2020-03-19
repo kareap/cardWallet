@@ -4,10 +4,12 @@ import no.cardwallet.card.AppUser.AppUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.security.Principal;
-import java.sql.Date;
 import java.util.List;
 
 @Controller
@@ -50,12 +52,21 @@ public class GiftCardController {
         Long appUserId = appUserRepository.findByEmail(email).getId();
         giftCard.setAppUserId(appUserId);
         giftCardRepository.save(giftCard);
-                return "redirect:/myCards";
+        return "redirect:/myCards";
     }
 
-    @GetMapping("/edit/{id}")
-    public String edit(Model model, @PathVariable Long id) {
-        GiftCard giftCard = giftCardRepository.findById(id).get();
+    @GetMapping("/edit/{userIdPath}/{cardIdPath}")
+    public String edit(Model model, @PathVariable Long cardIdPath, @PathVariable Long userIdPath, Principal principal) {
+        String email = principal.getName();
+        Long principleUserId = appUserRepository.findByEmail(email).getId();
+
+        List<GiftCard> giftCardList = (List<GiftCard>) giftCardRepository.findGiftCardsByAppUserId(principleUserId);
+
+        if (!giftCardList.contains(giftCardRepository.findGiftCardById(cardIdPath)) || principleUserId != userIdPath) {
+            return "defaultView";
+        }
+
+        GiftCard giftCard = giftCardRepository.findById(cardIdPath).get();
         model.addAttribute(giftCard);
         return "editGiftCard";
     }

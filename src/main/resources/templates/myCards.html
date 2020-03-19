@@ -6,6 +6,10 @@
 </head>
 <body>
 
+<div th:if="${giftCardList == null}" th:text="You do not have any gift cards yet"><p>  </p> </div>
+
+
+
 <div th:each="giftCard : ${giftCardList}">
 
     <p th:text="'Store Name: ' + ${giftCard.getStoreName()}"></p>
