@@ -20,8 +20,10 @@ public class GiftCardController {
     AppUserRepository appUserRepository;
 
     //  Main page - Show all gift cards of user, by id
-    @GetMapping("/{appUserId}")
-    public String getAllCards(Model model, @PathVariable Long appUserId) {
+    @GetMapping("/myCards")
+    public String getAllCards(Model model, Principal principal) {
+        String email = principal.getName();
+        Long appUserId = appUserRepository.findByEmail(email).getId();
         List<GiftCard> giftCardList = (List<GiftCard>) giftCardRepository.findGiftCardsByAppUserId(appUserId);
         model.addAttribute("giftCardList", giftCardList);
         return "myCards";

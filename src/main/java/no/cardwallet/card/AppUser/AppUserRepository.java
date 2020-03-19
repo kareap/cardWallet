@@ -6,6 +6,4 @@ import org.springframework.security.core.userdetails.User;
 public interface AppUserRepository extends CrudRepository<AppUser, Long> {
 
     AppUser findByEmail(String email);
-
-    //User findByUsername(String username);
 }
