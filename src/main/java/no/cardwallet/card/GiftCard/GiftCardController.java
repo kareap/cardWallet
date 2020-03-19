@@ -32,10 +32,11 @@ public class GiftCardController {
     }
 
     //  Show gift card details
-    @GetMapping("/giftcard/{giftCardId}")
-    public String showGiftCard(Model model, @PathVariable Long giftCardId) {
+    @GetMapping("/giftcard/{appUserId}/{giftCardId}")
+    public String showGiftCard(Model model, @PathVariable Long appUserId, @PathVariable Long giftCardId) {
         GiftCard giftCard = giftCardRepository.findGiftCardById(giftCardId);
         model.addAttribute("giftCard", giftCard);
+        model.addAttribute("appUserId", appUserId);
         return "showGiftCard";
     }
 
@@ -60,18 +61,19 @@ public class GiftCardController {
         return "redirect:/myCards";
     }
 
-    @GetMapping("/edit/{userIdPath}/{cardIdPath}")
-    public String edit(Model model, @PathVariable Long cardIdPath, @PathVariable Long userIdPath, Principal principal) {
+
+    @GetMapping("/edit/{appUserId}/{cardId}")
+    public String edit(Model model, @PathVariable Long appUserId, @PathVariable Long cardId, Principal principal) {
         String email = principal.getName();
         Long principleUserId = appUserRepository.findByEmail(email).getId();
 
         List<GiftCard> giftCardList = (List<GiftCard>) giftCardRepository.findGiftCardsByAppUserId(principleUserId);
 
-        if (!giftCardList.contains(giftCardRepository.findGiftCardById(cardIdPath)) || principleUserId != userIdPath) {
+        if (!giftCardList.contains(giftCardRepository.findGiftCardById(cardId)) || principleUserId != appUserId) {
             return "defaultView";
         }
 
-        GiftCard giftCard = giftCardRepository.findById(cardIdPath).get();
+        GiftCard giftCard = giftCardRepository.findById(cardId).get();
         model.addAttribute(giftCard);
         return "editGiftCard";
     }

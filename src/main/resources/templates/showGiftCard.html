@@ -6,12 +6,14 @@
 </head>
 <body>
 
-<div>
+<a>
 
     <p th:text="'Store Name: ' + ${giftCard.getStoreName()}"></p>
     <p th:text="'Card Code: ' + ${giftCard.getCardCode()}"></p>
     <p th:text="'Balance: ' + ${giftCard.getBalance()}"></p>
     <p th:text="'Exp: ' + ${giftCard.getExpiryDate()}"></p>
+    <a th:href="'/edit/' + ${appUserId} + '/' + ${giftCard.getId()}">Edit Card</a>
+
 
 </div>
 
