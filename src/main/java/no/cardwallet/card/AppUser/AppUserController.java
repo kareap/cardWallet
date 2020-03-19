@@ -37,7 +37,7 @@ public class AppUserController {
         }
         appUser.setPassword(passwordEncoder.encode(appUser.getPassword()));
         appUserRepository.save(appUser);
-        return "defaultView";//send to log in page
+        return "login";//send to log in page
     }
 
     @GetMapping("/login")

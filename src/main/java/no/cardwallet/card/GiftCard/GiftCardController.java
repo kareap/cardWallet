@@ -45,9 +45,12 @@ public class GiftCardController {
 
     //  Save gift card
     @PostMapping("/savegiftcard")
-    public String saveGiftCard(@ModelAttribute GiftCard giftCard) {
+    public String saveGiftCard(@ModelAttribute GiftCard giftCard, Principal principal) {
+        String email = principal.getName();
+        Long appUserId = appUserRepository.findByEmail(email).getId();
+        giftCard.setAppUserId(appUserId);
         giftCardRepository.save(giftCard);
-                return "redirect:/1";
+                return "redirect:/myCards";
     }
 
     @GetMapping("/edit/{id}")
