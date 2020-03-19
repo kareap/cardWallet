@@ -21,12 +21,22 @@ public class GiftCardController {
     @Autowired
     AppUserRepository appUserRepository;
 
+    //part of refactoring
+    private Long getAppUserId(Principal principal) {
+        String email = principal.getName();
+        return appUserRepository.findByEmail(email).getId();
+    }
+
+    //part of refactoring
+    private List<GiftCard> getGiftCards(Principal principal) {
+        Long appUserId = getAppUserId(principal);
+        return giftCardRepository.findGiftCardsByAppUserId(appUserId);
+    }
+
     //  Main page - Show all gift cards of user, by id
     @GetMapping("/myCards")
     public String getAllCards(Model model, Principal principal) {
-        String email = principal.getName();
-        Long appUserId = appUserRepository.findByEmail(email).getId();
-        List<GiftCard> giftCardList = (List<GiftCard>) giftCardRepository.findGiftCardsByAppUserId(appUserId);
+        List<GiftCard> giftCardList = getGiftCards(principal);
         model.addAttribute("giftCardList", giftCardList);
         return "myCards";
     }
@@ -49,8 +59,7 @@ public class GiftCardController {
     //  Save gift card
     @PostMapping("/savegiftcard/{cardIdPath}")
     public String saveGiftCard(@ModelAttribute GiftCard giftCard, @PathVariable Long cardIdPath, Principal principal) {
-        String email = principal.getName();
-        Long appUserId = appUserRepository.findByEmail(email).getId();
+        Long appUserId = getAppUserId(principal);
 
         if (cardIdPath != null){
             giftCard.setId(cardIdPath);
@@ -60,17 +69,13 @@ public class GiftCardController {
         return "redirect:/myCards";
     }
 
-
-
-
     @GetMapping("/edit/{appUserId}/{cardId}")
     public String edit(Model model, @PathVariable Long appUserId, @PathVariable Long cardId, Principal principal) {
-        String email = principal.getName();
-        Long principleUserId = appUserRepository.findByEmail(email).getId();
+        Long principleUserId = getAppUserId(principal);
 
-        List<GiftCard> giftCardList = (List<GiftCard>) giftCardRepository.findGiftCardsByAppUserId(principleUserId);
+        List<GiftCard> giftCardList = giftCardRepository.findGiftCardsByAppUserId(principleUserId);
 
-        if (!giftCardList.contains(giftCardRepository.findGiftCardById(cardId)) || principleUserId != appUserId) {
+        if (!giftCardList.contains(giftCardRepository.findGiftCardById(cardId)) || !principleUserId.equals(appUserId)) {
             return "defaultView";
         }
 

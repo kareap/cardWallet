@@ -25,10 +25,7 @@ public class GiftCard {
     public GiftCard() {
     }
 
-
-    public Long getAppUserId() {
-        return appUserId;
-    }
+    public Long getAppUserId() { return appUserId; }
 
     public void setAppUserId(Long appUserId) {
         this.appUserId = appUserId;
@@ -46,9 +43,7 @@ public class GiftCard {
         return cardCode;
     }
 
-    public void setCardCode(String cardCode) {
-        this.cardCode = cardCode;
-    }
+    public void setCardCode(String cardCode) { this.cardCode = cardCode; }
 
     public String getStoreName() {
         return storeName;
