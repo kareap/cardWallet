@@ -1,6 +1,8 @@
 package no.cardwallet.card.AppUser;
 
 import no.cardwallet.card.GiftCard.GiftCard;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -8,6 +10,8 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class AppUserController {
+    @Autowired
+    PasswordEncoder passwordEncoder;
 
     final
     AppUserRepository appUserRepository;
@@ -31,6 +35,7 @@ public class AppUserController {
         if (bindingResult.hasErrors()) {
             return "signUp";
         }
+        appUser.setPassword(passwordEncoder.encode(appUser.getPassword()));
         appUserRepository.save(appUser);
         return "defaultView";//send to log in page
     }

@@ -20,33 +20,43 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+    private final AppUserDetailService appUserDetailService;
+
+    public SecurityConfig(AppUserDetailService appUserDetailService) {
+        this.appUserDetailService = appUserDetailService;
+    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        /*http.csrf().disable();
-        http.headers().frameOptions().disable();*/
+        http.csrf().disable();
+        http.headers().frameOptions().disable();
 
         http
                 .authorizeRequests()
-                .antMatchers("/1", "/login", "/signup", "/h2", "/h2/**").permitAll()
+                .antMatchers("/1", "/login", "/signup", "/h2", "/h2/**", "/saveuser").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
-                .defaultSuccessUrl("/1",true)
-                .loginPage("/login")
+                .defaultSuccessUrl("/1", true)
                 .permitAll();
     }
 
-    @Autowired
-    AppUserRepository appUserRepository;
+    @Override
+    protected void configure(AuthenticationManagerBuilder authenticationManagerBuilder) {
+        authenticationManagerBuilder.authenticationProvider(authenticationProvider());
+    }
 
     @Bean
-    public UserDetailsService userDetailsService() {
-        InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
-        manager.createUser(User.withDefaultPasswordEncoder().username("nils.nordmann@hotmail.com").password("123").roles
-                ("USER").build());
+    public DaoAuthenticationProvider authenticationProvider() {
+        DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
+        authenticationProvider.setUserDetailsService(appUserDetailService);
+        authenticationProvider.setPasswordEncoder(encoder());
+        return authenticationProvider;
+    }
 
-        return manager;
+    @Bean
+    public PasswordEncoder encoder() {
+        return new BCryptPasswordEncoder(10);
     }
 }
 
