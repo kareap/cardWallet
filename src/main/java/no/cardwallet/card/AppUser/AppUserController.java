@@ -78,11 +78,27 @@ public class AppUserController {
         return "SuccessfullyChangedEmail";
     }
 
-    @GetMapping("/changepassword")
-    public String changePassword() {
+    @GetMapping("/changePassword")
+    public String changePassword(Model model, Principal principal) {
+        String email = principal.getName();
+        AppUser appUser = appUserRepository.findByEmail(email);
+        model.addAttribute(appUser);
 
         return "changePassword";
     }
+
+
+    @PostMapping("/saveChangedPassword")
+    public String saveChangedPassword(Model model, Principal principal, @ModelAttribute AppUser appUserPosting) {
+        String email = principal.getName();
+        AppUser appUser = appUserRepository.findByEmail(email);
+        appUser.setPassword(appUserPosting.getPassword());
+        appUserRepository.save(appUser);
+        model.addAttribute(appUser);
+
+        return "successfullyChangedPassword";
+    }
+
 
     @GetMapping("/termsandconditions")
     public String termsAndConditions() {
