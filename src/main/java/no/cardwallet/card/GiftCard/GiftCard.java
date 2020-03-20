@@ -24,7 +24,6 @@ public class GiftCard {
         this.balanceInt = balanceInt;
         this.balanceDecimal = balanceDecimal;
         this.expiryDate = expiryDate;
-
         this.logoImage = logoImage;
 
     }

@@ -1,10 +1,5 @@
 package no.cardwallet.card.AppUser;
 
-<<<<<<< HEAD
-import no.cardwallet.card.AppUserDetailService;
-import no.cardwallet.card.GiftCard.GiftCard;
-=======
->>>>>>> 2f8c9aa5e3f3e823a5b29282fb476c8dec486189
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -65,16 +60,6 @@ public class AppUserController {
         return "userSettings";
     }
 
-<<<<<<< HEAD
-    @DeleteMapping("/delete")
-    public String deleteUser(Principal principal) {
-        String email = principal.getName();
-       /* Long id = appUserRepository.findByEmail(email).getId();
-        appUserRepository.deleteById(id);*/
-        appUserRepository.deleteByEmail(email);
-        return "redirect:/signup";
-    }
-
     @GetMapping("/changeEmail")
     public String changeEmail(Model model, Principal principal) {
         String email = principal.getName();
@@ -84,10 +69,10 @@ public class AppUserController {
     }
 
     @PostMapping("/saveChangedEmail")
-    public String saveChangedEmail(Model model, Principal principal) {
+    public String saveChangedEmail(Model model, Principal principal, @ModelAttribute AppUser appUserPosting) {
         String email = principal.getName();
         AppUser appUser = appUserRepository.findByEmail(email);
-        appUser.setEmail(newEmail);
+        appUser.setEmail(appUserPosting.getEmail());
         appUserRepository.save(appUser);
         model.addAttribute(appUser);
         return "SuccessfullyChangedEmail";
