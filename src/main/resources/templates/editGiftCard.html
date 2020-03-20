@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>Edit Gift Card Details</h1>
-<form th:action="'/savegiftcard/' + ${cardIdPath} " th:object="${giftCard}" method="post">
+<form th:action="'/savegiftcard/' + ${cardId} " th:object="${giftCard}" method="post">
     <span> Store Name: <input type="text" th:field="*{storeName}" > </span>
     <span> Card Code: <input type="text"  th:field="*{cardCode}"> </span>
     <span> Balance: <input type="number"  th:field="*{balance}"></span>
