@@ -1,9 +1,11 @@
 package no.cardwallet.card.AppUser;
 
 import no.cardwallet.card.AppUserDetailService;
+import no.cardwallet.card.GiftCard.GiftCard;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,7 +26,7 @@ public class AppUserController {
 
     @GetMapping("/signp")
     public String signUp(@ModelAttribute AppUser appUser) {
-            return "signUp";
+        return "signUp";
     }
 
     @PostMapping("/saveuser")
@@ -43,7 +45,7 @@ public class AppUserController {
     }
 
     @GetMapping("/login")
-    public String userLogin(){
+    public String userLogin() {
         return "login";
     }
 
@@ -67,14 +69,23 @@ public class AppUserController {
         return "redirect:/signup";
     }
 
-
-
-    @GetMapping("/changeemail")
-    public String changeEmail() {
-
+    @GetMapping("/changeEmail")
+    public String changeEmail(Model model, Principal principal) {
+        String email = principal.getName();
+        AppUser appUser = appUserRepository.findByEmail(email);
+        model.addAttribute(appUser);
         return "changeEmail";
     }
 
+    @PostMapping("/saveChangedEmail")
+    public String saveChangedEmail(Model model, Principal principal) {
+        String email = principal.getName();
+        AppUser appUser = appUserRepository.findByEmail(email);
+        appUser.setEmail(newEmail);
+        appUserRepository.save(appUser);
+        model.addAttribute(appUser);
+        return "SuccessfullyChangedEmail";
+    }
 
     @GetMapping("/changepassword")
     public String changePassword() {

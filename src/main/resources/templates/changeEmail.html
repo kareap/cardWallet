@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Change email</title>
 </head>
 <body>
 
-
-
 <h1>Change email</h1>
-
+<form th:action="'/saveChangedEmail/'" th:object="${appUser}" th:method="post" >
+    <input type="text" th:field="*{email}" >
+    <input type="submit" value="Save New Email">
+</form>
 
 
 </body>
