@@ -20,7 +20,7 @@ public class AppUserController {
         this.appUserRepository = appUserRepository;
     }
 
-    @GetMapping("/signup")
+    @GetMapping("/signp")
     public String signUp(@ModelAttribute AppUser appUser) {
             return "signUp";
     }
