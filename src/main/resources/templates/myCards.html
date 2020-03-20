@@ -6,21 +6,21 @@
 </head>
 <body>
 
-<div th:if="${giftCardList == null}" th:text="You do not have any gift cards yet"><p>  </p> </div>
+<div th:if="${giftCardList.size()} == 0">
+    <p>You do not have any gift cards yet...</p>
+    <p><a href="/addgiftcard">Add your first gift card now!</a></p>
+</div>
 
-
-
-<div th:each="giftCard : ${giftCardList}">
-
-    <p th:text="'Store Name: ' + ${giftCard.getStoreName()}"></p>
-    <p th:text="'Card Code: ' + ${giftCard.getCardCode()}"></p>
-    <p th:text="'Balance: ' + ${giftCard.getBalance()}"></p>
-    <p> _________________________________________________________</p>
-
+<div>
+    <div th:if="${giftCardList.size() >= 1}" th:each="giftCard : ${giftCardList}">
+        <p th:text="'Store Name: ' + ${giftCard.getStoreName()}"></p>
+        <p th:text="'Card Code: ' + ${giftCard.getCardCode()}"></p>
+        <p th:text="'Balance: ' + ${giftCard.getBalance()}"></p>
+        <p> _________________________________________________________</p>
+    </div>
 </div>
 
     <p><a href="/addgiftcard">Add card</a></p>
-
 
 </body>
 </html>

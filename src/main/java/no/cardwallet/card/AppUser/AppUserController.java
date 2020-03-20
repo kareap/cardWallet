@@ -4,10 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+
+import java.security.Principal;
 
 
 @Controller
@@ -51,9 +50,19 @@ public class AppUserController {
     public String logout() {
         return "login";
     }
+
     @GetMapping("/settings")
     public String userSettings(@ModelAttribute AppUser appUser) {
         return "userSettings";
+    }
+
+    @DeleteMapping("/delete")
+    public String deleteUser(Principal principal) {
+        String email = principal.getName();
+       /* Long id = appUserRepository.findByEmail(email).getId();
+        appUserRepository.deleteById(id);*/
+        appUserRepository.deleteByEmail(email);
+        return "redirect:/signup";
     }
 
 

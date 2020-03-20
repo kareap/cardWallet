@@ -72,13 +72,10 @@ public class GiftCardController {
     @GetMapping("/edit/{appUserId}/{cardId}")
     public String edit(Model model, @PathVariable Long appUserId, @PathVariable Long cardId, Principal principal) {
         Long principleUserId = getAppUserId(principal);
-
         List<GiftCard> giftCardList = giftCardRepository.findGiftCardsByAppUserId(principleUserId);
-
-        if (!giftCardList.contains(giftCardRepository.findGiftCardById(cardId)) || !principleUserId.equals(appUserId)) {
+        if (!principleUserId.equals(appUserId) || !giftCardList.contains(giftCardRepository.findGiftCardById(cardId))) {
             return "defaultView";
         }
-
         GiftCard giftCard = giftCardRepository.findById(cardId).get();
         model.addAttribute(giftCard);
         return "editGiftCard";
