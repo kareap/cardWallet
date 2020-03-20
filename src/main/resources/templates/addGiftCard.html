@@ -6,11 +6,11 @@
 </head>
 <body>
 
-<form th:action="'/savegiftcard'" method="post">
-    <span> Store Name: <input type="text" name="storeName"> </span>
-    <span> Card Code: <input type="text"  name="cardCode"> </span>
-    <span> Balance: <input type="number"  name="balance"></span>
-    <span> Expiry Date: <input type="date"  name="expiryDate"></span>
+<form  method="post" th:action="'/saveNewGiftCard/'" th:object="${giftCard}">
+    <span> Store Name: <input type="text" th:field="*{storeName}"> </span>
+    <span> Card Code: <input type="text" th:field="*{cardCode}"> </span>
+    <span> Balance: <input type="number" th:field="*{balance}"></span>
+    <span> Expiry Date: <input type="date" th:field="*{expiryDate}"></span>
     <input type="submit" value="Save Card">
 </form>
 
