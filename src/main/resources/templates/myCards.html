@@ -15,11 +15,14 @@
     <p th:text="'Store Name: ' + ${giftCard.getStoreName()}"></p>
     <p th:text="'Card Code: ' + ${giftCard.getCardCode()}"></p>
     <p th:text="'Balance: ' + ${giftCard.getBalance()}"></p>
-    <p> _________________________________________________________</p>
 
+    <p><a href="/edit/{appUserId}/{cardId}">Edit Card</a></p>
+    <p> _________________________________________________________</p>
 </div>
 
-    <p><a href="/addgiftcard">Add card</a></p>
+    <p><a href="/addgiftcard">Add Card</a></p>
+    <p>My Cards</p>
+    <p><a href="/settings">Settings</a></p>
 
 
 </body>
