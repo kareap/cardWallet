@@ -45,8 +45,14 @@ public class GiftCardController {
     @GetMapping("/giftCard/{appUserId}/{giftCardId}")
     public String showGiftCard(Model model, @PathVariable Long appUserId, @PathVariable Long giftCardId) {
         GiftCard giftCard = giftCardRepository.findGiftCardById(giftCardId);
+
         model.addAttribute("giftCard", giftCard);
         model.addAttribute("appUserId", appUserId);
+
+//        if (giftCard.getBalanceInt() == null){
+//            return "defaultView";
+//        }
+
         return "showGiftCard";
     }
 
@@ -59,6 +65,7 @@ public class GiftCardController {
         return "addGiftCard";
     }
 
+
     //  Save new gift card
     @PostMapping("/saveNewGiftCard/")
     public String saveNewGiftCard(@ModelAttribute GiftCard giftCard, Principal principal) {
@@ -66,12 +73,16 @@ public class GiftCardController {
 
         giftCard.setAppUserId(appUserId);
         giftCardRepository.save(giftCard);
+
         return "redirect:/myCards";
     }
 
     @GetMapping("/editGiftCard/{appUserId}/{cardId}")
-    public String edit(Model model, @PathVariable Long appUserId, @PathVariable Long cardId, Principal principal) {
+    public String editGiftCard(Model model, @PathVariable Long appUserId, @PathVariable Long cardId, Principal principal) {
         Long principleUserId = getAppUserId(principal);
+
+        GiftCard tempGiftCard = new GiftCard();
+        model.addAttribute("tempGiftCard", tempGiftCard);
 
         List<GiftCard> giftCardList = giftCardRepository.findGiftCardsByAppUserId(principleUserId);
 
@@ -83,16 +94,22 @@ public class GiftCardController {
         return "editGiftCard";
     }
 
+
     @PostMapping("/saveEditedGiftCard/{appUserId}/{cardId}")
-    public String savEditedGiftCard(@ModelAttribute GiftCard giftCard, @PathVariable Long cardId, Principal principal) {
+    public String savEditedGiftCard(@ModelAttribute GiftCard giftCard, @ModelAttribute GiftCard tempGiftCard, @PathVariable Long cardId, Principal principal) {
         Long appUserId = getAppUserId(principal);
 
-        if (cardId != null){
+//        GiftCard tempGiftCard = new GiftCard();
+//        model.addAttribute("tempGiftCard", tempGiftCard);
+
+        if (cardId != null) {
             giftCard.setId(cardId);
         }
         giftCard.setAppUserId(appUserId);
         giftCardRepository.save(giftCard);
+
+        giftCard.setBalanceInt(tempGiftCard.getBalanceInt());
+
         return "redirect:/myCards";
     }
-
 }

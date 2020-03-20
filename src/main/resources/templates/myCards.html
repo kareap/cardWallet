@@ -6,21 +6,19 @@
 </head>
 <body>
 
+<h1>My Cards</h1>
+
 <div th:if="${giftCardList.size()} == 0">
     <p>You do not have any gift cards yet...</p>
     <p><a href="/addGiftCard">Add your first gift card now!</a></p>
 </div>
 
-<div>
     <div th:if="${giftCardList.size() >= 1}" th:each="giftCard : ${giftCardList}">
+        <p th:text=" ${giftCard.getLogoImage()} "></p>
         <p th:text="'Store Name: ' + ${giftCard.getStoreName()}"></p>
-        <p th:text="'Card Code: ' + ${giftCard.getCardCode()}"></p>
-        <p th:text="'Balance: ' + ${giftCard.getBalance()}"></p>
+        <p th:text="'Balance: ' + ${giftCard.getBalanceInt()} + '.' + ${giftCard.getBalanceDecimal()}"></p>
+        <p th:text="'Exp: ' + ${giftCard.getExpiryDate()}"></p>
         <p> _________________________________________________________</p>
-    </div>
-
-    <p><a th:href="'/editGiftCard/' + ${appUserId} + '/' + ${cardId}">Edit Card</a></p>
-
 </div>
 
     <p><a href="/addGiftCard">Add Card</a></p>

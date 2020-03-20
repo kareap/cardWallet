@@ -9,7 +9,7 @@ id BIGINT AUTO_INCREMENT PRIMARY KEY,
 store_name VARCHAR(100) NOT NULL,
 card_code VARCHAR(100) NOT NULL,
 expiry_date DATE,
-balance DOUBLE,
+balance_int INT,
 logo_image VARCHAR(100),
 app_user_id BIGINT,
 FOREIGN KEY (app_user_id) REFERENCES app_user(id)

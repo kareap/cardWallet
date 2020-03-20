@@ -11,15 +11,22 @@ public class GiftCard {
     private String cardCode;
     private String storeName;
     private Date expiryDate;
-    private Double balance;
+    private int balanceInt;
+    @Transient
+    private int balanceDecimal;
     private String logoImage;
     private Long appUserId;
 
-    public GiftCard(String storeName, String cardCode, Double balance, Date expiryDate) {
+
+    public GiftCard(String storeName, String cardCode, int balanceInt, int balanceDecimal, Date expiryDate, String logoImage) {
         this.storeName = storeName;
         this.cardCode = cardCode;
-        this.balance = balance;
+        this.balanceInt = balanceInt;
+        this.balanceDecimal = balanceDecimal;
         this.expiryDate = expiryDate;
+
+        this.logoImage = logoImage;
+
     }
 
     public GiftCard() {
@@ -61,13 +68,22 @@ public class GiftCard {
         this.expiryDate = expiryDate;
     }
 
-    public Double getBalance() {
-        return balance;
+    public int getBalanceInt() {
+        return ((balanceInt  - balanceDecimal) / 100);
     }
 
-    public void setBalance(Double balance) {
-        this.balance = balance;
+    public int getBalanceDecimal() {
+        return (balanceInt % 100);
     }
+
+    public void setBalanceInt(int balanceInt) {
+        this.balanceInt = balanceInt ;
+    }
+
+    public void setBalanceDecimal(int balanceDecimal) {
+        this.balanceDecimal = balanceInt ;
+    }
+
 
     public String getLogoImage() {
         return logoImage;
