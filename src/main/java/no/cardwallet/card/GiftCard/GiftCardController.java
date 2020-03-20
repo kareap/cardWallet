@@ -90,7 +90,9 @@ public class GiftCardController {
             return "defaultView";
         }
         GiftCard giftCard = giftCardRepository.findById(cardId).get();
+
         model.addAttribute(giftCard);
+
         return "editGiftCard";
     }
 
@@ -99,13 +101,11 @@ public class GiftCardController {
     public String savEditedGiftCard(@ModelAttribute GiftCard giftCard, @ModelAttribute GiftCard tempGiftCard, @PathVariable Long cardId, Principal principal) {
         Long appUserId = getAppUserId(principal);
 
-//        GiftCard tempGiftCard = new GiftCard();
-//        model.addAttribute("tempGiftCard", tempGiftCard);
-
         if (cardId != null) {
             giftCard.setId(cardId);
         }
         giftCard.setAppUserId(appUserId);
+        giftCard.setExpiryDate(giftCardRepository.findGiftCardById(cardId).getExpiryDate()); // Should we allow the user to change the expiry date?
         giftCardRepository.save(giftCard);
 
         giftCard.setBalanceInt(tempGiftCard.getBalanceInt());

@@ -10,14 +10,13 @@
 
 <div>
 
-    <p th:text=" ${giftCard.getLogoImage()} "></p>
-    <a th:href="'/editGiftCard/' + ${appUserId} + '/' + ${giftCard.getId()}">Edit Card</a>
+    <p th:text=" ${giftCard.logoImage} "></p>
+    <a th:href="'/editGiftCard/' + ${appUserId} + '/' + ${giftCard.id}">Edit Card</a>
 
-    <p th:text="'Store Name: ' + ${giftCard.getStoreName()}"></p>
-    <p th:text="'Card Code: ' + ${giftCard.getCardCode()}"></p>
-    <p th:text="'Current Balance INT: ' + ${giftCard.getBalanceInt()}"></p>
-    <p th:text="'Current Balance DECIMAL: ' + ${giftCard.getBalanceDecimal()}"></p>
-    <p th:text="'Exp: ' + ${giftCard.getExpiryDate()}"></p>
+    <p th:text="'Store Name: ' + ${giftCard.storeName}"></p>
+    <p th:text="'Card Code: ' + ${giftCard.cardCode}"></p>
+    <p th:text="'Current Balance: ' + ${giftCard.balanceInt}"></p>
+    <p th:text="'Exp: ' + ${giftCard.expiryDate}"></p>
 
 
 </div>

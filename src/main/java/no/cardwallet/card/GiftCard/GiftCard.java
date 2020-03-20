@@ -68,15 +68,15 @@ public class GiftCard {
     }
 
     public int getBalanceInt() {
-        return ((balanceInt  - balanceDecimal) / 100);
+        return balanceInt / 100;
     }
 
     public int getBalanceDecimal() {
-        return (balanceInt % 100);
+        return balanceInt % 100;
     }
 
     public void setBalanceInt(int balanceInt) {
-        this.balanceInt = balanceInt ;
+        this.balanceInt = balanceInt *100;
     }
 
     public void setBalanceDecimal(int balanceDecimal) {
