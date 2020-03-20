@@ -42,7 +42,7 @@ public class GiftCardController {
     }
 
     //  Show gift card details
-    @GetMapping("/giftCard/{appUserId}/{giftCardId}")
+    @GetMapping("/showGiftCard/{appUserId}/{giftCardId}")
     public String showGiftCard(Model model, @PathVariable Long appUserId, @PathVariable Long giftCardId) {
         GiftCard giftCard = giftCardRepository.findGiftCardById(giftCardId);
 
