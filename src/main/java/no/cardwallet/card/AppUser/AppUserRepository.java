@@ -7,5 +7,6 @@ public interface AppUserRepository extends CrudRepository<AppUser, Long> {
 
     AppUser findByEmail(String email);
 
-    AppUser deleteByEmail(String email);
+    void deleteAppUserByEmail(String email);
+
 }

@@ -1,17 +1,18 @@
 package no.cardwallet.card.AppUser;
 
-import no.cardwallet.card.AppUserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
 import java.security.Principal;
 
 
 @Controller
 public class AppUserController {
+
     @Autowired
     PasswordEncoder passwordEncoder;
 
@@ -22,12 +23,12 @@ public class AppUserController {
         this.appUserRepository = appUserRepository;
     }
 
-    @GetMapping("/signp")
+    @GetMapping("/signUp")
     public String signUp(@ModelAttribute AppUser appUser) {
-            return "signUp";
+        return "signUp";
     }
 
-    @PostMapping("/saveuser")
+    @PostMapping("/saveUser")
     public String validateUser(@ModelAttribute AppUser appUser, BindingResult bindingResult, @RequestParam String email, @RequestParam String password, @RequestParam String repeatPassword) {
         AppUserValidator appUserValidator = new AppUserValidator();
         appUser = new AppUser(email, password, repeatPassword);
@@ -43,7 +44,7 @@ public class AppUserController {
     }
 
     @GetMapping("/login")
-    public String userLogin(){
+    public String userLogin() {
         return "login";
     }
 
@@ -58,23 +59,11 @@ public class AppUserController {
         return "userSettings";
     }
 
-    @DeleteMapping("/delete")
-    public String deleteUser(Principal principal) {
-        String email = principal.getName();
-       /* Long id = appUserRepository.findByEmail(email).getId();
-        appUserRepository.deleteById(id);*/
-        appUserRepository.deleteByEmail(email);
-        return "redirect:/signup";
-    }
-
-
-
     @GetMapping("/changeemail")
     public String changeEmail() {
 
         return "changeEmail";
     }
-
 
     @GetMapping("/changepassword")
     public String changePassword() {
@@ -88,9 +77,11 @@ public class AppUserController {
         return "termsAndConditions";
     }
 
-    @GetMapping("/deleteaccount")
-    public String deleteAccount() {
-
-        return "deleteAccount";
+    @Transactional
+    @GetMapping("/deleteAppUser")
+    public String deleteAppUser(Principal principal) {
+        String email = principal.getName();
+        appUserRepository.deleteAppUserByEmail(email);
+        return "redirect:/signUp";
     }
 }
