@@ -28,7 +28,7 @@ public class GiftCardController {
     }
 
     //part of refactoring
-    private List<GiftCard> getGiftCards(Principal principal) {
+    private List<GiftCard> getAllCards(Principal principal) {
         Long appUserId = getAppUserId(principal);
         return giftCardRepository.findGiftCardsByAppUserId(appUserId);
     }
@@ -36,13 +36,13 @@ public class GiftCardController {
     //  Main page - Show all gift cards of user, by id
     @GetMapping("/myCards")
     public String getAllCards(Model model, Principal principal) {
-        List<GiftCard> giftCardList = getGiftCards(principal);
+        List<GiftCard> giftCardList = getAllCards(principal);
         model.addAttribute("giftCardList", giftCardList);
         return "myCards";
     }
 
     //  Show gift card details
-    @GetMapping("/giftcard/{appUserId}/{giftCardId}")
+    @GetMapping("/giftCard/{appUserId}/{giftCardId}")
     public String showGiftCard(Model model, @PathVariable Long appUserId, @PathVariable Long giftCardId) {
         GiftCard giftCard = giftCardRepository.findGiftCardById(giftCardId);
         model.addAttribute("giftCard", giftCard);
@@ -51,29 +51,30 @@ public class GiftCardController {
     }
 
     //  Add gift card
-    @GetMapping("/addgiftcard")
-    public String addGiftCard() {
+    @GetMapping("/addGiftCard")
+    public String addGiftCard(Model model, Principal principal) {
+        Long appUserId = getAppUserId(principal);
+        model.addAttribute("appUserId", appUserId);
+        model.addAttribute("giftCard", new GiftCard());
         return "addGiftCard";
     }
 
-    //  Save gift card
-    @PostMapping("/savegiftcard/{cardIdPath}")
-    public String saveGiftCard(@ModelAttribute GiftCard giftCard, @PathVariable Long cardIdPath, Principal principal) {
+    //  Save new gift card
+    @PostMapping("/saveNewGiftCard/")
+    public String saveNewGiftCard(@ModelAttribute GiftCard giftCard, Principal principal) {
         Long appUserId = getAppUserId(principal);
-
-        if (cardIdPath != null){
-            giftCard.setId(cardIdPath);
-        }
         giftCard.setAppUserId(appUserId);
         giftCardRepository.save(giftCard);
         return "redirect:/myCards";
     }
 
-    @GetMapping("/edit/{appUserId}/{cardId}")
+    @GetMapping("/editGiftCard/{appUserId}/{cardId}")
     public String edit(Model model, @PathVariable Long appUserId, @PathVariable Long cardId, Principal principal) {
         Long principleUserId = getAppUserId(principal);
+
         List<GiftCard> giftCardList = giftCardRepository.findGiftCardsByAppUserId(principleUserId);
-        if (!principleUserId.equals(appUserId) || !giftCardList.contains(giftCardRepository.findGiftCardById(cardId))) {
+
+        if (!giftCardList.contains(giftCardRepository.findGiftCardById(cardId)) || !principleUserId.equals(appUserId)) {
             return "defaultView";
         }
         GiftCard giftCard = giftCardRepository.findById(cardId).get();
@@ -81,27 +82,16 @@ public class GiftCardController {
         return "editGiftCard";
     }
 
-/* @PostMapping("/save")
-    public String saveGiftCard(@RequestParam String storeName, @RequestParam String cardCode, @RequestParam Double balance, Principal principal) {
-        GiftCard giftCard = new GiftCard(storeName, cardCode, balance);
+    @PostMapping("/saveEditedGiftCard/{appUserId}/{cardId}")
+    public String savEditedGiftCard(@ModelAttribute GiftCard giftCard, @PathVariable Long cardId, Principal principal) {
+        Long appUserId = getAppUserId(principal);
+
+        if (cardId != null){
+            giftCard.setId(cardId);
+        }
+        giftCard.setAppUserId(appUserId);
         giftCardRepository.save(giftCard);
-
-//        Date newExpDate = expiryDate;
-//        String username = principal.getName();
-//        appUserRepository.fin
-//        return "redirect:/" + user.getId;
-
-        return "redirect:/1";
-    }*/
-
-    /*@PostMapping("/edit/{id}")
-    public String editGiftCard(@RequestParam String storeName, @RequestParam String cardCode, @RequestParam Double balance, @RequestParam Long id) {
-        GiftCard giftCard = giftCardRepository.findById(id).get();
-        giftCard.setStoreName(storeName);
-        giftCard.setCardCode(cardCode);
-        giftCard.setBalance(balance);
-        giftCardRepository.save(giftCard);
-        return "redirect:/1";
-    }*/
+        return "redirect:/myCards";
+    }
 
 }

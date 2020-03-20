@@ -1,5 +1,6 @@
 package no.cardwallet.card.AppUser;
 
+import no.cardwallet.card.AppUserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -21,7 +22,7 @@ public class AppUserController {
         this.appUserRepository = appUserRepository;
     }
 
-    @GetMapping("/signup")
+    @GetMapping("/signp")
     public String signUp(@ModelAttribute AppUser appUser) {
             return "signUp";
     }
@@ -51,6 +52,7 @@ public class AppUserController {
         return "login";
     }
 
+
     @GetMapping("/settings")
     public String userSettings(@ModelAttribute AppUser appUser) {
         return "userSettings";
@@ -66,4 +68,29 @@ public class AppUserController {
     }
 
 
+
+    @GetMapping("/changeemail")
+    public String changeEmail() {
+
+        return "changeEmail";
+    }
+
+
+    @GetMapping("/changepassword")
+    public String changePassword() {
+
+        return "changePassword";
+    }
+
+    @GetMapping("/termsandconditions")
+    public String termsAndConditions() {
+
+        return "termsAndConditions";
+    }
+
+    @GetMapping("/deleteaccount")
+    public String deleteAccount() {
+
+        return "deleteAccount";
+    }
 }
