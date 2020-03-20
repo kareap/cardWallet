@@ -73,7 +73,7 @@ public class GiftCard {
     }
 
     public int getBalanceDecimal() {
-        return (balanceInt  % 100);
+        return (balanceInt % 100);
     }
 
     public void setBalanceInt(int balanceInt) {
