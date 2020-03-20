@@ -6,15 +6,22 @@
 </head>
 <body>
 
-<div th:if="${giftCardList == null}" th:text="You do not have any gift cards yet"><p>  </p> </div>
+<h1>My Cards</h1>
+
+<!--<div th:if="${giftCardList == null}" th:text="You do not have any gift cards yet"><p>  </p> </div>-->
 
 
 
 <div th:each="giftCard : ${giftCardList}">
 
+    <p th:text=" ${giftCard.getLogoImage()} "></p>
+
     <p th:text="'Store Name: ' + ${giftCard.getStoreName()}"></p>
-    <p th:text="'Card Code: ' + ${giftCard.getCardCode()}"></p>
-    <p th:text="'Balance: ' + ${giftCard.getBalance()}"></p>
+    <p th:text="'Current Balance INT: ' + ${giftCard.getBalanceInt()}"></p>
+    <p th:text="'Current Balance DECIMAL: ' + ${giftCard.getBalanceDecimal()}"></p>
+
+    <p th:text="'Exp: ' + ${giftCard.getExpiryDate()}"></p>
+
     <p> _________________________________________________________</p>
 
 </div>

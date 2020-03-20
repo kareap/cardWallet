@@ -45,8 +45,14 @@ public class GiftCardController {
     @GetMapping("/giftcard/{appUserId}/{giftCardId}")
     public String showGiftCard(Model model, @PathVariable Long appUserId, @PathVariable Long giftCardId) {
         GiftCard giftCard = giftCardRepository.findGiftCardById(giftCardId);
+
         model.addAttribute("giftCard", giftCard);
         model.addAttribute("appUserId", appUserId);
+
+//        if (giftCard.getBalanceInt() == null){
+//            return "defaultView";
+//        }
+
         return "showGiftCard";
     }
 
@@ -57,22 +63,44 @@ public class GiftCardController {
     }
 
     //  Save gift card
-    @PostMapping("/savegiftcard/{cardIdPath}")
-    public String saveGiftCard(@ModelAttribute GiftCard giftCard, @PathVariable Long cardIdPath, Principal principal) {
+    @PostMapping("/savegiftcard")
+    public String saveGiftCard(@ModelAttribute GiftCard giftCard, Principal principal) {
         Long appUserId = getAppUserId(principal);
+
+        giftCard.setAppUserId(appUserId);
+        giftCardRepository.save(giftCard);
+
+        return "redirect:/myCards";
+    }
+
+    // DELETE EDIT GIFTCARD
+    @PostMapping("/saveeditedgiftcard/{cardIdPath}")
+    public String editGiftCard(Model model, @ModelAttribute GiftCard tempGiftCard, @ModelAttribute GiftCard giftCard, @PathVariable Long cardIdPath, Principal principal) {
+        Long appUserId = getAppUserId(principal);
+
+//        GiftCard tempGiftCard = new GiftCard();
+//        model.addAttribute("tempGiftCard", tempGiftCard);
 
         if (cardIdPath != null){
             giftCard.setId(cardIdPath);
         }
 
         giftCard.setAppUserId(appUserId);
+
+//        giftCard.setBalanceInt(tempGiftCard.getBalanceInt() + tempGiftCard.getBalanceDecimal());
+
         giftCardRepository.save(giftCard);
+        giftCard.setBalanceInt(tempGiftCard.getBalanceInt());
+
         return "redirect:/myCards";
     }
 
     @GetMapping("/edit/{appUserId}/{cardId}")
     public String edit(Model model, @PathVariable Long appUserId, @PathVariable Long cardId, Principal principal) {
         Long principleUserId = getAppUserId(principal);
+
+        GiftCard tempGiftCard = new GiftCard();
+        model.addAttribute("tempGiftCard", tempGiftCard);
 
         List<GiftCard> giftCardList = giftCardRepository.findGiftCardsByAppUserId(principleUserId);
 
@@ -86,7 +114,7 @@ public class GiftCardController {
     }
 
 /* @PostMapping("/save")
-    public String saveGiftCard(@RequestParam String storeName, @RequestParam String cardCode, @RequestParam Double balance, Principal principal) {
+    public String saveGiftCard(@RequestParam String storeName, @RequestParam String cardCode, @RequestParam Integer balance, Principal principal) {
         GiftCard giftCard = new GiftCard(storeName, cardCode, balance);
         giftCardRepository.save(giftCard);
 
@@ -99,7 +127,7 @@ public class GiftCardController {
     }*/
 
     /*@PostMapping("/edit/{id}")
-    public String editGiftCard(@RequestParam String storeName, @RequestParam String cardCode, @RequestParam Double balance, @RequestParam Long id) {
+    public String editGiftCard(@RequestParam String storeName, @RequestParam String cardCode, @RequestParam Integer balance, @RequestParam Long id) {
         GiftCard giftCard = giftCardRepository.findById(id).get();
         giftCard.setStoreName(storeName);
         giftCard.setCardCode(cardCode);

@@ -6,10 +6,17 @@
 </head>
 <body>
 
-<a>
+<h1>My Card</h1>
+
+<div>
+
+    <p th:text=" ${giftCard.getLogoImage()} "></p>
+    <p> Edit Card Link Here </p>
+
     <p th:text="'Store Name: ' + ${giftCard.getStoreName()}"></p>
     <p th:text="'Card Code: ' + ${giftCard.getCardCode()}"></p>
-    <p th:text="'Balance: ' + ${giftCard.getBalance()}"></p>
+    <p th:text="'Current Balance INT: ' + ${giftCard.getBalanceInt()}"></p>
+    <p th:text="'Current Balance DECIMAL: ' + ${giftCard.getBalanceDecimal()}"></p>
     <p th:text="'Exp: ' + ${giftCard.getExpiryDate()}"></p>
     <a th:href="'/edit/' + ${appUserId} + '/' + ${giftCard.getId()}">Edit Card</a>
 
