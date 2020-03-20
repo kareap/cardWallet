@@ -1,7 +1,10 @@
 package no.cardwallet.card.AppUser;
 
+<<<<<<< HEAD
 import no.cardwallet.card.AppUserDetailService;
 import no.cardwallet.card.GiftCard.GiftCard;
+=======
+>>>>>>> 2f8c9aa5e3f3e823a5b29282fb476c8dec486189
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -9,11 +12,13 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
 import java.security.Principal;
 
 
 @Controller
 public class AppUserController {
+
     @Autowired
     PasswordEncoder passwordEncoder;
 
@@ -24,12 +29,12 @@ public class AppUserController {
         this.appUserRepository = appUserRepository;
     }
 
-    @GetMapping("/signp")
+    @GetMapping("/signUp")
     public String signUp(@ModelAttribute AppUser appUser) {
         return "signUp";
     }
 
-    @PostMapping("/saveuser")
+    @PostMapping("/saveUser")
     public String validateUser(@ModelAttribute AppUser appUser, BindingResult bindingResult, @RequestParam String email, @RequestParam String password, @RequestParam String repeatPassword) {
         AppUserValidator appUserValidator = new AppUserValidator();
         appUser = new AppUser(email, password, repeatPassword);
@@ -60,6 +65,7 @@ public class AppUserController {
         return "userSettings";
     }
 
+<<<<<<< HEAD
     @DeleteMapping("/delete")
     public String deleteUser(Principal principal) {
         String email = principal.getName();
@@ -99,9 +105,11 @@ public class AppUserController {
         return "termsAndConditions";
     }
 
-    @GetMapping("/deleteaccount")
-    public String deleteAccount() {
-
-        return "deleteAccount";
+    @Transactional
+    @GetMapping("/deleteAppUser")
+    public String deleteAppUser(Principal principal) {
+        String email = principal.getName();
+        appUserRepository.deleteAppUserByEmail(email);
+        return "redirect:/signUp";
     }
 }

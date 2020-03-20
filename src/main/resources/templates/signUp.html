@@ -7,7 +7,7 @@
 <body>
 <h1>Sign up</h1>
 
-<form action="/saveuser" th:object="${appUser}" method="post" >
+<form action="/saveUser" th:object="${appUser}" method="post" >
     <input  type="text" th:field="*{email}" placeholder="Email"/>
     <p th:if="${#fields.hasErrors('email')}">Please enter a valid email address.</p>
     <input th:field="*{password}" placeholder="Password"/>
