@@ -10,8 +10,4 @@ public interface GiftCardRepository extends CrudRepository<GiftCard, Long>{
     List<GiftCard> findGiftCardsByAppUserId(Long id);
 
     GiftCard findGiftCardById(Long id);
-
-    void deleteByAppUserId(Principal principal);
-
-    void findById(long cardId);
 }
