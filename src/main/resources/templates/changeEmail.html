@@ -16,7 +16,7 @@
 
 <div id="cardContainer">
 
-    <form th:action="'/saveChangedEmail/'" th:object="${appUser}" th:method="post">
+    <form th:action="'/save-changed-email/'" th:object="${appUser}" th:method="post">
         <input type="text" th:field="*{email}">
         <input type="submit" value="Save New Email">
     </form>

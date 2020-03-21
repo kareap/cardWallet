@@ -6,7 +6,9 @@
     <link type="text/css" rel="stylesheet" href="login.css">
 </head>
 <body>
+
 <h1>Sign up</h1>
+
 
 <form action="/saveUser" th:object="${appUser}" method="post">
     <div><input type="text" th:field="*{email}" placeholder="Email"/>
@@ -16,6 +18,7 @@
     <div><input th:field="*{repeatPassword}" placeholder="Confirm password"/>
         <p th:if="${#fields.hasErrors('repeatPassword')}">Passwords are not a match.</p></div>
     <div><input type="submit" value="Sign up"/></div>
+
 
 </form>
 

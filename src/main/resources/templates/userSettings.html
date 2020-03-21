@@ -6,32 +6,26 @@
     <link type="text/css" rel="stylesheet" href="inapp.css">
 </head>
 <body>
+
 <div id="header">
     <h1>Settings</h1>
 </div>
 
-    <form th:action="'/logout'" method="post">
-        <input type="submit" value="Log out"/>
-    </form>
+<form th:action="'/logout'" method="post">
+    <input type="submit" value="Log out"/>
+</form>
 
-    <form th:action="'/delete'" method="delete">
-        <input type="submit" value="Delete account"/>
-    </form>
+<p><a href="/change-email">Change email</a></p>
+<p><a href="/change-password">Change password</a></p>
+<p><a href="/terms-and-conditions">Terms and Conditions</a></p>
 
-    <a href="/delete">Delete user/account??</a>
-
-    <p><a href="/changeEmail">Change email</a></p>
-    <p><a href="/changePassword">Change password</a></p>
-    <p><a href="/termsandconditions">Terms and Conditions</a></p>
-
-    <p><a href="/deleteaccount">Delete account</a></p>
+<p><a href="/delete-app-user">Delete account</a></p>
 
 <div id="footer">
-    <p><a href="/addGiftCard">Add Card</a></p>
-    <p><a href="/myCards">My Cards</a></p>
-    <p>Settings</p>
+    <span><a href="/add-gift-card">Add Card</a></span>
+    <span><a href="/my-cards">My Cards</a></span>
+    <span>Settings</span>
 </div>
-
 
 </body>
 </html>

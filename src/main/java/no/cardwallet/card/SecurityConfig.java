@@ -26,17 +26,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http
                 .authorizeRequests()
-                .antMatchers( "/userlogin", "/signup", "/h2", "/h2/**", "/saveuser").permitAll()
+                .antMatchers("/userlogin", "/sign-up", "/h2", "/h2/**", "/save-user").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/userLogin").permitAll()
-                .defaultSuccessUrl("/myCards", true)
+                .defaultSuccessUrl("/my-cards", true)
                 .permitAll();
     }
 
 
-// Hva gjør denne metoden?
+    // Hva gjør denne metoden?
     @Override
     protected void configure(AuthenticationManagerBuilder authenticationManagerBuilder) {
         authenticationManagerBuilder.authenticationProvider(authenticationProvider());
