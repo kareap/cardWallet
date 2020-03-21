@@ -3,26 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Edit GiftCard</title>
+    <link type="text/css" rel="stylesheet" href="inapp.css">
 </head>
 <body>
-<h1>Edit Gift Card Details</h1>
+<div id="header">
+    <h1>Edit Gift Card Details</h1>
+</div>
 
-<form th:action="'/saveEditedGiftCard/' + ${appUserId} + '/' + ${cardId} " th:object="${giftCard}" method="post">
+<div id="cardContainer">
+    <form th:action="'/saveEditedGiftCard/' + ${appUserId} + '/' + ${cardId} " th:object="${giftCard}" method="post">
 
-    <span> Store Name: <input type="text" th:field="*{storeName}" > </span>
-    <span> Card Code: <input type="text"  th:field="*{cardCode}"> </span>
-    <span> Balance <input type="number" th:field="*{balanceInt}"></span>
+        <div> Store Name: <input type="text" th:field="*{storeName}"></div>
+        <div> Card Code: <input type="text" th:field="*{cardCode}"></div>
+        <div> Balance <input type="number" th:field="*{balanceInt}"></div>
 
-<!--    <span> Balance DECIMAL: <input type="number" th:default="*{balanceDecimal}"  th:field="${tempGiftCard.balanceDecimal}"></span>-->
-<!--    <span type="hidden" th:field="*{expiryDate}"> </span>-->
+        <!--    <span type="hidden" th:field="*{expiryDate}"> </span>-->
 
-    <input type="submit" value="Save Changes">
-</form>
+        <input type="submit" value="Save Changes">
+    </form>
+</div>
+<div id="footer">
+    <span><a href="/addGiftCard">Add Card</a></span>
+    <span><a href="/myCards">My Cards</a></span>
+    <span><a href="/settings">Settings</a></span>
 
-    <p><a href="/addGiftCard">Add Card</a></p>
-    <p><a href="/myCards">My Cards</a></p>
-    <p><a href="/settings">Settings</a></p>
-
-
+</div>
 </body>
 </html>

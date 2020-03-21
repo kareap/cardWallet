@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Sign up</title>
+    <link type="text/css" rel="stylesheet" href="login.css">
 </head>
 <body>
 <h1>Sign up</h1>
 
-<form action="/saveUser" th:object="${appUser}" method="post" >
-    <input  type="text" th:field="*{email}" placeholder="Email"/>
-    <p th:if="${#fields.hasErrors('email')}">Please enter a valid email address.</p>
-    <input th:field="*{password}" placeholder="Password"/>
-    <p th:if="${#fields.hasErrors('password')}" >Please enter a password.</p>
-    <input th:field="*{repeatPassword}" placeholder="Confirm password"/>
-    <p th:if="${#fields.hasErrors('repeatPassword')}">Passwords are not a match.</p>
-    <input type="submit" value="Sign up"/>
+<form action="/saveUser" th:object="${appUser}" method="post">
+    <div><input type="text" th:field="*{email}" placeholder="Email"/>
+        <p th:if="${#fields.hasErrors('email')}">Please enter a valid email address.</p></div>
+    <div><input th:field="*{password}" placeholder="Password"/>
+        <p th:if="${#fields.hasErrors('password')}">Please enter a password.</p></div>
+    <div><input th:field="*{repeatPassword}" placeholder="Confirm password"/>
+        <p th:if="${#fields.hasErrors('repeatPassword')}">Passwords are not a match.</p></div>
+    <div><input type="submit" value="Sign up"/></div>
+
 </form>
 
 </body>

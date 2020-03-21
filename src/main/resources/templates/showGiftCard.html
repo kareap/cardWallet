@@ -3,29 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>GiftCard</title>
+    <link type="text/css" rel="stylesheet" href="inapp.css">
 </head>
+
 <body>
 
-<h1>My Card</h1>
+<div id="header">
 
-<div>
-
-    <p th:text=" ${giftCard.logoImage} "></p>
-    <a th:href="'/editGiftCard/' + ${appUserId} + '/' + ${giftCard.id}">Edit Card</a>
-
-    <p th:text="'Store Name: ' + ${giftCard.storeName}"></p>
-    <p th:text="'Card Code: ' + ${giftCard.cardCode}"></p>
-    <p th:text="'Current Balance: ' + ${giftCard.balanceInt}"></p>
-    <p th:text="'Exp: ' + ${giftCard.expiryDate}"></p>
-
+    <h1>My Card</h1>
 
 </div>
 
-    <p><a href="/addGiftCard">Add Card</a></p>
-    <p><a href="/myCards">My Cards</a></p>
-    <p><a href="/settings">Settings</a></p>
+<div id="cardContainer">
+    <div th:text=" ${giftCard.logoImage} "></div>
+    <div><a th:href="'/editGiftCard/' + ${appUserId} + '/' + ${giftCard.id}">Edit Card</a></div>
+    <div th:text="'Store Name: ' + ${giftCard.storeName}"></div>
+    <div th:text="'Card Code: ' + ${giftCard.cardCode}"></div>
+    <div th:text="'Current Balance: ' + ${giftCard.balanceInt}"></div>
+    <div th:text="'Exp: ' + ${giftCard.expiryDate}"></div>
+</div>
 
-
+<div id="footer">
+    <span><a href="/addGiftCard">Add Card</a></span>
+    <span><a href="/myCards">My Cards</a></span>
+    <span><a href="/settings">Settings</a></span>
+</div>
 
 </body>
 </html>

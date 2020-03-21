@@ -41,17 +41,17 @@ public class AppUserController {
         }
         appUser.setPassword(passwordEncoder.encode(appUser.getPassword()));
         appUserRepository.save(appUser);
-        return "login";//send to log in page
+        return "userLogin";//send to log in page
     }
 
-    @GetMapping("/login")
+    @GetMapping("/userLogin")
     public String userLogin() {
-        return "login";
+        return "userLogin";
     }
 
     @GetMapping("/logout")
     public String logout() {
-        return "login";
+        return "userLogin";
     }
 
 

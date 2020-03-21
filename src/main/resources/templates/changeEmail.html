@@ -3,19 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Change email</title>
+    <link type="text/css" rel="stylesheet" href="inapp.css">
 </head>
 <body>
+<div id="header">
 
-<h1>Change email</h1>
 
-<form th:action="'/saveChangedEmail/'" th:object="${appUser}" th:method="post" >
-    <input type="text" th:field="*{email}" >
-    <input type="submit" value="Save New Email">
-</form>
+    <h1>Change email</h1>
 
-<p><a href="/addGiftCard">Add Card</a></p>
-<p><a href="/myCards">My Cards</a></p>
-<p><a href="/settings">Settings</a></p>
+</div>
 
+
+<div id="cardContainer">
+
+    <form th:action="'/saveChangedEmail/'" th:object="${appUser}" th:method="post">
+        <input type="text" th:field="*{email}">
+        <input type="submit" value="Save New Email">
+    </form>
+</div>
+
+<div id="footer">
+    <span><a href="/addGiftCard">Add Card</a></span>
+    <span><a href="/myCards">My Cards</a></span>
+    <span><a href="/settings">Settings</a></span>
+
+</div>
 </body>
 </html>

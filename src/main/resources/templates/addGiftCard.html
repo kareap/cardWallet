@@ -3,22 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Add Gift Card</title>
+    <link type="text/css" rel="stylesheet" href="inapp.css">
 </head>
 <body>
+<div id="header">
 
+    <h1>Add Card</h1>
 
+</div>
+
+<div id="cardContainer">
 <form  method="post" th:action="'/saveNewGiftCard/'" th:object="${giftCard}">
-    <span> Store Name: <input type="text" th:field="*{storeName}"> </span>
-    <span> Amount: <input type="number" th:field="*{balanceInt}"></span>
-    <span> Exp: <input type="date" th:field="*{expiryDate}"></span>
-    <span> Card Code: <input type="text" th:field="*{cardCode}"> </span>
+    <div> Store Name: <input type="text" th:field="*{storeName}"> </div>
+    <div> Amount: <input type="number" th:field="*{balanceInt}"></div>
+    <div> Exp: <input type="date" th:field="*{expiryDate}"></div>
+    <div> Card Code: <input type="text" th:field="*{cardCode}"> </div>
 
     <input type="submit" value="Save Card">
 </form>
+</div>
 
-    <p>Add Card</p>
-    <p><a href="/myCards">My Cards</a></p>
-    <p><a href="/settings">Settings</a></p>
+<div id="footer">
+    <span>Add Card</span>
+    <span><a href="/myCards">My Cards</a></span>
+    <span><a href="/settings">Settings</a></span>
+</div>
 
 </body>
 </html>

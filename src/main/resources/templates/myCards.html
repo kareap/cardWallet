@@ -3,15 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link type="text/css" rel="stylesheet" href="inapp.css">
+
 </head>
 <body>
 
-<h1>My Cards</h1>
 
-<div th:if="${giftCardList.size()} == 0">
-    <p>You do not have any gift cards yet...</p>
-    <p><a href="/addGiftCard">Add your first gift card now!</a></p>
+<div id="header">
+
+    <h1>My Cards</h1>
+
 </div>
+
+
+<div id="cardContainer">
+
+    <div th:if="${giftCardList.size()} == 0">
+        <p>You do not have any gift cards yet...</p>
+        <p><a href="/addGiftCard">Add your first gift card now!</a></p>
+    </div>
 
     <div th:if="${giftCardList.size() >= 1}" th:each="giftCard : ${giftCardList}">
 
@@ -22,13 +32,17 @@
         <p th:text="'Exp: ' + ${giftCard.expiryDate}"></p>
         <p><a th:href="'/showGiftCard/' + ${giftCard.appUserId} + '/' + ${giftCard.id}">
         </a></p>
-        <p> _________________________________________________________</p>
+        <p> ________________________________________</p>
+    </div>
 </div>
 
-    <p><a href="/addGiftCard">Add Card</a></p>
-    <p>My Cards</p>
-    <p><a href="/settings">Settings</a></p>
+<div id="footer">
 
+    <span><a href="/addGiftCard">Add Card</a></span>
+    <span>My Cards</span>
+    <span><a href="/settings">Settings</a></span>
+
+</div>
 
 
 </body>
