@@ -24,12 +24,12 @@ public class AppUserController {
         this.appUserRepository = appUserRepository;
     }
 
-    @GetMapping("/signUp")
+    @GetMapping("/sign-up")
     public String signUp(@ModelAttribute AppUser appUser) {
         return "signUp";
     }
 
-    @PostMapping("/saveUser")
+    @PostMapping("/save-user")
     public String validateUser(@ModelAttribute AppUser appUser, BindingResult bindingResult, @RequestParam String email, @RequestParam String password, @RequestParam String repeatPassword) {
         AppUserValidator appUserValidator = new AppUserValidator();
         appUser = new AppUser(email, password, repeatPassword);
@@ -60,7 +60,7 @@ public class AppUserController {
         return "userSettings";
     }
 
-    @GetMapping("/changeEmail")
+    @GetMapping("/change-email")
     public String changeEmail(Model model, Principal principal) {
         String email = principal.getName();
         AppUser appUser = appUserRepository.findByEmail(email);
@@ -68,7 +68,7 @@ public class AppUserController {
         return "changeEmail";
     }
 
-    @PostMapping("/saveChangedEmail")
+    @PostMapping("/save-changed-email")
     public String saveChangedEmail(Model model, Principal principal, @ModelAttribute AppUser appUserPosting) {
         String email = principal.getName();
         AppUser appUser = appUserRepository.findByEmail(email);
@@ -78,7 +78,7 @@ public class AppUserController {
         return "SuccessfullyChangedEmail";
     }
 
-    @GetMapping("/changePassword")
+    @GetMapping("/change-password")
     public String changePassword(Model model, Principal principal) {
         String email = principal.getName();
         AppUser appUser = appUserRepository.findByEmail(email);
@@ -88,7 +88,7 @@ public class AppUserController {
     }
 
 
-    @PostMapping("/saveChangedPassword")
+    @PostMapping("/save-changed-password")
     public String saveChangedPassword(Model model, Principal principal, @ModelAttribute AppUser appUserPosting) {
         String email = principal.getName();
         AppUser appUser = appUserRepository.findByEmail(email);
@@ -100,17 +100,17 @@ public class AppUserController {
     }
 
 
-    @GetMapping("/termsandconditions")
+    @GetMapping("/terms-and-conditions")
     public String termsAndConditions() {
 
         return "termsAndConditions";
     }
 
     @Transactional
-    @GetMapping("/deleteAppUser")
+    @GetMapping("/delete-app-user")
     public String deleteAppUser(Principal principal) {
         String email = principal.getName();
         appUserRepository.deleteAppUserByEmail(email);
-        return "redirect:/signUp";
+        return "redirect:/sign-up";
     }
 }

@@ -8,13 +8,13 @@
 
 <h1>Change email</h1>
 
-<form th:action="'/saveChangedEmail/'" th:object="${appUser}" th:method="post" >
+<form th:action="'/save-changed-email/'" th:object="${appUser}" th:method="post" >
     <input type="text" th:field="*{email}" >
     <input type="submit" value="Save New Email">
 </form>
 
-<p><a href="/addGiftCard">Add Card</a></p>
-<p><a href="/myCards">My Cards</a></p>
+<p><a href="/add-gift-card">Add Card</a></p>
+<p><a href="/my-cards">My Cards</a></p>
 <p><a href="/settings">Settings</a></p>
 
 </body>

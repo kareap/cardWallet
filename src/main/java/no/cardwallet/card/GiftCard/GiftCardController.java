@@ -34,7 +34,7 @@ public class GiftCardController {
     }
 
     //  Main page - Show all gift cards of user, by id
-    @GetMapping("/myCards")
+    @GetMapping("/my-cards")
     public String getAllCards(Model model, Principal principal) {
         List<GiftCard> giftCardList = getAllCards(principal);
         model.addAttribute("giftCardList", giftCardList);
@@ -42,7 +42,7 @@ public class GiftCardController {
     }
 
     //  Show gift card details
-    @GetMapping("/showGiftCard/{appUserId}/{giftCardId}")
+    @GetMapping("/show-gift-card/{appUserId}/{giftCardId}")
     public String showGiftCard(Model model, @PathVariable Long appUserId, @PathVariable Long giftCardId) {
         GiftCard giftCard = giftCardRepository.findGiftCardById(giftCardId);
 
@@ -57,7 +57,7 @@ public class GiftCardController {
     }
 
     //  Add gift card
-    @GetMapping("/addGiftCard")
+    @GetMapping("/add-gift-card")
     public String addGiftCard(Model model, Principal principal) {
         Long appUserId = getAppUserId(principal);
         model.addAttribute("appUserId", appUserId);
@@ -67,17 +67,17 @@ public class GiftCardController {
 
 
     //  Save new gift card
-    @PostMapping("/saveNewGiftCard/")
+    @PostMapping("/save-new-gift-card")
     public String saveNewGiftCard(@ModelAttribute GiftCard giftCard, Principal principal) {
         Long appUserId = getAppUserId(principal);
 
         giftCard.setAppUserId(appUserId);
         giftCardRepository.save(giftCard);
 
-        return "redirect:/myCards";
+        return "redirect:/my-cards";
     }
 
-    @GetMapping("/editGiftCard/{appUserId}/{cardId}")
+    @GetMapping("/edit-gift-card/{appUserId}/{cardId}")
     public String editGiftCard(Model model, @PathVariable Long appUserId, @PathVariable Long cardId, Principal principal) {
         Long principleUserId = getAppUserId(principal);
 
@@ -97,7 +97,7 @@ public class GiftCardController {
     }
 
 
-    @PostMapping("/saveEditedGiftCard/{appUserId}/{cardId}")
+    @PostMapping("/save-edited-gift-card/{appUserId}/{cardId}")
     public String savEditedGiftCard(@ModelAttribute GiftCard giftCard, @ModelAttribute GiftCard tempGiftCard, @PathVariable Long cardId, Principal principal) {
         Long appUserId = getAppUserId(principal);
 
@@ -110,6 +110,6 @@ public class GiftCardController {
 
         giftCard.setBalanceInt(tempGiftCard.getBalanceInt());
 
-        return "redirect:/myCards";
+        return "redirect:/my-cards";
     }
 }

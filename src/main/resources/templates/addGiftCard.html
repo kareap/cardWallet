@@ -7,7 +7,7 @@
 <body>
 
 
-<form  method="post" th:action="'/saveNewGiftCard/'" th:object="${giftCard}">
+<form  method="post" th:action="'/save-new-gift-card'" th:object="${giftCard}">
     <span> Store Name: <input type="text" th:field="*{storeName}"> </span>
     <span> Amount: <input type="number" th:field="*{balanceInt}"></span>
     <span> Exp: <input type="date" th:field="*{expiryDate}"></span>
@@ -17,7 +17,7 @@
 </form>
 
     <p>Add Card</p>
-    <p><a href="/myCards">My Cards</a></p>
+    <p><a href="/my-cards">My Cards</a></p>
     <p><a href="/settings">Settings</a></p>
 
 </body>

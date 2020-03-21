@@ -1,0 +1,17 @@
+.flex-container {
+    display: flex;
+}
+
+* {
+    background-color: red;
+}
+
+body {
+    font-family: 'DejaVu Sans Mono', monospace;
+}
+
+h2 {
+    color: white;
+    size: 1em;
+}
+

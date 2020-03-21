@@ -7,7 +7,7 @@
 <body>
 <h1>Edit Gift Card Details</h1>
 
-<form th:action="'/saveEditedGiftCard/' + ${appUserId} + '/' + ${cardId} " th:object="${giftCard}" method="post">
+<form th:action="'/save-edited-gift-card/' + ${appUserId} + '/' + ${cardId} " th:object="${giftCard}" method="post">
 
     <span> Store Name: <input type="text" th:field="*{storeName}" > </span>
     <span> Card Code: <input type="text"  th:field="*{cardCode}"> </span>
@@ -19,8 +19,8 @@
     <input type="submit" value="Save Changes">
 </form>
 
-    <p><a href="/addGiftCard">Add Card</a></p>
-    <p><a href="/myCards">My Cards</a></p>
+    <p><a href="/add-gift-card">Add Card</a></p>
+    <p><a href="/my-cards">My Cards</a></p>
     <p><a href="/settings">Settings</a></p>
 
 
