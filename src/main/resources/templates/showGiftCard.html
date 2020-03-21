@@ -11,7 +11,10 @@
 <div>
 
     <p th:text=" ${giftCard.logoImage} "></p>
+
     <a th:href="'/edit-gift-card/' + ${appUserId} + '/' + ${giftCard.id}">Edit Card</a>
+
+    <a th:href="'/delete-gift-card/' + ${appUserId} + '/' + ${giftCard.id}">Delete Card</a>
 
     <p th:text="'Store Name: ' + ${giftCard.storeName}"></p>
     <p th:text="'Card Code: ' + ${giftCard.cardCode}"></p>

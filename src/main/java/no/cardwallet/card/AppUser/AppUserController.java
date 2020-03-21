@@ -41,7 +41,7 @@ public class AppUserController {
         }
         appUser.setPassword(passwordEncoder.encode(appUser.getPassword()));
         appUserRepository.save(appUser);
-        return "login";//send to log in page
+        return "login";
     }
 
     @GetMapping("/login")
@@ -53,7 +53,6 @@ public class AppUserController {
     public String logout() {
         return "login";
     }
-
 
     @GetMapping("/settings")
     public String userSettings(@ModelAttribute AppUser appUser) {
@@ -87,7 +86,6 @@ public class AppUserController {
         return "changePassword";
     }
 
-
     @PostMapping("/save-changed-password")
     public String saveChangedPassword(Model model, Principal principal, @ModelAttribute AppUser appUserPosting) {
         String email = principal.getName();
@@ -99,7 +97,6 @@ public class AppUserController {
         return "successfullyChangedPassword";
     }
 
-
     @GetMapping("/terms-and-conditions")
     public String termsAndConditions() {
 
@@ -109,7 +106,7 @@ public class AppUserController {
     @Transactional
     @GetMapping("/delete-app-user")
     public String deleteAppUser(Principal principal) {
-        String email = principal.getName();
+        String email = principal.getName(); //cannot delete user before the user's cards have been deleted
         appUserRepository.deleteAppUserByEmail(email);
         return "redirect:/sign-up";
     }

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.transaction.Transactional;
 import java.security.Principal;
 import java.util.List;
 
@@ -65,7 +66,6 @@ public class GiftCardController {
         return "addGiftCard";
     }
 
-
     //  Save new gift card
     @PostMapping("/save-new-gift-card")
     public String saveNewGiftCard(@ModelAttribute GiftCard giftCard, Principal principal) {
@@ -96,7 +96,6 @@ public class GiftCardController {
         return "editGiftCard";
     }
 
-
     @PostMapping("/save-edited-gift-card/{appUserId}/{cardId}")
     public String savEditedGiftCard(@ModelAttribute GiftCard giftCard, @ModelAttribute GiftCard tempGiftCard, @PathVariable Long cardId, Principal principal) {
         Long appUserId = getAppUserId(principal);
@@ -110,6 +109,14 @@ public class GiftCardController {
 
         giftCard.setBalanceInt(tempGiftCard.getBalanceInt());
 
+        return "redirect:/my-cards";
+    }
+
+    @GetMapping("/delete-gift-card/{appUserId}/{cardId}")
+    public String deleteGiftCard(@PathVariable Long appUserId, @PathVariable Long cardId, Principal principal) {
+        //check whether principal = appUser;
+        //if not, return "defaultView";
+        //if yes, delete card (some stuff with giftCardRepository.deleteByCardId??)
         return "redirect:/my-cards";
     }
 }
