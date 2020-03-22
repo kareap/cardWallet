@@ -1,6 +1,8 @@
 package no.cardwallet.card.AppUser;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -103,11 +105,22 @@ public class AppUserController {
         return "termsAndConditions";
     }
 
-    @Transactional
+    /*@Transactional
     @GetMapping("/delete-app-user")
     public String deleteAppUser(Principal principal) {
         String email = principal.getName(); //cannot delete user before the user's cards have been deleted
         appUserRepository.deleteAppUserByEmail(email);
         return "redirect:/sign-up";
+    }*/
+
+    @Transactional
+    @GetMapping("/delete-app-user")
+    public String deleteAppUserById(Principal principal) {
+        String email = principal.getName();
+        Long appUserId = appUserRepository.findByEmail(email).getId();
+        appUserRepository.deleteEmailById(appUserId);
+        appUserRepository.deletePasswordById(appUserId);
+        return "redirect:/sign-up";
     }
+
 }

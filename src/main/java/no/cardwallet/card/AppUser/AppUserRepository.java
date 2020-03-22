@@ -9,4 +9,7 @@ public interface AppUserRepository extends CrudRepository<AppUser, Long> {
 
     void deleteAppUserByEmail(String email);
 
+    void deleteEmailById(Long appUserId);
+
+    void deletePasswordById(Long appUserId);
 }
