@@ -1,5 +1,6 @@
 package no.cardwallet.card.AppUser;
 
+import no.cardwallet.card.GiftCard.GiftCardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -18,6 +19,9 @@ public class AppUserController {
 
     @Autowired
     PasswordEncoder passwordEncoder;
+
+    @Autowired
+    GiftCardRepository giftCardRepository;
 
     final
     AppUserRepository appUserRepository;
@@ -105,22 +109,15 @@ public class AppUserController {
         return "termsAndConditions";
     }
 
-    /*@Transactional
-    @GetMapping("/delete-app-user")
-    public String deleteAppUser(Principal principal) {
-        String email = principal.getName(); //cannot delete user before the user's cards have been deleted
-        appUserRepository.deleteAppUserByEmail(email);
-        return "redirect:/sign-up";
-    }*/
-
     @Transactional
     @GetMapping("/delete-app-user")
-    public String deleteAppUserById(Principal principal) {
+    public String deleteAppUser(Principal principal) {
         String email = principal.getName();
         Long appUserId = appUserRepository.findByEmail(email).getId();
-        appUserRepository.deleteEmailById(appUserId);
-        appUserRepository.deletePasswordById(appUserId);
+        giftCardRepository.deleteByAppUserId(appUserId);
+        appUserRepository.deleteAppUserByEmail(email);
         return "redirect:/sign-up";
     }
+
 
 }
