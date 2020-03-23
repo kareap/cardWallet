@@ -13,14 +13,15 @@
 <form action="/save-user" th:object="${appUser}" method="post">
     <div><input type="text" th:field="*{email}" placeholder="Email"/>
         <p th:if="${#fields.hasErrors('email')}">Please enter a valid email address.</p></div>
-    <div><input th:field="*{password}" placeholder="Password"/>
+    <div><input type="password" th:field="*{password}" placeholder="Password"/>
         <p th:if="${#fields.hasErrors('password')}">Please enter a password.</p></div>
-    <div><input th:field="*{repeatPassword}" placeholder="Confirm password"/>
+    <div><input type="password" th:field="*{repeatPassword}" placeholder="Confirm password"/>
         <p th:if="${#fields.hasErrors('repeatPassword')}">Passwords are not a match.</p></div>
     <div><input type="submit" value="Sign up"/></div>
-
-
 </form>
+
+<div>Already have an account?</div>
+<div><a th:href="'/login'">Click here to log in.</a></div>
 
 </body>
 </html>
