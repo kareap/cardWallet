@@ -50,7 +50,6 @@ public class GiftCardController {
         allLogos.add("/images/lindex.jpg");
 
 
-
         return "myCards";
     }
 
@@ -126,10 +125,9 @@ public class GiftCardController {
     }
 
     @GetMapping("/delete-gift-card/{appUserId}/{cardId}")
-    public String deleteGiftCard(@PathVariable Long appUserId, @PathVariable Long cardId, Principal principal) {
-        //check whether principal = appUser;
-        //if not, return "defaultView";
-        //if yes, delete card (some stuff with giftCardRepository.deleteByCardId??)
+    public String deleteGiftCard(@PathVariable Long appUserId, @PathVariable Long cardId) {
+        giftCardRepository.deleteById(cardId);
         return "redirect:/my-cards";
     }
+
 }
