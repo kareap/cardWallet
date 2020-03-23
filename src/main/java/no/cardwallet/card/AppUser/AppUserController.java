@@ -8,7 +8,11 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.transaction.Transactional;
+import java.io.IOException;
 import java.security.Principal;
 
 
@@ -78,7 +82,7 @@ public class AppUserController {
         appUser.setEmail(appUserPosting.getEmail());
         appUserRepository.save(appUser);
         model.addAttribute(appUser);
-        return "SuccessfullyChangedEmail";
+        return "successfullyChangedEmail";
     }
 
     @GetMapping("/change-password")
@@ -105,6 +109,19 @@ public class AppUserController {
     public String termsAndConditions() {
 
         return "termsAndConditions";
+    }
+
+    @GetMapping("/forgot-password")
+    public String forgotPassword() {
+        return "forgotPassword";
+    }
+
+    @PostMapping("/successfully-reset-password")
+    public String passwordReset(@ModelAttribute AppUser appUser) {
+        appUser = appUserRepository.findAppUserByEmail("olav.nordmann@hotmail.com");
+        appUser.setPassword(passwordEncoder.encode("abc"));
+        appUserRepository.save(appUser);
+        return "successfullyResetPassword";
     }
 
     @Transactional
