@@ -8,33 +8,43 @@
 
 
 <body>
+<div class="phoneContainer">
 
-<div id="header">
+    <div class="mainContainer">
 
-    <h1>My Card</h1>
+        <div id="header">
 
-</div>
+            <h1>My Card</h1>
 
-<div id="mainContainer">
-    <div th:text=" ${giftCard.logoImage} "></div>
-    <div><a th:href="'/edit-gift-card/' + ${appUserId} + '/' + ${giftCard.id}">Edit Card</a>
-        <a th:href="'/delete-gift-card/' + ${appUserId} + '/' + ${giftCard.id}">Delete Card</a>
+        </div>
+        <div>
+            <div class="cardContainer">
+                <div class="logoContainer" th:fragment="logo">
+                    <img th:src="'/images/' + ${giftCard.storeName} + '.jpg'" alt="store logo" class="logo">
+                </div>
+                <div><a th:href="'/edit-gift-card/' + ${appUserId} + '/' + ${giftCard.id}">Edit Card</a>
+                    <a th:href="'/delete-gift-card/' + ${appUserId} + '/' + ${giftCard.id}">Delete Card</a>
+                </div>
+                <div th:text="${giftCard.storeName}"></div>
+            </div>
+
+            <!--            <div th:text="'Card Code: ' + ${giftCard.cardCode}"></div>-->
+
+            <div th:fragment="logo">
+                <img src="/images/strekkode.jpg" alt="store logo" class="logo">
+            </div>
+
+            <div th:text="'Current Balance: ' + ${giftCard.balanceInt}"></div>
+
+            <div th:text="'Exp: ' + ${giftCard.expiryDate.getDay()} + '/' + ${giftCard.expiryDate.getMonth()} + '/' + ${giftCard.expiryDate.getYear()}"></div>
+        </div>
     </div>
-    <div th:text="'Store Name: ' + ${giftCard.storeName}"></div>
-    <div th:text="'Card Code: ' + ${giftCard.cardCode}"></div>
-    <div th:text="'Current Balance: ' + ${giftCard.balanceInt}"></div>
 
-    <div th:fragment="logo">
-        <img src="/images/strekkode.jpg" alt="store logo" class="logo">
+    <div id="footer">
+        <span><a href="/add-gift-card">Add Card</a></span>
+        <span><a href="/my-cards">My Cards</a></span>
+        <span><a href="/settings">Settings</a></span>
     </div>
-
-    <div th:text="'Exp: ' + ${giftCard.expiryDate.getDay()} + '/' + ${giftCard.expiryDate.getMonth()} + '/' + ${giftCard.expiryDate.getYear()}"></div>
-</div>
-
-<div id="footer">
-    <span><a href="/add-gift-card">Add Card</a></span>
-    <span><a href="/my-cards">My Cards</a></span>
-    <span><a href="/settings">Settings</a></span>
 </div>
 
 </body>

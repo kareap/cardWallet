@@ -6,30 +6,37 @@
     <link type="text/css" rel="stylesheet" href="/inapp.css">
 </head>
 <body>
-<div id="header">
-    <h1>Edit Gift Card Details</h1>
-</div>
 
-<div id="cardContainer">
-    <form th:action="'/save-edited-gift-card/' + ${appUserId} + '/' + ${cardId} " th:object="${giftCard}" method="post">
+<div class="phoneContainer">
+
+    <div class="mainContainer">
+        <div id="header">
+            <h1>Edit Gift Card Details</h1>
+        </div>
+
+        <div id="cardContainer">
+            <form th:action="'/save-edited-gift-card/' + ${appUserId} + '/' + ${cardId} " th:object="${giftCard}"
+                  method="post">
 
 
-        <div> Store Name: <input type="text" th:field="*{storeName}"></div>
-        <div> Card Code: <input type="text" th:field="*{cardCode}"></div>
-        <div> Balance <input type="number" th:field="*{balanceInt}"></div>
+                <div> Store Name: <input type="text" th:field="*{storeName}"></div>
+                <div> Card Code: <input type="text" th:field="*{cardCode}"></div>
+                <div> Balance <input type="number" th:field="*{balanceInt}"></div>
 
 
-        <!--    <span type="hidden" th:field="*{expiryDate}"> </span>-->
+                <!--    <span type="hidden" th:field="*{expiryDate}"> </span>-->
 
-        <input type="submit" value="Save Changes">
-    </form>
-</div>
+                <input type="submit" value="Save Changes">
+            </form>
+        </div>
 
-<div id="footer">
-    <span><a href="/add-gift-card">Add Card</a></span>
-    <span><a href="/my-cards">My Cards</a></span>
-    <span><a href="/settings">Settings</a></span>
+        <div id="footer">
+            <span><a href="/add-gift-card">Add Card</a></span>
+            <span><a href="/my-cards">My Cards</a></span>
+            <span><a href="/settings">Settings</a></span>
 
+        </div>
+    </div>
 </div>
 </body>
 </html>

@@ -22,14 +22,15 @@
 
         <div th:if="${giftCardList.size() >= 1}" th:each="giftCard : ${giftCardList}">
             <div>
-                    <a class="cardContainer" th:href="'/show-gift-card/' + ${giftCard.appUserId} + '/' + ${giftCard.id}">
-                        <div class="logoContainer" th:fragment="logo">
-                            <img th:src="'/images/' + ${giftCard.storeName} + '.jpg'" alt="store logo" class="logo">
-                        </div>
+                <a class="cardContainer" th:href="'/show-gift-card/' + ${giftCard.appUserId} + '/' + ${giftCard.id}">
+                    <div class="logoContainer" th:fragment="logo">
+                        <img th:src="'/images/' + ${giftCard.storeName} + '.jpg'" alt="store logo" class="logo">
+                    </div>
                     <div class="infoContainer">
                         <p th:text="${giftCard.storeName}"></p>
                         <p th:text="'Balance: ' + ${giftCard.balanceInt}"></p>
-                        <p th:text="'Exp: ' + ${giftCard.expiryDate}"></p><p>
+                        <p th:text="'Exp: ' + ${giftCard.expiryDate}"></p>
+                        <p>
                     </div>
                 </a>
             </div>
