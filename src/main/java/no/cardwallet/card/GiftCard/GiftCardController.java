@@ -47,6 +47,7 @@ public class GiftCardController {
     public String showGiftCard(Model model, @PathVariable Long appUserId, @PathVariable Long giftCardId) {
         GiftCard giftCard = giftCardRepository.findGiftCardById(giftCardId);
 
+
         model.addAttribute("giftCard", giftCard);
         model.addAttribute("appUserId", appUserId);
 
