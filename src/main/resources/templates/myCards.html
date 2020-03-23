@@ -20,20 +20,17 @@
     </div>
 
     <div th:if="${giftCardList.size() >= 1}" th:each="giftCard : ${giftCardList}">
-        <p>
-            <a th:href="'/show-gift-card/' + ${giftCard.appUserId} + '/' + ${giftCard.id}"></a>
+        <p><a th:href="'/show-gift-card/' + ${giftCard.appUserId} + '/' + ${giftCard.id}"></a>
         <div th:fragment="logo">
-            <img th:src="'/images/' + ${giftCard.storeName} + '.jpg'" alt="store logo" class="logo">
+            <img th:src="'/images/' + ${giftCard.storeName} + '.jpg'" alt="store logo not available" class="logo">
         </div>
 
         <p th:text=" ${giftCard.logoImage} "></p>
         <p th:text="'Store Name: ' + ${giftCard.storeName}"></p>
         <p th:text="'Balance: ' + ${giftCard.balanceInt}"></p>
         <p th:text="'Exp: ' + ${giftCard.expiryDate}"></p>
-        <p>
-            <a th:href="'/show-gift-card/' + ${giftCard.appUserId} + '/' + ${giftCard.id}"></a>
-        </p>
-        <p> ________________________________________</p>
+        <p><a th:href="'/show-gift-card/' + ${giftCard.appUserId} + '/' + ${giftCard.id}"></a></p>
+
     </div>
 </div>
 

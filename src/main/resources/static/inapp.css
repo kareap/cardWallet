@@ -12,6 +12,11 @@
     max-height: 812px;
 }
 
+.logo {
+    width: 200vw;
+    height: 100vw;
+}
+
 body {
     font-family: Tahoma;
     color: black;
