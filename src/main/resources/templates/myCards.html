@@ -7,33 +7,32 @@
 
 </head>
 <body>
+<div id="phone">
+    <div id="header">
+        <h1>My Cards</h1>
+    </div>
 
-<div id="header">
-    <h1>My Cards</h1>
-</div>
+    <div id="cardContainer">
 
-<div id="cardContainer">
-
-    <div th:if="${giftCardList.size()} == 0">
+        <div th:if="${giftCardList.size()} == 0">
         <p>You do not have any gift cards yet...</p>
         <p><a href="/add-gift-card">Add your first gift card now!</a></p>
     </div>
 
     <div th:if="${giftCardList.size() >= 1}" th:each="giftCard : ${giftCardList}">
-
-        <p><a th:href="'/show-gift-card/' + ${giftCard.appUserId} + '/' + ${giftCard.id}">
-
-
-            <div th:fragment="logo">
-                <img src="/images/hm.jpg" alt="store logo" class="logo">
-            </div>
+        <p>
+            <a th:href="'/show-gift-card/' + ${giftCard.appUserId} + '/' + ${giftCard.id}"></a>
+        <div th:fragment="logo">
+            <img th:src="'/images/' + ${giftCard.storeName} + '.jpg'" alt="store logo" class="logo">
+        </div>
 
         <p th:text=" ${giftCard.logoImage} "></p>
         <p th:text="'Store Name: ' + ${giftCard.storeName}"></p>
         <p th:text="'Balance: ' + ${giftCard.balanceInt}"></p>
         <p th:text="'Exp: ' + ${giftCard.expiryDate}"></p>
-        <p><a th:href="'/show-gift-card/' + ${giftCard.appUserId} + '/' + ${giftCard.id}">
-        </a></p>
+        <p>
+            <a th:href="'/show-gift-card/' + ${giftCard.appUserId} + '/' + ${giftCard.id}"></a>
+        </p>
         <p> ________________________________________</p>
     </div>
 </div>
@@ -43,6 +42,8 @@
     <span><a href="/add-gift-card">Add Card</a></span>
     <span>My Cards</span>
     <span><a href="/settings">Settings</a></span>
+</div>
+
 </div>
 
 </body>

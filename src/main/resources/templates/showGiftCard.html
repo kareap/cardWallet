@@ -28,7 +28,7 @@
         <img src="/images/strekkode.jpg" alt="store logo" class="logo">
     </div>
 
-    <div th:text="'Exp: ' + ${giftCard.expiryDate}"></div>
+    <div th:text="'Exp: ' + ${giftCard.expiryDate.getDay()} + '/' + ${giftCard.expiryDate.getMonth()} + '/' + ${giftCard.expiryDate.getYear()}"></div>
 </div>
 
 <div id="footer">
