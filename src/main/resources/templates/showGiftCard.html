@@ -15,7 +15,7 @@
 
 </div>
 
-<div id="cardContainer">
+<div id="mainContainer">
     <div th:text=" ${giftCard.logoImage} "></div>
     <div><a th:href="'/edit-gift-card/' + ${appUserId} + '/' + ${giftCard.id}">Edit Card</a>
         <a th:href="'/delete-gift-card/' + ${appUserId} + '/' + ${giftCard.id}">Delete Card</a>

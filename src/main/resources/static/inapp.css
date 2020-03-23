@@ -12,9 +12,33 @@
     max-height: 812px;
 }
 
-.logo {
-    width: 200vw;
-    height: 100vw;
+
+#mainContainer {
+    background-color: white;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+#cardContainer {
+    width: 90vw;
+    height: 10vw;
+    background-color: whitesmoke;
+    border-color: #727a82;
+    display: flex;
+    flex-direction: row;
+}
+
+.logoContainer {
+    width: 7vw;
+    height: 7vw;
+    margin: 20px;
+}
+
+.infoContainer {
+    width: 50vw;
+    height: 7vw;
+
 }
 
 body {
@@ -29,11 +53,7 @@ body {
 }
 
 
-#cardContainer {
-    background-color: #FAF8F0;
-    padding: 5px;
 
-}
 
 #footer {
     background-color: #ff4d4d;

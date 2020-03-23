@@ -12,7 +12,7 @@
 
 </div>
 
-<div id="cardContainer">
+<div id="mainContainer">
     <form method="post" th:action="'/save-new-gift-card'" th:object="${giftCard}">
         <div> Store Name: <input type="text" th:field="*{storeName}"></div>
         <div> Amount: <input type="number" th:field="*{balanceInt}"></div>
