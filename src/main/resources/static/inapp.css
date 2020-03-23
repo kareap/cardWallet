@@ -1,44 +1,63 @@
-* {
-    margin: 0px;
-    padding: 2px;
-    box-sizing: border-box;
-
-    justify-content: center;
-    text-align: center;
-}
-
-#phone {
-    max-width: 375px;
-    max-height: 812px;
-}
-
-
-#mainContainer {
-    background-color: white;
-    padding: 5px;
+*{
     display: flex;
-    flex-direction: column;
 }
+.mainContainer {
+    background-color: white;
+    width: 375px;
+    margin: 0 auto;
+    color: black;
+    font-size: 18px;
+}
+
+.phoneContainer{
+    background-color: white;
+    width: 375px;
+    margin: 0 auto;
+    color: black;
+    font-size: 18px;
+    border-style: solid;
+}
+
 
 #cardContainer {
-    width: 90vw;
-    height: 10vw;
-    background-color: whitesmoke;
-    border-color: #727a82;
-    display: flex;
+    background-color: white;
+    width: 360px;
+    height: 140px;
+    margin: 5px;
+    color: black;
+    font-size: 15px;
     flex-direction: row;
+    border-style: solid;
+    display: flex;
+    align-items: start;
+
+
+
+    /*height: 10vw;*/
+    /*background-color: whitesmoke;*/
+    /*border-color: #727a82;*/
+    /*display: flex;*/
+    /*flex-direction: row;*/
+}
+
+.logo{
+    height: 100px;
+    width: 100px;
+    border-style: solid;
+
 }
 
 .logoContainer {
-    width: 7vw;
-    height: 7vw;
-    margin: 20px;
+    margin: 16px;
+    flex: 1 1 auto;
 }
 
 .infoContainer {
-    width: 50vw;
-    height: 7vw;
-
+    /*width: 220px;*/
+    /*height: 130px;*/
+    margin: 5px 5px 5px 0;
+    /* padding-left: 150px; */
+    flex: 1 1 auto;
 }
 
 body {
@@ -51,9 +70,6 @@ body {
     background-color: #ff4d4d;
     padding: 5px;
 }
-
-
-
 
 #footer {
     background-color: #ff4d4d;

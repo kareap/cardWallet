@@ -7,12 +7,13 @@
 
 </head>
 <body>
-<div id="phone">
-    <div id="header">
-        <h1>My Cards</h1>
-    </div>
+<div class="phoneContainer">
 
-    <div id="mainContainer">
+    <div class="mainContainer">
+
+        <div id="header">
+            <h1>My Cards</h1>
+        </div>
 
         <div th:if="${giftCardList.size()} == 0">
             <p>You do not have any gift cards yet...</p>
@@ -34,13 +35,12 @@
             </div>
         </div>
 
-    </div>
+        <div id="footer">
+            <span><a href="/add-gift-card">Add Card</a></span>
+            <span>My Cards</span>
+            <span><a href="/settings">Settings</a></span>
+        </div>
 
-    <div id="footer">
-
-        <span><a href="/add-gift-card">Add Card</a></span>
-        <span>My Cards</span>
-        <span><a href="/settings">Settings</a></span>
     </div>
 
 </div>
