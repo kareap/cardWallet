@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.transaction.Transactional;
 import java.security.Principal;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -34,11 +35,22 @@ public class GiftCardController {
         return giftCardRepository.findGiftCardsByAppUserId(appUserId);
     }
 
+    ArrayList<String> allLogos = new ArrayList<>();
+
+
     //  Main page - Show all gift cards of user, by id
     @GetMapping("/my-cards")
     public String getAllCards(Model model, Principal principal) {
         List<GiftCard> giftCardList = getAllCards(principal);
         model.addAttribute("giftCardList", giftCardList);
+
+        allLogos.add("/images/hm.jpg");
+        allLogos.add("/images/cubus.jpg");
+        allLogos.add("/images/jernia.jpg");
+        allLogos.add("/images/lindex.jpg");
+
+
+
         return "myCards";
     }
 

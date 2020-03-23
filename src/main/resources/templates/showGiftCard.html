@@ -15,7 +15,7 @@
 
 </div>
 
-<div id="cardContainer">
+<div id="mainContainer">
     <div th:text=" ${giftCard.logoImage} "></div>
     <div><a th:href="'/edit-gift-card/' + ${appUserId} + '/' + ${giftCard.id}">Edit Card</a>
         <a th:href="'/delete-gift-card/' + ${appUserId} + '/' + ${giftCard.id}">Delete Card</a>
@@ -28,7 +28,7 @@
         <img src="/images/strekkode.jpg" alt="store logo" class="logo">
     </div>
 
-    <div th:text="'Exp: ' + ${giftCard.expiryDate}"></div>
+    <div th:text="'Exp: ' + ${giftCard.expiryDate.getDay()} + '/' + ${giftCard.expiryDate.getMonth()} + '/' + ${giftCard.expiryDate.getYear()}"></div>
 </div>
 
 <div id="footer">
