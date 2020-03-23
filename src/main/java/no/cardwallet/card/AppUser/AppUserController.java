@@ -2,8 +2,6 @@ package no.cardwallet.card.AppUser;
 
 import no.cardwallet.card.GiftCard.GiftCardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -47,17 +45,17 @@ public class AppUserController {
         }
         appUser.setPassword(passwordEncoder.encode(appUser.getPassword()));
         appUserRepository.save(appUser);
-        return "userLogin";//send to log in page
+        return "login";//send to log in page
     }
 
-    @GetMapping("/userLogin")
+    @GetMapping("/login")
     public String userLogin() {
-        return "userLogin";
+        return "login";
     }
 
     @GetMapping("/logout")
     public String logout() {
-        return "userLogin";
+        return "login";
     }
 
     @GetMapping("/settings")

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link type="text/css" rel="stylesheet" href="inapp.css">
+    <link type="text/css" rel="stylesheet" href="/inapp.css">
 
 </head>
 <body>
@@ -23,9 +23,11 @@
 
         <p><a th:href="'/show-gift-card/' + ${giftCard.appUserId} + '/' + ${giftCard.id}">
 
+
             <div th:fragment="logo">
-                <img src="/images/${}.jpg" alt="store logo" class="logo">
+                <img src="/images/hm.jpg" alt="store logo" class="logo">
             </div>
+
         <p th:text=" ${giftCard.logoImage} "></p>
         <p th:text="'Store Name: ' + ${giftCard.storeName}"></p>
         <p th:text="'Balance: ' + ${giftCard.balanceInt}"></p>
