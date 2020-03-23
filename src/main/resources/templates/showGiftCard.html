@@ -23,6 +23,11 @@
     <div th:text="'Store Name: ' + ${giftCard.storeName}"></div>
     <div th:text="'Card Code: ' + ${giftCard.cardCode}"></div>
     <div th:text="'Current Balance: ' + ${giftCard.balanceInt}"></div>
+
+    <div th:fragment="logo">
+        <img src="/images/strekkode.jpg" alt="store logo" class="logo">
+    </div>
+
     <div th:text="'Exp: ' + ${giftCard.expiryDate}"></div>
 </div>
 
