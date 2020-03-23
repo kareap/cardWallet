@@ -117,8 +117,8 @@ public class AppUserController {
     }
 
     @PostMapping("/successfully-reset-password")
-    public String passwordReset(@ModelAttribute AppUser appUser) {
-        appUser = appUserRepository.findAppUserByEmail("olav.nordmann@hotmail.com");
+    public String passwordReset(@ModelAttribute AppUser appUser, @RequestParam String email) {
+        appUser = appUserRepository.findAppUserByEmail(email);
         appUser.setPassword(passwordEncoder.encode("abc"));
         appUserRepository.save(appUser);
         return "successfullyResetPassword";
