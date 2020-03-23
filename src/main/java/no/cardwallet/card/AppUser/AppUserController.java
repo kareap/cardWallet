@@ -8,11 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.transaction.Transactional;
-import java.io.IOException;
 import java.security.Principal;
 
 
@@ -49,6 +45,7 @@ public class AppUserController {
         }
         appUser.setPassword(passwordEncoder.encode(appUser.getPassword()));
         appUserRepository.save(appUser);
+
         return "login";//send to log in page
     }
 
@@ -72,6 +69,7 @@ public class AppUserController {
         String email = principal.getName();
         AppUser appUser = appUserRepository.findByEmail(email);
         model.addAttribute(appUser);
+
         return "changeEmail";
     }
 
@@ -82,6 +80,7 @@ public class AppUserController {
         appUser.setEmail(appUserPosting.getEmail());
         appUserRepository.save(appUser);
         model.addAttribute(appUser);
+
         return "successfullyChangedEmail";
     }
 
@@ -121,6 +120,7 @@ public class AppUserController {
         appUser = appUserRepository.findAppUserByEmail(email);
         appUser.setPassword(passwordEncoder.encode("abc"));
         appUserRepository.save(appUser);
+
         return "successfullyResetPassword";
     }
 
@@ -131,6 +131,7 @@ public class AppUserController {
         Long appUserId = appUserRepository.findByEmail(email).getId();
         giftCardRepository.deleteByAppUserId(appUserId);
         appUserRepository.deleteAppUserByEmail(email);
+
         return "redirect:/sign-up";
     }
 

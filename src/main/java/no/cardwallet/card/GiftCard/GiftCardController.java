@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
-import javax.transaction.Transactional;
 import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +32,6 @@ public class GiftCardController {
         Long appUserId = getAppUserId(principal);
         return giftCardRepository.findGiftCardsByAppUserId(appUserId);
     }
-
     ArrayList<String> allLogos = new ArrayList<>();
 
 
@@ -43,12 +40,10 @@ public class GiftCardController {
     public String getAllCards(Model model, Principal principal) {
         List<GiftCard> giftCardList = getAllCards(principal);
         model.addAttribute("giftCardList", giftCardList);
-
         allLogos.add("/images/hm.jpg");
         allLogos.add("/images/cubus.jpg");
         allLogos.add("/images/jernia.jpg");
         allLogos.add("/images/lindex.jpg");
-
 
         return "myCards";
     }
@@ -57,14 +52,8 @@ public class GiftCardController {
     @GetMapping("/show-gift-card/{appUserId}/{giftCardId}")
     public String showGiftCard(Model model, @PathVariable Long appUserId, @PathVariable Long giftCardId) {
         GiftCard giftCard = giftCardRepository.findGiftCardById(giftCardId);
-
-
         model.addAttribute("giftCard", giftCard);
         model.addAttribute("appUserId", appUserId);
-
-//        if (giftCard.getBalanceInt() == null){
-//            return "defaultView";
-//        }
 
         return "showGiftCard";
     }
@@ -75,6 +64,7 @@ public class GiftCardController {
         Long appUserId = getAppUserId(principal);
         model.addAttribute("appUserId", appUserId);
         model.addAttribute("giftCard", new GiftCard());
+
         return "addGiftCard";
     }
 
@@ -82,7 +72,6 @@ public class GiftCardController {
     @PostMapping("/save-new-gift-card")
     public String saveNewGiftCard(@ModelAttribute GiftCard giftCard, Principal principal) {
         Long appUserId = getAppUserId(principal);
-
         giftCard.setAppUserId(appUserId);
         giftCardRepository.save(giftCard);
 
@@ -118,7 +107,6 @@ public class GiftCardController {
         giftCard.setAppUserId(appUserId);
         giftCard.setExpiryDate(giftCardRepository.findGiftCardById(cardId).getExpiryDate()); // Should we allow the user to change the expiry date?
         giftCardRepository.save(giftCard);
-
         giftCard.setBalanceInt(tempGiftCard.getBalanceInt());
 
         return "redirect:/my-cards";

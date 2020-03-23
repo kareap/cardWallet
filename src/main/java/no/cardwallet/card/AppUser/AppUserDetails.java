@@ -1,6 +1,5 @@
-package no.cardwallet.card;
+package no.cardwallet.card.AppUser;
 
-import no.cardwallet.card.AppUser.AppUser;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

@@ -1,7 +1,5 @@
-package no.cardwallet.card;
+package no.cardwallet.card.AppUser;
 
-import no.cardwallet.card.AppUser.AppUser;
-import no.cardwallet.card.AppUser.AppUserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
