@@ -7,15 +7,14 @@
 </head>
 <body>
 
-<div>
-    <form method="post" th:action="@{/userLogin}">
-        <h2>Log in</h2>
+<form method="post" th:action="'/userLogin'">
+    <h2>Log in</h2>
 
-        <div><input name="username" type="text" placeholder="Email"></div>
-        <div><input name="password" type="password" placeholder="Password"></div>
-        <div><input type="submit" value="Log in"></div>
-    </form>
-</div>
+    <div><input name="username" type="text" placeholder="Email"></div>
+    <div><input name="password" type="password" placeholder="Password"></div>
+    <div><input type="submit" value="Log in"></div>
+</form>
+
 
 </body>
 </html>
