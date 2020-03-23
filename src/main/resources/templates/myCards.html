@@ -21,7 +21,7 @@
 
     <div th:if="${giftCardList.size() >= 1}" th:each="giftCard : ${giftCardList}">
 
-        <p><a th:href="'/show-gift-card/' + ${giftCard.appUserId} + '/' + ${giftCard.id}"
+        <p><a th:href="'/show-gift-card/' + ${giftCard.appUserId} + '/' + ${giftCard.id}">
         <p th:text=" ${giftCard.logoImage} "></p>
         <p th:text="'Store Name: ' + ${giftCard.storeName}"></p>
         <p th:text="'Balance: ' + ${giftCard.balanceInt}"></p>
