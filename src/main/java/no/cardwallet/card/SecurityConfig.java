@@ -29,7 +29,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                     .antMatchers("/resources/static/**").permitAll()
-                    .antMatchers("/sign-up", "/forgot-password", "/successfully-reset-password", "/login", "/h2", "/h2/**", "/save-user", "/**/*.PNG", "/**/*.jpg", "/**/*.css").permitAll()
+                    .antMatchers("/sign-up", "/forgot-password", "/successfully-reset-password", "/login", "/h2", "/h2/**", "/save-user", "/**/*.png", "/**/*.jpg", "/**/*.css").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
