@@ -1,12 +1,74 @@
-
+h2 {
+    font-family:Arial;
+    color: white;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+}
 
 .image {
     background-image: url("Skjermbilde.png");
-    background-color: #cccccc;
-    height: 700px;
-    width: 700px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+
+    background-color: white;
+    width: 375px;
+    height: 812px;
+    margin: 0 auto;
+    color: black;
+    font-size: 18px;
+    border-style: solid;
+}
+
+input[type=text] {
+    border: none;
+    border-bottom: 1px solid dimgrey;
+
+    color: white;
+    background-color: rgba(0, 0, 0, 0);
+    font-family:Arial;
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+}
+
+input[type=password] {
+    border: none;
+    border-bottom: 1px solid dimgrey;
+
+    color: white;
+    background-color: rgba(0, 0, 0, 0);
+    font-family:Arial;
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+}
+
+.button {
+    background: white;
+    border-radius:28px;
+    border:1px solid white;
+    display:inline-block;
+    cursor:pointer;
+    color:orangered;
+    font-family:Arial;
+    font-size:15px;
+    padding:16px 31px;
+    text-decoration:none;
+
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: white;
 }
