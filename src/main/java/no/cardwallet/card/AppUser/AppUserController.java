@@ -9,6 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
 import javax.transaction.Transactional;
 import java.security.Principal;
 import java.util.List;
@@ -76,15 +78,15 @@ public class AppUserController {
     }
 
     @PostMapping("/save-changed-email")
-    public String saveChangedEmail(Model model, Principal principal, @ModelAttribute AppUser appUserPosting) {
+    public String saveChangedEmail (Model model, Principal principal, @ModelAttribute AppUser appUserPosting, HttpServletRequest httpRequest) throws ServletException {
         String email = principal.getName();
         AppUser appUser = appUserRepository.findByEmail(email);
         appUser.setEmail(appUserPosting.getEmail());
         appUserRepository.save(appUser);
         email = principal.getName();
         model.addAttribute(appUser);
-
-        return "successfullyChangedEmail";
+        httpRequest.logout();
+        return "successfullyChangedEmail"; //link til login
     }
 
     @GetMapping("/change-password")

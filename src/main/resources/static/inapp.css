@@ -132,7 +132,7 @@ p {
     display: block;
     margin-block-start: 1em;
     margin-block-end: 1em;
-    margin-inline-start: 0px;
+    margin-inline-start: 0;
     margin-inline-end: 0px;
     padding-left: 20px;
     padding-right: 15px;
@@ -143,10 +143,84 @@ h3 {
     display: block;
     font-size: 15px;
     text-align: center;
+    color: lightgoldenrodyellow;
 }
 
-/*Change email view*/
 
+/*settings view*/
+
+.changeEmailContainer{
+    background-color: lightsalmon;
+    width: 365px;
+    color: black;
+    font-size: 15px;
+    border-style: hidden;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    height: 80px;
+    margin-left: 5px;
+    margin-top: 30px;
+}
+
+.changePasswordContainer{
+    background-color: lightsalmon;
+    width: 365px;
+    margin-top: 5px;
+    color: black;
+    font-size: 15px;
+    border-style: hidden;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    height: 80px;
+    margin-left: 5px;
+}
+
+.termsAndConditionsContainer{
+    background-color: lightsalmon;
+    width: 365px;
+    margin-top: 5px;
+    color: black;
+    font-size: 15px;
+    border-style: hidden;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    height: 80px;
+    margin-left: 5px;
+
+}
+
+.logoutContainer{
+    background-color: lightsalmon;
+    width: 365px;
+    margin-top: 5px;
+    color: black;
+    font-size: 15px;
+    border-style: hidden;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    height: 80px;
+    margin-left: 5px;
+}
+.deleteAppUserContainer{
+    background-color: lightsalmon;
+    width: 365px;
+    margin-top: 5px;
+    color: black;
+    font-size: 15px;
+    border-style: hidden;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    height: 80px;
+    margin-left: 5px;
+}
+
+
+/*Change email view*/
 
 #emailAddress{
     width: 330px;
@@ -158,19 +232,12 @@ h3 {
     padding-left: 10px;
     margin-left: 12px;
     margin-right: 10px;
-    margin-top: 200px;
-
-    /*width: 430px;*/
-    /*height: 30px;*/
-    /*border-radius: 1px;*/
-    /*border: 1px solid lightgray;*/
-    /*outline: 0;*/
-    /*padding: 7px;*/
+    margin-top: 60px;
 }
 
 #saveNewEmailButton{
-    width: 330px;
-    height: 30px;
+    width: 349px;
+    height: 40px;
     border-radius: 1px;
     border: 1px solid lightgray;
     outline: 0;
@@ -178,16 +245,62 @@ h3 {
     padding-left: 10px;
     margin-left: 12px;
     margin-right: 10px;
-    margin-top: 200px;
+    margin-top: 10px;
+}
+
+.iconEmail{
+    color: lightsalmon;
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 150px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    padding-right: 112px;
+    padding-left: 112px;
+    padding-top: 112px;
 }
 
 
-    /*padding: 5px;*/
-    /*position: absolute;*/
-    /*left: 0;*/
-    /*bottom: 0;*/
-    /*height: 50px;*/
-    /*color:#FFFFFF;*/
-    /*text-align: center;*/
-    /*line-height: 50px;*/
+/*Change password view*/
+
+#password{
+    width: 330px;
+    height: 40px;
+    border-radius: 1px;
+    border: 1px solid lightgray;
+    outline: 0;
+    padding-right: 7px;
+    padding-left: 10px;
+    margin-left: 12px;
+    margin-right: 10px;
+    margin-top: 40px;
+}
+
+#saveNewPasswordButton{
+    width: 349px;
+    height: 40px;
+    border-radius: 1px;
+    border: 1px solid lightgray;
+    outline: 0;
+    padding-right: 7px;
+    padding-left: 10px;
+    margin-left: 12px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+
+.iconPassword{
+    color: lightsalmon;
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 190px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    padding-right: 112px;
+    padding-left: 127px;
+    padding-top: 112px;
+}
+
+
 

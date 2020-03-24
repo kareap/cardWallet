@@ -14,22 +14,38 @@
             <h1>Settings</h1>
         </div>
 
-   <div class="mainContainer">
-        <form th:action="'/logout'" method="post">
-            <input type="submit" value="Log out"/>
-        </form>
+<div class="mainContainer">
 
-        <p><a href="/change-email">Change email</a></p>
-        <p><a href="/change-password">Change password</a></p>
-        <p><a href="/terms-and-conditions">Terms and Conditions</a></p>
+        <a href="/change-email" class="changeEmailContainer">
+            <p>Change email</p>
+        </a>
 
-        <p><a href="/delete-app-user">Delete account</a></p>
+
+        <a href="/change-password" class="changePasswordContainer">
+        <p>Change password</p>
+        </a>
+
+        <a href="/terms-and-conditions" class="termsAndConditionsContainer">
+        <p>Terms and Conditions</p>
+        </a>
+
+        <a href="/logout" method="post" class="logoutContainer" >
+            <p>Log out</p>
+        </a>
+
+        <a href="/delete-app-user" class="deleteAppUserContainer">
+        <p>Delete account</p>
+        </a>
+
    </div>
+
             <div id="footer">
             <span id="addCard"><a href="/add-gift-card"><i class="fa fa-plus"></i></a></span>
             <span id="myCards"><a href="/my-cards"><i class="fa fa-credit-card"></i></a></span>
             <span id="settings"><a href="/settings"><i class="fa fa-cog"></i></a></span>
     </div>
+
+
 </span>
     </span>
 
