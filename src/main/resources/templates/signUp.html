@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Sign up</title>
     <link type="text/css" rel="stylesheet" href="/login_signup.css">
+    <link type="text/css" rel="stylesheet" href="/all.css">
 </head>
 
 <body>
@@ -23,7 +24,7 @@
             <p th:if="${#fields.hasErrors('password')}">Please enter a password.</p>
         <input type="password" th:field="*{repeatPassword}" placeholder="Confirm password"/>
             <p th:if="${#fields.hasErrors('repeatPassword')}">Passwords are not a match.</p>
-        <p><input type="checkbox" id="terms"/>
+        <p id="termsText"><input type="checkbox" id="terms"/>
             I hereby agree to the <a herf="/terms-and-conditions">terms of service.</a>
         </p>
         <div id="warningMessage"></div>
