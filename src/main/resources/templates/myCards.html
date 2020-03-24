@@ -29,7 +29,7 @@
                     <div class="infoContainer">
                         <p th:text="${giftCard.storeName}"></p>
                         <p th:text="'Balance: ' + ${giftCard.balanceInt}"></p>
-                        <p th:text="'Exp: ' + ${giftCard.expiryDate}"></p>
+                        <p th:text="'Exp: in ' + ${#dates.format(giftCard.expiryDate, 'dd. MMMM yyyy')}"></p>
                         <p>
                     </div>
                 </a>
