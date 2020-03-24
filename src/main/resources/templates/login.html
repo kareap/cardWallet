@@ -8,18 +8,19 @@
 
 </head>
 <body>
-
+<div class="image">
     <form method="post" th:action="@{/login}">
         <h2>Log in</h2>
         <div><input name="username" type="text" placeholder="Email"></div>
-        <p th:if="${#request.getParameter('error')}">Invalid email address.</p>
         <div><input name="password" type="password" placeholder="Password"></div>
-        <p th:if="${#request.getParameter('error')}">Invalid password.</p>
+        <p th:if="${#request.getParameter('error')}">Invalid email or password.</p>
         <span><a href="/forgot-password">Forgot password?</a></span>
-        <div><input type="submit" value="Log in"></div>
+        <input class="button" type="submit" value="Log in">
     </form>
 
     <div>Don't have an account yet?</div>
+
+</div>
     <div><a th:href="'/sign-up'">Sign up</a></div>
 
 </body>
