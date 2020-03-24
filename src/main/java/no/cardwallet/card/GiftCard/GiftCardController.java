@@ -32,7 +32,6 @@ public class GiftCardController {
         Long appUserId = getAppUserId(principal);
         return giftCardRepository.findGiftCardsByAppUserId(appUserId);
     }
-    ArrayList<String> allLogos = new ArrayList<>();
 
 
     //  Main page - Show all gift cards of user, by id
@@ -40,10 +39,6 @@ public class GiftCardController {
     public String getAllCards(Model model, Principal principal) {
         List<GiftCard> giftCardList = getAllCards(principal);
         model.addAttribute("giftCardList", giftCardList);
-        allLogos.add("/images/hm.jpg");
-        allLogos.add("/images/cubus.jpg");
-        allLogos.add("/images/jernia.jpg");
-        allLogos.add("/images/lindex.jpg");
 
         return "myCards";
     }

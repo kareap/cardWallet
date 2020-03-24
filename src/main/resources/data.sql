@@ -1,8 +1,8 @@
 INSERT INTO app_user (email, password)
-VALUES ('olav.nordmann@hotmail.com', '$2a$10$.TfieO7U8dAd3v4IXpIr8.5ltZJLFHc1NFAMUcC51VuZqY1WHq932');
+VALUES ('paal.hansen@hotmail.com', '$2a$10$.TfieO7U8dAd3v4IXpIr8.5ltZJLFHc1NFAMUcC51VuZqY1WHq932');
 
 INSERT INTO app_user (email, password)
-VALUES ('kari.nordmann@hotmail.com', '$2a$10$.TfieO7U8dAd3v4IXpIr8.5ltZJLFHc1NFAMUcC51VuZqY1WHq932'); -- passord = 123
+VALUES ('elise.norvik@hotmail.com', '$2a$10$.TfieO7U8dAd3v4IXpIr8.5ltZJLFHc1NFAMUcC51VuZqY1WHq932'); -- passord = 123
 
 INSERT INTO app_user (email, password)
 VALUES ('nils.nordmann@hotmail.com', '$2a$10$.TfieO7U8dAd3v4IXpIr8.5ltZJLFHc1NFAMUcC51VuZqY1WHq932');
