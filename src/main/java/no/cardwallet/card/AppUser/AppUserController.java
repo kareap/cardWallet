@@ -1,5 +1,6 @@
 package no.cardwallet.card.AppUser;
 
+import no.cardwallet.card.GiftCard.GiftCard;
 import no.cardwallet.card.GiftCard.GiftCardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
 import java.security.Principal;
+import java.util.List;
 
 
 @Controller
@@ -79,6 +81,7 @@ public class AppUserController {
         AppUser appUser = appUserRepository.findByEmail(email);
         appUser.setEmail(appUserPosting.getEmail());
         appUserRepository.save(appUser);
+        email = principal.getName();
         model.addAttribute(appUser);
 
         return "successfullyChangedEmail";
@@ -118,9 +121,17 @@ public class AppUserController {
 
     @PostMapping("/successfully-reset-password")
     public String passwordReset(@ModelAttribute AppUser appUser, @RequestParam String email) {
-        appUser = appUserRepository.findAppUserByEmail(email);
-        appUser.setPassword(passwordEncoder.encode("abc"));
-        appUserRepository.save(appUser);
+
+//        List<AppUser> appUserList = (List<AppUser>) appUserRepository.findAll();
+//        Lag liste av alle emails i appUserRepository istede...
+
+        if (!appUserRepository.findAppUserByEmail(email).equals(null)) {
+            appUser = appUserRepository.findAppUserByEmail(email);
+            appUser.setPassword(passwordEncoder.encode("abc"));
+            appUserRepository.save(appUser);
+        } else {
+            return "defaultView";
+        }
 
         return "successfullyResetPassword";
     }

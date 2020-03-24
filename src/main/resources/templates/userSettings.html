@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-<div class="phoneContainer">
-
-    <div class="mainContainer">
+<span class="phoneCase">
+<span class="phoneContainer">
 
         <div id="header">
             <h1>Settings</h1>
         </div>
 
+   <div class="mainContainer">
         <form th:action="'/logout'" method="post">
             <input type="submit" value="Log out"/>
         </form>
@@ -24,15 +24,14 @@
         <p><a href="/terms-and-conditions">Terms and Conditions</a></p>
 
         <p><a href="/delete-app-user">Delete account</a></p>
-
+   </div>
         <div id="footer">
             <span><a href="/add-gift-card"><i class="fa fa-plus"></i></a></span>
             <span><a href="/my-cards"><i class="fa fa-credit-card"></i></a></span>
             <span><i class="fa fa-cog"></i></span>
         </div>
-    </div>
-</div>
-</div>
+</span>
+    </span>
 
 
 </body>
