@@ -36,11 +36,10 @@
         <div th:text="'Exp: ' + ${#dates.format(giftCard.expiryDate, 'd. MMMM yyyy')}"></div>
     </div>
 
-
-    <div id="footer">
-        <span><a href="/add-gift-card"><i class="fa fa-plus"></i></a></span>
-        <span><a href="/my-cards"><i class="fa fa-credit-card"></i></a></span>
-        <span><a href="/settings"><i class="fa fa-cog"></i></a></span>
+           <div id="footer">
+            <span id="addCard"><a href="/add-gift-card"><i class="fa fa-plus"></i></a></span>
+            <span id="myCards"><a href="/my-cards"><i class="fa fa-credit-card"></i></a></span>
+            <span id="settings"><a href="/settings"><i class="fa fa-cog"></i></a></span>
     </div>
 </span>
     </span>

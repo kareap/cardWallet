@@ -4,8 +4,8 @@
     top: 35px;
     background-color: dimgrey;
     border-radius: 25px;
-    width: 405px;
-    height: 842px;
+    width: 21.5vw;
+    height: 41.5vw;
     margin: 0 auto;
     color: black;
     border-style: solid;
@@ -16,8 +16,8 @@
     left: 700px;
     top: 50px;
     background-color: white;
-    width: 375px;
-    height: 812px;
+    width: 20vw;
+    height: 40vw;
     margin: 0 auto;
     color: black;
     font-size: 18px;
@@ -42,7 +42,7 @@
 
 .cardContainer {
     background-color: white;
-    width: 360px;
+    width: 19vw;
     margin: 5px;
     color: black;
     font-size: 15px;
@@ -101,7 +101,6 @@
     width: inherit;
     padding: 25px;
     background-color: deeppink;
-
 
 }
 
