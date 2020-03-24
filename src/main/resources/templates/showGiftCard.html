@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>GiftCard</title>
     <link type="text/css" rel="stylesheet" href="/inapp.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-
 
 <body>
 <div class="phoneContainer">
@@ -36,14 +36,15 @@
 
             <div th:text="'Current Balance: ' + ${giftCard.balanceInt}"></div>
 
-            <div th:text="'Exp: ' + ${#dates.format(giftCard.expiryDate, 'dd.mm.yyyy')}"></div>
+            <div th:text="'Exp: ' + ${#dates.format(giftCard.expiryDate, 'dd. MMMM yyyy')}"></div>
+
         </div>
     </div>
 
     <div id="footer">
-        <span><a href="/add-gift-card">Add Card</a></span>
-        <span><a href="/my-cards">My Cards</a></span>
-        <span><a href="/settings">Settings</a></span>
+        <span><a href="/add-gift-card"><i class="fa fa-plus"></i></a></span>
+        <span><a href="/my-cards"><i class="fa fa-credit-card"></i></a></span>
+        <span><a href="/settings"><i class="fa fa-cog"></i></a></span>
     </div>
 </div>
 
