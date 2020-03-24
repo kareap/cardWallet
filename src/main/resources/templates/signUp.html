@@ -6,8 +6,13 @@
     <title>Sign up</title>
     <link type="text/css" rel="stylesheet" href="/login_signup.css">
 </head>
+
 <body>
+<span class="phoneCase">
+<span class="phoneContainer">
+
 <div class="image">
+
     <h1>wallit</h1>
 
     <form action="/save-user" th:object="${appUser}" method="post">
@@ -29,7 +34,11 @@
         <p>Already have an account?</p>
         <a th:href="'/login'">Login</a>
     </div>
+
 </div>
+    
+</span>
+</span>
 </body>
 
 <script>

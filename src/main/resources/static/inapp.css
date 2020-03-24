@@ -102,7 +102,6 @@
     padding: 25px;
     background-color: deeppink;
 
-
 }
 
 h1 {
@@ -151,75 +150,76 @@ h3 {
 /*settings view*/
 
 .changeEmailContainer{
-    background-color: lightsalmon;
-    width: 365px;
+    background-image: linear-gradient(40deg, lightgoldenrodyellow, #FFCC72);
+    background-color: #FFCC72;
+    /*width: 19.2vw;*/
     color: black;
     font-size: 15px;
     border-style: hidden;
     display: flex;
     align-items: center;
     border-radius: 10px;
-    height: 80px;
-    margin-left: 5px;
-    margin-top: 30px;
+    height: 6vw;
+    /*margin-left: 5px;*/
+    /*margin-top: 0.1vw;*/
 }
 
 .changePasswordContainer{
-    background-color: lightsalmon;
-    width: 365px;
-    margin-top: 5px;
+    background-image: linear-gradient(40deg, lightgoldenrodyellow, #FFCC72);
+    /*width: 19.2vw;*/
     color: black;
     font-size: 15px;
     border-style: hidden;
     display: flex;
     align-items: center;
     border-radius: 10px;
-    height: 80px;
-    margin-left: 5px;
+    height: 6vw;
+    /*margin-left: 5px;*/
+    /*margin-top: 0.1vw;*/
 }
 
 .termsAndConditionsContainer{
-    background-color: lightsalmon;
-    width: 365px;
-    margin-top: 5px;
+    background-image: linear-gradient(40deg, lightgoldenrodyellow, #FFCC72);
+    /*width: 19.2vw;*/
     color: black;
     font-size: 15px;
     border-style: hidden;
     display: flex;
     align-items: center;
     border-radius: 10px;
-    height: 80px;
-    margin-left: 5px;
+    height: 6vw;
+    /*margin-left: 5px;*/
+    /*margin-top: 0.1vw;*/
 
 }
 
 .logoutContainer{
-    background-color: lightsalmon;
-    width: 365px;
-    margin-top: 5px;
+    background-image: linear-gradient(40deg, lightgoldenrodyellow, #FFCC72);
+    /*width: 19.2vw;*/
     color: black;
     font-size: 15px;
     border-style: hidden;
     display: flex;
     align-items: center;
     border-radius: 10px;
-    height: 80px;
-    margin-left: 5px;
+    height: 6vw;
+    /*margin-left: 5px;*/
+    /*margin-top: 0.1vw;*/
 }
 .deleteAppUserContainer{
-    background-color: lightsalmon;
-    width: 365px;
-    margin-top: 5px;
+    background-image: linear-gradient(40deg, lightgoldenrodyellow, #FFCC72);
+    /*width: 19.2vw;*/
     color: black;
     font-size: 15px;
     border-style: hidden;
     display: flex;
     align-items: center;
     border-radius: 10px;
-    height: 80px;
-    margin-left: 5px;
+    height: 7vw;
+    /*margin-left: 5px;*/
+    /*margin-top: 0.1vw;*/
+    /*margin-bottom: 0.1vw;*/
 }
-
 
 /*Change email view*/
 
