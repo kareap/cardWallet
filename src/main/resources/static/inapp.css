@@ -109,13 +109,26 @@ a:-webkit-any-link {
 #footer {
     position: absolute;
     bottom: -68px;
-    width: 38.8%;
-    height: 50px;
-    background-color: #f56046;
     text-align: center;
+    clear: both;
+    height: 50px;
+    width: 378px;
+    /* text-align: center; */
+    margin: 0 0 0 0;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: green;
 }
 
 
+    /*position: absolute;*/
+    /*!*bottom: -68px;*!*/
+    /*!*width: 45%;*!*/
+    /*text-align: center;*/
+    /*background-color: #ff4d4d;*/
+    /*font-size: 18px;*/
+    /*padding: 5px 5px 0px;*/
+    /*height: 45px;*/
 
 
     /*padding: 5px;*/
@@ -126,5 +139,4 @@ a:-webkit-any-link {
     /*color:#FFFFFF;*/
     /*text-align: center;*/
     /*line-height: 50px;*/
-}
 
