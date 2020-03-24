@@ -8,21 +8,40 @@
 </head>
 <body>
 <div class="image">
+    <h1>wallit</h1>
+
     <form action="/save-user" th:object="${appUser}" method="post">
         <h2>Sign up</h2>
-        <div><input type="text" th:field="*{email}" placeholder="Email"/>
-            <p th:if="${#fields.hasErrors('email')}">Please enter a valid email address.</p></div>
-        <div><input type="password" th:field="*{password}" placeholder="Password"/>
-            <p th:if="${#fields.hasErrors('password')}">Please enter a password.</p></div>
-        <div><input type="password" th:field="*{repeatPassword}" placeholder="Confirm password"/>
-            <p th:if="${#fields.hasErrors('repeatPassword')}">Passwords are not a match.</p></div>
-        <div><input class="button" type="submit" value="Sign up"/></div>
+        <input type="text" th:field="*{email}" placeholder="Email"/>
+            <p th:if="${#fields.hasErrors('email')}">Please enter a valid email address.</p>
+        <input type="password" th:field="*{password}" placeholder="Password"/>
+            <p th:if="${#fields.hasErrors('password')}">Please enter a password.</p>
+        <input type="password" th:field="*{repeatPassword}" placeholder="Confirm password"/>
+            <p th:if="${#fields.hasErrors('repeatPassword')}">Passwords are not a match.</p>
+        <p id="terms" >Ved å klikke på Registrer deg godtar du våre betingelser. Les mer om hvordan vi samler inn,
+            bruker og deler dataene dine, i våre retningslinjer for data, og hvordan vi bruker
+            informasjonskapsler og lignende teknologi, i våre retningslinjer for informasjonskapsler.</p>
+        <input class="button" type="submit" value="Sign up"/>
+
     </form>
 
-    <div>Already have an account?</div>
-    <div><a th:href="'/login'">Click here to log in.</a></div>
-</div>
+    <div id="loginLink">
+        <p>Already have an account?</p>
+        <a th:href="'/login'">Login</a>
+        </div>
 
+
+<script>
+   const checkboxElement = document.querySelector('input[type="checkbox"]');
+   const submitElement = document.querySelector('input[type="submit"]');
+   const warningElement = document.getElementById("warningMessage");
+   submitElement.addEventListener('click', function(event){
+       if(!checkboxElement.checked) {
+           event.preventDefault();
+           warningElement.innerText="Please agree to the terms of service.";
+       }
+   });
+</script>
 
 </body>
 </html>

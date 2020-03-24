@@ -1,9 +1,16 @@
+h1 {
+    font-size: 60px;
+    color: black;
+    margin: 40px;
+    text-align: center;
+
+}
+
 h2 {
     font-family:Arial;
     color: white;
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
+   margin: 20px;
+    text-align: center;
 }
 
 .image {
@@ -22,28 +29,47 @@ h2 {
     border-style: solid;
 }
 
+form {
+    text-align: center;
+}
+
 input[type=text] {
     border: none;
     border-bottom: 1px solid dimgrey;
-
     color: white;
     background-color: rgba(0, 0, 0, 0);
     font-family:Arial;
-    width: 80%;
-    padding: 12px 20px;
-    margin: 8px 0;
+    width: 260px;
+    margin: 20px;
+
 }
 
 input[type=password] {
     border: none;
     border-bottom: 1px solid dimgrey;
-
     color: white;
     background-color: rgba(0, 0, 0, 0);
     font-family:Arial;
-    width: 80%;
-    padding: 12px 20px;
-    margin: 8px 0;
+    width: 260px;
+    margin: 20px;
+
+}
+
+.input {
+    border: none;
+    border-bottom: 1px solid dimgrey;
+    color: white;
+    background: transparent;
+    font-family:Arial;
+    width: 260px;
+    margin: 20px;
+}
+
+#terms {
+    color: white;
+    font-size: 10px;
+    text-align: center;
+    margin: 30px;
 }
 
 .button {
@@ -57,7 +83,35 @@ input[type=password] {
     font-size:15px;
     padding:16px 31px;
     text-decoration:none;
+    margin: 20px;
 
+}
+
+#loginLink {
+     color: white;
+     text-decoration: none;
+     text-align: center;
+     margin: 40px;
+ }
+
+#signupLink {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    margin: 40px;
+}
+
+a {
+    color: white;
+}
+
+#forgotPassword {
+    text-align: center;
+    font-size: 12px;
+}
+
+#forgotPasswordLink {
+    text-decoration: none;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
