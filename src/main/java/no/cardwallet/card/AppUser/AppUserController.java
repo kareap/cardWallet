@@ -97,9 +97,10 @@ public class AppUserController {
     public String saveChangedPassword(Model model, Principal principal, @ModelAttribute AppUser appUserPosting) {
         String email = principal.getName();
         AppUser appUser = appUserRepository.findByEmail(email);
-        appUser.setPassword(appUserPosting.getPassword());
+        appUser.setPassword(passwordEncoder.encode(appUserPosting.getPassword()));
         appUserRepository.save(appUser);
         model.addAttribute(appUser);
+
 
         return "successfullyChangedPassword";
     }
