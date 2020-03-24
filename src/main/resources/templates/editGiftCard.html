@@ -8,14 +8,13 @@
 </head>
 <body>
 
-<div class="phoneContainer">
-
-    <div class="mainContainer">
+<span class="phoneCase">
+<span class="phoneContainer">
         <div id="header">
             <h1>Edit Gift Card Details</h1>
         </div>
 
-        <div id="cardContainer">
+        <div class="cardContainer">
             <form th:action="'/save-edited-gift-card/' + ${appUserId} + '/' + ${cardId} " th:object="${giftCard}"
                   method="post">
 
@@ -36,7 +35,8 @@
             <span><a href="/my-cards"><i class="fa fa-credit-card"></i></a></span>
             <span><a href="/settings"><i class="fa fa-cog"></i></a></span>
         </div>
-    </div>
-</div>
+</span>
+    </span>
+
 </body>
 </html>
