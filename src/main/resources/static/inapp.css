@@ -9,32 +9,13 @@
     font-family: Tahoma;
 }
 
-#header {
+#header{
+    font-size: 16px;
+    padding: 7px 7px 0px;
     background-color: #e78439;
-    padding: 5px;
-}
-
-#headerTC{
-    background-color: #e78439;
-    font-size: 18px;
-    padding: 5px 5px 0px;
     height: 45px;
 }
 
-#textTC{
-    font-size: 14px;
-}
-
-p {
-     display: block;
-     margin-block-start: 1em;
-     margin-block-end: 1em;
-     margin-inline-start: 0px;
-     margin-inline-end: 0px;
-     padding-left: 20px;
-     padding-right: 15px;
-     padding-top: 10px;
-}
 
 .mainContainer {
     background-color: white;
@@ -55,11 +36,6 @@ p {
     align-items: start;
 
 
-    /*height: 10vw;*/
-    /*background-color: whitesmoke;*/
-    /*border-color: #727a82;*/
-    /*display: flex;*/
-    /*flex-direction: row;*/
 }
 
 .logo {
@@ -91,11 +67,6 @@ h1 {
     text-align: center;
 }
 
-h3 {
-    display: block;
-    font-size: 15px;
-    text-align: center;
-}
 
 a:-webkit-any-link {
     color: black;
@@ -113,7 +84,6 @@ a:-webkit-any-link {
     clear: both;
     height: 50px;
     width: 378px;
-    /* text-align: center; */
     margin: 0 0 0 0;
     font-weight: bold;
     font-size: 20px;
@@ -121,14 +91,64 @@ a:-webkit-any-link {
 }
 
 
-    /*position: absolute;*/
-    /*!*bottom: -68px;*!*/
-    /*!*width: 45%;*!*/
-    /*text-align: center;*/
-    /*background-color: #ff4d4d;*/
-    /*font-size: 18px;*/
-    /*padding: 5px 5px 0px;*/
-    /*height: 45px;*/
+/*terms and condition view*/
+
+#textTC{
+    font-size: 14px;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-left: 20px;
+    padding-right: 15px;
+    padding-top: 10px;
+}
+
+h3 {
+    display: block;
+    font-size: 15px;
+    text-align: center;
+}
+
+/*Change email view*/
+
+
+#emailAddress{
+    width: 330px;
+    height: 40px;
+    border-radius: 1px;
+    border: 1px solid lightgray;
+    outline: 0;
+    padding-right: 7px;
+    padding-left: 10px;
+    margin-left: 12px;
+    margin-right: 10px;
+    margin-top: 200px;
+
+    /*width: 430px;*/
+    /*height: 30px;*/
+    /*border-radius: 1px;*/
+    /*border: 1px solid lightgray;*/
+    /*outline: 0;*/
+    /*padding: 7px;*/
+}
+
+#saveNewEmailButton{
+    width: 330px;
+    height: 30px;
+    border-radius: 1px;
+    border: 1px solid lightgray;
+    outline: 0;
+    padding-right: 7px;
+    padding-left: 10px;
+    margin-left: 12px;
+    margin-right: 10px;
+    margin-top: 200px;
+}
 
 
     /*padding: 5px;*/

@@ -104,6 +104,7 @@ public class AppUserController {
         appUserRepository.save(appUser);
         model.addAttribute(appUser);
 
+
         return "successfullyChangedPassword";
     }
 
@@ -145,6 +146,5 @@ public class AppUserController {
 
         return "redirect:/sign-up";
     }
-
 
 }
