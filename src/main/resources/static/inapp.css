@@ -77,21 +77,30 @@
     width: 100%;
     text-align: center;
     clear: both;
-    height: 50px;
     font-weight: bold;
     font-size: 20px;
     background-color: #e78439;
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 
 #addCard{
+    width: inherit;
+    padding: 25px;
+    background-color: green;
 
 }
 #myCards{
+    width: inherit;
+    padding: 25px;
+    background-color: #e78439;
 
 }
 #settings{
+    width: inherit;
+    padding: 25px;
+    background-color: deeppink;
 
 
 }
