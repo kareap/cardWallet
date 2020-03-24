@@ -18,30 +18,30 @@
             <p th:if="${#fields.hasErrors('password')}">Please enter a password.</p>
         <input type="password" th:field="*{repeatPassword}" placeholder="Confirm password"/>
             <p th:if="${#fields.hasErrors('repeatPassword')}">Passwords are not a match.</p>
-        <p id="terms" >Ved å klikke på Registrer deg godtar du våre betingelser. Les mer om hvordan vi samler inn,
-            bruker og deler dataene dine, i våre retningslinjer for data, og hvordan vi bruker
-            informasjonskapsler og lignende teknologi, i våre retningslinjer for informasjonskapsler.</p>
+        <p><input type="checkbox" id="terms"/>
+            I hereby agree to the <a herf="/terms-and-conditions">terms of service.</a>
+        </p>
+        <div id="warningMessage"></div>
         <input class="button" type="submit" value="Sign up"/>
-
     </form>
 
     <div id="loginLink">
         <p>Already have an account?</p>
         <a th:href="'/login'">Login</a>
-        </div>
-
+    </div>
+</div>
+</body>
 
 <script>
-   const checkboxElement = document.querySelector('input[type="checkbox"]');
-   const submitElement = document.querySelector('input[type="submit"]');
-   const warningElement = document.getElementById("warningMessage");
-   submitElement.addEventListener('click', function(event){
-       if(!checkboxElement.checked) {
-           event.preventDefault();
-           warningElement.innerText="Please agree to the terms of service.";
-       }
-   });
+    const checkboxElement = document.querySelector('input[type="checkbox"]');
+    const submitElement = document.querySelector('input[type="submit"]');
+    const warningElement = document.getElementById("warningMessage");
+    submitElement.addEventListener('click', function(event){
+        if(!checkboxElement.checked) {
+            event.preventDefault();
+            warningElement.innerText="Please agree to the terms of service.";
+        }
+    });
 </script>
 
-</body>
 </html>
