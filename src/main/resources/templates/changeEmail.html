@@ -19,6 +19,10 @@
 
         <div id="mainContainer">
 
+            <div class="iconEmail">
+            <i class="fa fa-envelope"></i>
+            </div>
+
             <form th:action="'/save-changed-email/'" th:object="${appUser}" th:method="post">
                 <input type="text" th:field="*{email}" id="emailAddress">
                 <input type="submit" value="Save New Email" id="saveNewEmailButton">
