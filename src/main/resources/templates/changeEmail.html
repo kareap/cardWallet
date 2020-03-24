@@ -6,27 +6,34 @@
     <link type="text/css" rel="stylesheet" href="inapp.css">
 </head>
 <body>
-<div id="header">
+
+<div class="mainContainer">
+
+    <div class="phoneContainer">
+
+        <div id="header">
+            <h1>Change email</h1>
+        </div>
 
 
-    <h1>Change email</h1>
+        <div id="mainContainer">
+
+            <form th:action="'/save-changed-email/'" th:object="${appUser}" th:method="post">
+                <input type="text" th:field="*{email}" id="emailAddress">
+                <input type="submit" value="Save New Email" id="saveNewEmailButton">
+             </form>
+
+            <div id="footer">
+                <span><a href="/add-gift-card">Add Card</a></span>
+                <span><a href="/my-cards">My Cards</a></span>
+                <span><a href="/settings">Settings</a></span>
+            </div>
+
+        </div>
+
+    </div>
 
 </div>
 
-
-<div id="mainContainer">
-
-    <form th:action="'/save-changed-email/'" th:object="${appUser}" th:method="post">
-        <input type="text" th:field="*{email}">
-        <input type="submit" value="Save New Email">
-    </form>
-</div>
-
-<div id="footer">
-    <span><a href="/add-gift-card">Add Card</a></span>
-    <span><a href="/my-cards">My Cards</a></span>
-    <span><a href="/settings">Settings</a></span>
-
-</div>
 </body>
 </html>
