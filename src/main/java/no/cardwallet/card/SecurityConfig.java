@@ -28,8 +28,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http
                 .authorizeRequests()
-//                    .antMatchers("/resources/static/**").permitAll()
-                    .antMatchers("/sign-up", "/forgot-password", "/successfully-reset-password", "/login", "/h2", "/h2/**", "/save-user").permitAll()
+                    .antMatchers("/resources/static/**").permitAll()
+                    .antMatchers("/sign-up", "/forgot-password", "/successfully-reset-password", "/login", "/h2", "/h2/**", "/save-user", "/**/*.PNG", "/**/*.jpg", "/**/*.css").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -38,12 +38,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll();
     }
 
-    @Override
-    public void configure(WebSecurity web) throws Exception {
-        web
-                .ignoring()
-                .antMatchers( "/**/*.css");
-    }
+
 
 
     // Hva gjør denne metoden?

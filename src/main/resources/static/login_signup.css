@@ -1,0 +1,12 @@
+
+
+.image {
+    background-image: url("Skjermbilde.png");
+    background-color: #cccccc;
+    height: 700px;
+    width: 700px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
