@@ -10,12 +10,12 @@
 }
 
 #header {
-    background-color: #ff4d4d;
+    background-color: #e78439;
     padding: 5px;
 }
 
 #headerTC{
-    background-color: #ff4d4d;
+    background-color: #e78439;
     font-size: 18px;
     padding: 5px 5px 0px;
     height: 45px;
@@ -117,7 +117,7 @@ a:-webkit-any-link {
     margin: 0 0 0 0;
     font-weight: bold;
     font-size: 20px;
-    background-color: green;
+    background-color: #e78439;
 }
 
 
