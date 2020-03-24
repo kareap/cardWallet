@@ -1,11 +1,11 @@
 .phoneCase {
     position: fixed;
-    left: 690px;
-    top: 40px;
+    left: 685px;
+    top: 35px;
     background-color: dimgrey;
     border-radius: 25px;
-    width: 395px;
-    height: 832px;
+    width: 405px;
+    height: 842px;
     margin: 0 auto;
     color: black;
     border-style: solid;
