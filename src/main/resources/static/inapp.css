@@ -9,11 +9,10 @@
     font-family: Tahoma;
 }
 
-#header {
-    background-color: #ff4d4d;
+#header{
     font-size: 16px;
     padding: 7px 7px 0px;
-    height: 45px;
+    background-color: #e78439;
 }
 
 
@@ -87,7 +86,7 @@ a:-webkit-any-link {
     margin: 0 0 0 0;
     font-weight: bold;
     font-size: 20px;
-    background-color: green;
+    background-color: #e78439;
 }
 
 
