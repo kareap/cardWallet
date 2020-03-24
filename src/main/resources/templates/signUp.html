@@ -8,21 +8,35 @@
 </head>
 <body>
 <div class="image">
+    <h1>wallit</h1>
     <form action="/save-user" th:object="${appUser}" method="post">
-        <h2>Sign up</h2>
+        <h3>Sign up</h3>
         <div><input type="text" th:field="*{email}" placeholder="Email"/>
             <p th:if="${#fields.hasErrors('email')}">Please enter a valid email address.</p></div>
         <div><input type="password" th:field="*{password}" placeholder="Password"/>
             <p th:if="${#fields.hasErrors('password')}">Please enter a password.</p></div>
         <div><input type="password" th:field="*{repeatPassword}" placeholder="Confirm password"/>
             <p th:if="${#fields.hasErrors('repeatPassword')}">Passwords are not a match.</p></div>
+        <input type="checkbox">I hereby agree with the terms of service.</input>
+        <div id="warningMessage"></div>
         <div><input class="button" type="submit" value="Sign up"/></div>
     </form>
 
     <div>Already have an account?</div>
-    <div><a th:href="'/login'">Click here to log in.</a></div>
+    <div><a th:href="'/login'">Log in.</a></div>
 </div>
 
+<script>
+   const checkboxElement = document.querySelector('input[type="checkbox"]');
+   const submitElement = document.querySelector('input[type="submit"]');
+   const warningElement = document.getElementById("warningMessage");
+   submitElement.addEventListener('click', function(event){
+       if(!checkboxElement.checked) {
+           event.preventDefault();
+           warningElement.innerText="Please agree to the terms of service.";
+       }
+   });
+</script>
 
 </body>
 </html>
