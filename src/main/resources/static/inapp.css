@@ -1,13 +1,12 @@
 #header{
-    font-size: 2vw;
-    padding-top: 0.7vw;
-    padding-bottom: 0.7vw;
+    font-size: 100%;
+    padding-top: 1vw;
     background-color: #FF6E33;
     height: 3.5vw;
 }
 
 .mainContainer {
-    height: 32vw;
+    height: 30.7vw;
     background-color:  #ffede6;
     margin: 0 auto;
     color: black;
