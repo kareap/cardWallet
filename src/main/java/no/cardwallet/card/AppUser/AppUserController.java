@@ -95,7 +95,6 @@ public class AppUserController {
         return "changePassword";
     }
 
-
     @PostMapping("/save-changed-password")
     public String saveChangedPassword(Model model, Principal principal, @ModelAttribute AppUser appUserPosting) {
         String email = principal.getName();
@@ -105,30 +104,6 @@ public class AppUserController {
         model.addAttribute(appUser);
         return "successfullyChangedPassword";
     }
-
-
-//        @PostMapping("/save-changed-password")
-//        public String saveChangedPassword (Model model, Principal principal, @ModelAttribute AppUser appUserPosting, BindingResult bindingResult, @RequestParam String password, @RequestParam String repeatPassword) {
-//        AppUserValidator appUserValidator = new AppUserValidator();
-//        String email = principal.getName();
-//        AppUser appUser = appUserRepository.findByEmail(email);
-//
-//        appUserPosting = new AppUser(email, password, repeatPassword);
-//
-//        if (appUserValidator.supports(appUserPosting.getClass())){
-//            appUserValidator.validate(appUserPosting, bindingResult);
-//        }
-//        if (bindingResult.hasErrors()){
-//            return "changePassword";
-//        }
-//
-//        // Remember to encode the password before saving
-//        appUser.setPassword(appUserPosting.getPassword());
-//        appUserRepository.save(appUser);
-//        model.addAttribute(appUser);
-//
-//        return "successfullyChangedPassword";
-//        }
 
     @GetMapping("/terms-and-conditions")
     public String termsAndConditions() {
