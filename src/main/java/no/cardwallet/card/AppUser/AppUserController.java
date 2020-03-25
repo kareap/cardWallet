@@ -1,6 +1,5 @@
 package no.cardwallet.card.AppUser;
 
-import no.cardwallet.card.GiftCard.GiftCard;
 import no.cardwallet.card.GiftCard.GiftCardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -13,7 +12,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.transaction.Transactional;
 import java.security.Principal;
-import java.util.List;
 
 
 @Controller
@@ -32,6 +30,13 @@ public class AppUserController {
         this.appUserRepository = appUserRepository;
     }
 
+    private void getAppUserByEmailAddModelAttribute(Model model, Principal principal) {
+        String email = principal.getName();
+        AppUser appUser = appUserRepository.findByEmail(email);
+        model.addAttribute(appUser);
+    }
+
+
     @GetMapping("/sign-up")
     public String signUp(@ModelAttribute AppUser appUser) {
         return "signUp";
@@ -49,7 +54,6 @@ public class AppUserController {
         }
         appUser.setPassword(passwordEncoder.encode(appUser.getPassword()));
         appUserRepository.save(appUser);
-
         return "login";//send to log in page
     }
 
@@ -70,10 +74,7 @@ public class AppUserController {
 
     @GetMapping("/change-email")
     public String changeEmail(Model model, Principal principal) {
-        String email = principal.getName();
-        AppUser appUser = appUserRepository.findByEmail(email);
-        model.addAttribute(appUser);
-
+        getAppUserByEmailAddModelAttribute(model, principal);
         return "changeEmail";
     }
 
@@ -81,20 +82,16 @@ public class AppUserController {
     public String saveChangedEmail (Model model, Principal principal, @ModelAttribute AppUser appUserPosting, HttpServletRequest httpRequest) throws ServletException {
         String email = principal.getName();
         AppUser appUser = appUserRepository.findByEmail(email);
+        model.addAttribute(appUser);
         appUser.setEmail(appUserPosting.getEmail());
         appUserRepository.save(appUser);
-        email = principal.getName();
-        model.addAttribute(appUser);
         httpRequest.logout();
-        return "successfullyChangedEmail"; //link til login
+        return "successfullyChangedEmail";
     }
 
     @GetMapping("/change-password")
     public String changePassword(Model model, Principal principal) {
-        String email = principal.getName();
-        AppUser appUser = appUserRepository.findByEmail(email);
-        model.addAttribute(appUser);
-
+        getAppUserByEmailAddModelAttribute(model, principal);
         return "changePassword";
     }
 
@@ -105,14 +102,11 @@ public class AppUserController {
         appUser.setPassword(passwordEncoder.encode(appUserPosting.getPassword()));
         appUserRepository.save(appUser);
         model.addAttribute(appUser);
-
-
         return "successfullyChangedPassword";
     }
 
     @GetMapping("/terms-and-conditions")
     public String termsAndConditions() {
-
         return "termsAndConditions";
     }
 
@@ -123,10 +117,6 @@ public class AppUserController {
 
     @PostMapping("/successfully-reset-password")
     public String passwordReset(@ModelAttribute AppUser appUser, @RequestParam String email) {
-
-//        List<AppUser> appUserList = (List<AppUser>) appUserRepository.findAll();
-//        Lag liste av alle emails i appUserRepository istede...
-
         if (!appUserRepository.findAppUserByEmail(email).equals(null)) {
             appUser = appUserRepository.findAppUserByEmail(email);
             appUser.setPassword(passwordEncoder.encode("abc"));
@@ -134,7 +124,6 @@ public class AppUserController {
         } else {
             return "defaultView";
         }
-
         return "successfullyResetPassword";
     }
 
@@ -145,7 +134,6 @@ public class AppUserController {
         Long appUserId = appUserRepository.findByEmail(email).getId();
         giftCardRepository.deleteByAppUserId(appUserId);
         appUserRepository.deleteAppUserByEmail(email);
-
         return "redirect:/sign-up";
     }
 

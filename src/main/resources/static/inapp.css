@@ -1,8 +1,10 @@
 #header{
-    font-size: 100%;
-    padding-top: 1vw;
+    font-size: 2vw;
+    padding-top: 1.1vw;
     background-color: #FF6E33;
     height: 3.5vw;
+    font-weight: bold;
+    text-align: center;
 }
 
 .mainContainer {
