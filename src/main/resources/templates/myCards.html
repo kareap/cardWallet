@@ -16,12 +16,16 @@
         <h1>My Cards</h1>
     </div>
 
+
+
+<div class="mainContainer">
+
     <div th:if="${giftCardList.size()} == 0">
         <p>You do not have any gift cards yet...</p>
         <p><a href="/add-gift-card">Add your first gift card now!</a></p>
     </div>
 
-    <div class="mainContainer">
+
         <div th:if="${giftCardList.size() >= 1}" th:each="giftCard : ${giftCardList}">
             <div>
                 <a class="cardContainer" th:href="'/show-gift-card/' + ${giftCard.appUserId} + '/' + ${giftCard.id}">
