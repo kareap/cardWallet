@@ -32,31 +32,17 @@ h2 {
     position: fixed;
     left: 35.8vw;
     top: 4.1vw;
-
 }
 
 form {
     text-align: center;
 }
 
-input[type=text] {
+input[type=text],[type=password] {
     border: none;
     border-bottom: 0.06vw solid dimgrey;
     color: white;
 
-    background-color: rgba(0, 0, 0, 0);
-    font-family: Arial;
-    width: 15vw;
-    height: 1.8vw;
-    margin: 1vw;
-    padding-left: 0.2vw;
-    padding-right: 0.2vw;
-}
-
-input[type=password] {
-    border: none;
-    border-bottom: 0.06vw solid dimgrey;
-    color: white;
     background-color: rgba(0, 0, 0, 0);
     font-family: Arial;
     width: 15vw;
@@ -99,7 +85,6 @@ input[type=password] {
     padding: 0.8vw 1.5vw;
     text-decoration: none;
     margin: 1.3vw;
-
 }
 
 #loginLink {
@@ -124,6 +109,11 @@ a {
 #forgotPassword {
     text-align: center;
     font-size: 0.9vw;
+}
+
+.popup {
+    font-size: 10px;
+    color: orangered;
 }
 
 #forgotPasswordLink {
