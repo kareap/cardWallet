@@ -42,7 +42,6 @@ input[type=text],[type=password] {
     border: none;
     border-bottom: 0.06vw solid dimgrey;
     color: white;
-
     background-color: rgba(0, 0, 0, 0);
     font-family: Arial;
     width: 15vw;
@@ -150,3 +149,4 @@ a {
     text-decoration: none;
     display: inline-block
 }
+

@@ -20,6 +20,10 @@
     display: none;
 }
 
+.mainContainerGiftCard {
+
+}
+
 .cardContainer {
     background-color:  #ffede6;
     width: 19vw;
@@ -32,17 +36,42 @@
 
 .flexGiftCard {
     display: flex;
+    margin: 10px;
 }
 
-.logo {
-    height: 100px;
-    width: 100px;
-    border-style: solid;
+.logoShowGiftCardContainer {
+    align-content: center;
+}
+
+.storeName {
+    font-size: 20px;
+    color: black;
+    text-align: center;
+    margin-top: 2vw;
+}
+
+.balance {
+     font-size: 40px;
+     color: black;
+    text-align: center;
+    margin: 1vw;
+ }
+
+.exp {
+    font-size: 16px;
+    color: black;
+    text-align: center;
+    margin: 0.5vw;
+}
+
+.logoShowGiftCard {
+    height: 4.5vw;
+    width: 4.5vw;
 }
 
 .strekkode {
     height: 100px;
-    width: 200px;
+    width: 240px;
 }
 
 .logoContainer {
@@ -56,6 +85,36 @@
     /*margin: 5px 5px 5px 0;*/
     /* padding-left: 150px; */
     flex: 1 1 auto;
+}
+
+.buttonContainerGiftCard {
+margin: 2vw;
+ }
+
+.editGiftCardButton {
+    border-radius: 1.3vw;
+    border: 1px solid orangered;
+    font-family: Arial;
+    font-size: 0.8vw;
+    padding: 0.8vw 1.5vw;
+    display: inline-block;
+    width: 15vw;
+    margin: 0.5vw;
+    text-align: center;
+    background: #ffede6;
+}
+
+.deleteGiftCardButton {
+    border-radius: 1.3vw;
+    border: 1px solid orangered;
+    font-family: Arial;
+    font-size: 0.8vw;
+    padding: 0.8vw 1.5vw;
+    display: inline-block;
+    width: 15vw;
+    margin: 0.5vw;
+    text-align: center;
+    background: #ffede6;
 }
 
 #footer {
