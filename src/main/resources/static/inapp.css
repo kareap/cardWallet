@@ -20,14 +20,17 @@
 }
 
 .cardContainer {
-    background-color: white;
+    background-color:  #ffede6;
     width: 19vw;
     margin: 5px;
     color: black;
     font-size: 0.8vw;
     border-style: solid;
-    display: flex;
     align-items: start;
+}
+
+.flexGiftCard {
+    display: flex;
 }
 
 .logo {
@@ -36,15 +39,20 @@
     border-style: solid;
 }
 
+.strekkode {
+    height: 100px;
+    width: 200px;
+}
+
 .logoContainer {
     margin: 16px;
     flex: 1 1 auto;
 }
 
 .infoContainer {
-    /*width: 220px;*/
-    /*height: 130px;*/
-    margin: 5px 5px 5px 0;
+    width: 220px;
+    height: 100px;
+    /*margin: 5px 5px 5px 0;*/
     /* padding-left: 150px; */
     flex: 1 1 auto;
 }
