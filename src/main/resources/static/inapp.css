@@ -19,14 +19,18 @@
 }
 
 .cardContainer {
-    background-color:  #ffede6;
-    width: 19vw;
-    margin: 5px;
+    background-color: #ffede6;
+    width: 20vw;
     color: black;
     font-size: 0.8vw;
-    border-style: solid;
+    border-style: solid hidden hidden hidden;
+    border-color: white;
     align-items: start;
+    margin-top: -0.0vw;
+    margin-left: -0.0vw;
+    height: 13vw;
 }
+
 
 .flexGiftCard {
     display: flex;
@@ -48,12 +52,28 @@
     flex: 1 1 auto;
 }
 
+
 .infoContainer {
-    width: 220px;
-    height: 100px;
-    /*margin: 5px 5px 5px 0;*/
-    /* padding-left: 150px; */
     flex: 1 1 auto;
+    padding-left: 10vw;
+    margin-top: -7.3vw;
+    text-align: left;
+}
+
+.logoMyCards {
+    height: 6vw;
+    width: 7vw;
+    border-style: solid;
+    border-color: white;
+    margin-right: 10vw;
+    margin-top: 1.5vw;
+}
+
+.infoMyCardsContainer{
+    flex: 1 1 auto;
+    padding-left: 10vw;
+    margin-top: -7.3vw;
+    text-align: left;
 }
 
 #footer {
@@ -73,19 +93,20 @@
 #addCard{
     width: inherit;
     padding: 1vw;
-    background-color: green;
+    background-color: #BFE3BC;
 
 }
 #myCards{
     width: inherit;
     padding: 1vw;
-    background-color: #e78439;
+    /*background-color: #e78439;*/
+    background-color: #89A387;
 
 }
 #settings{
     width: inherit;
     padding: 1vw;
-    background-color: deeppink;
+    background-color: #7A814F;
 }
 
 h1 {
@@ -205,7 +226,7 @@ h3 {
     border: 1px solid lightgray;
     outline: 0;
     padding-right: 0.5vw;
-    padding-left: 0.5vw;
+    padding-left: 1vw;
     margin-left: 0.9vw;
     margin-right: 0.9vw;
     margin-top: 6vw;
@@ -333,3 +354,7 @@ h3 {
     text-decoration: none;
     margin: 1.3vw;
 }
+
+
+
+
