@@ -101,6 +101,11 @@ input[type=text],[type=password] {
     font-size: 1vw;
 }
 
+#showHide {
+    font-size: 10px;
+    margin-top: 0;
+}
+
 a {
     color: white;
 }

@@ -20,9 +20,9 @@
         <h2>Log in</h2>
         <input class="input" type="text"  name="username"  placeholder="Email"/>
         <input id="password" class="input" type="password"  name="password"  placeholder="Password"/>
-        <button id="showHide">
-            <i id="eye" class="fa fa-eye"></i>
-        </button>
+        <p id="showHide" type="checkbox" style="background-color: transparent">
+            <i id="eye" class="fa fa-eye">Show Password</i>
+        </p>
         <p th:if="${#request.getParameter('error')}">Invalid email or password.</p>
         <input class="button" type="submit" value="Log in"/>
     </form>
