@@ -15,27 +15,28 @@
     <div id="header">
         <h1>My Card</h1>
     </div>
+<div class="mainContainer">
+    <!--<p class="storeName" th:text="${giftCard.storeName}"></p>-->
 
-        <div class="cardContainer">
-            <div class="flexGiftCard">
-            <div class="logoContainer" th:fragment="logo">
-                <img th:src="'/images/' + ${giftCard.storeName} + '.jpg'" alt="store logo" class="logo">
+            <div class="logoShowGiftCardContainer">
+                <img class="logoShowGiftCard" th:src="'/images/' + ${giftCard.storeName} + '.jpg'" alt="store logo" >
             </div>
-            <div class="infoContainer">
-                <p th:text="${giftCard.storeName}"></p>
-                <p th:text="'Current Balance: ' + ${giftCard.balanceInt}"></p>
-                <p th:text="'Exp: ' + ${#dates.format(giftCard.expiryDate, 'd. MMMM yyyy')}"></p>
-            </div>
-            </div>
-                <img class="strekkode" src="/images/strekkode.jpg" alt="store logo" >
+
+                <p class="exp">Current Balance:</p>
+                <p class="balance" th:text="${giftCard.balanceInt} + 'kr'"></p>
+
+                <img class="strekkode" src="/images/strekkode.jpg" alt="store logo">
+
+                <p class="exp" th:text="'Exp: ' + ${#dates.format(giftCard.expiryDate, 'd. MMMM yyyy')}"></p>
+
+    <div class="buttonContainerGiftCard">
+         <div class="editGiftCardButton"><a th:href="'/edit-gift-card/' + ${appUserId} + '/' + ${giftCard.id}">Edit Card</a></div>
+        <div class="deleteGiftCardButton"> <a th:href="'/delete-gift-card/' + ${appUserId} + '/' + ${giftCard.id}">Delete Card</a></div>
     </div>
+
+
     </div>
 
-    <!--            <div th:text="'Card Code: ' + ${giftCard.cardCode}"></div>-->
-
-    <div><a th:href="'/edit-gift-card/' + ${appUserId} + '/' + ${giftCard.id}">Edit Card</a>
-                <a th:href="'/delete-gift-card/' + ${appUserId} + '/' + ${giftCard.id}">Delete Card</a>
-            </div>
 
     <div id="footer">
             <a href="/add-gift-card" id="addCard"><span><i class="fa fa-plus"></i></span></a>
