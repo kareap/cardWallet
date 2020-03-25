@@ -159,6 +159,10 @@
     padding: 1vw;
     background-color: lightsalmon;
     border: solid lightgrey 1px;
+}
+
+#clickedView{
+    background-color: #FF6E33 !important;
 
 }
 
