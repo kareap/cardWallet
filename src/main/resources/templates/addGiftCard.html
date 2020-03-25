@@ -17,14 +17,18 @@
             <h1>Add Card</h1>
         </div>
 
-        <div class="mainContainer">
+        <div class="mainContainer" id="addCardContainer">
             <form method="post" th:action="'/save-new-gift-card'" th:object="${giftCard}">
-                <div> Store Name: <input type="text" th:field="*{storeName}"></div>
-                <div> Amount: <input type="number" th:field="*{balanceInt}"></div>
-                <div> Exp: <input type="date" th:field="*{expiryDate}"></div>
-                <div> Card Code: <input type="text" th:field="*{cardCode}"></div>
+                <div class="addCardDescription"> Store Name: </div>
+                <div> <input class="addCardInput" type="text" th:field="*{storeName}"></div>
+                <div class="addCardDescription"> Amount: </div>
+                   <div> <input class="addCardInput" type="number" th:field="*{balanceInt}" ></div>
+                <div class="addCardDescription"> Exp: </div>
+                <div><input class="addCardInput" type="date" th:field="*{expiryDate}" ></div>
+                 <div class="addCardDescription"> Card Code: </div>
+                <div>  <input class="addCardInput" type="text" th:field="*{cardCode}" ></div>
 
-                <input type="submit" value="Save Card">
+                <input class="addCardButton" type="submit" value="Save Card">
             </form>
         </div>
 

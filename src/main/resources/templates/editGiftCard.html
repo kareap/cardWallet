@@ -12,22 +12,23 @@
 <span class="phoneCase">
 <span class="phoneContainer">
         <div id="header">
-            <h1>Edit Gift Card Details</h1>
+            <h1>Edit Card</h1>
         </div>
 
-        <div class="cardContainer">
+        <div class="mainContainer" id="addCardContainer">
             <form th:action="'/save-edited-gift-card/' + ${appUserId} + '/' + ${cardId} " th:object="${giftCard}"
                   method="post">
 
-
-                <div> Store Name: <input type="text" th:field="*{storeName}"></div>
-                <div> Card Code: <input type="text" th:field="*{cardCode}"></div>
-                <div> Balance <input type="number" th:field="*{balanceInt}"></div>
-
+                <div class="addCardDescription"> Store Name: </div>
+                <div> <input class="addCardInput" type="text" th:field="*{storeName}"></div>
+                <div class="addCardDescription"> Card Code: </div>
+                   <div> <input class="addCardInput" type="number" th:field="*{cardCode}"></div>
+                <div class="addCardDescription"> Balance: </div>
+                <div><input class="addCardInput" type="date" th:field="*{balanceInt}" ></div>
 
                 <!--    <span type="hidden" th:field="*{expiryDate}"> </span>-->
 
-                <input type="submit" value="Save Changes">
+                <input class="addCardButton" type="submit" value="Save Changes">
             </form>
         </div>
 
