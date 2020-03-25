@@ -12,7 +12,7 @@
 <span class="phoneCase">
 <span class="phoneContainer">
 
-    <div id="header">
+    <div id="header" th:text="${giftCard.storeName}">
        My Card
     </div>
 <div class="mainContainer">
@@ -25,14 +25,13 @@
                 <p class="exp">Current Balance:</p>
                 <p class="balance" th:text="${giftCard.balanceInt} + 'kr'"></p>
 
-                <img class="strekkode" src="/images/strekkode.jpg" alt="store logo">
+                <img class="strekkode" src="/images/barcode.jpg" alt="store logo">
 
                 <p class="exp" th:text="'Exp: ' + ${#dates.format(giftCard.expiryDate, 'd. MMMM yyyy')}"></p>
 
-
+<br>
          <div class="editGiftCardButton"><a th:href="'/edit-gift-card/' + ${appUserId} + '/' + ${giftCard.id}">Edit Card</a></div>
         <div class="deleteGiftCardButton"> <a th:href="'/delete-gift-card/' + ${appUserId} + '/' + ${giftCard.id}">Delete Card</a></div>
-
 
 
     </div>
