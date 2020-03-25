@@ -128,78 +128,65 @@ h3 {
 
 
 /*settings view*/
-
 .changeEmailContainer{
-    background-image: linear-gradient(40deg, lightgoldenrodyellow, #FFCC72);
-    background-color: #FFCC72;
-    /*width: 19.2vw;*/
+    background-color: #ffede6;
     color: black;
-    font-size: 15px;
-    border-style: hidden;
+    font-size: 1vw;
     display: flex;
     align-items: center;
-    border-radius: 10px;
-    height: 6vw;
-    /*margin-left: 5px;*/
-    /*margin-top: 0.1vw;*/
+    height: 5.85vw;
+    border-style: solid hidden hidden hidden;
+    border-color: white;
+
 }
 
 .changePasswordContainer{
-    background-image: linear-gradient(40deg, lightgoldenrodyellow, #FFCC72);
-    /*width: 19.2vw;*/
+    background-color: #ffede6;
     color: black;
-    font-size: 15px;
-    border-style: hidden;
+    font-size: 1vw;
     display: flex;
     align-items: center;
-    border-radius: 10px;
-    height: 6vw;
-    /*margin-left: 5px;*/
-    /*margin-top: 0.1vw;*/
+    height: 5.85vw;
+    border-style: solid hidden hidden hidden;
+    border-color: white;
+
 }
 
 .termsAndConditionsContainer{
-    background-image: linear-gradient(40deg, lightgoldenrodyellow, #FFCC72);
-    /*width: 19.2vw;*/
+    background-color: #ffede6;
     color: black;
-    font-size: 15px;
-    border-style: hidden;
+    font-size: 1vw;
     display: flex;
     align-items: center;
-    border-radius: 10px;
-    height: 6vw;
-    /*margin-left: 5px;*/
-    /*margin-top: 0.1vw;*/
+    height: 5.85vw;
+    border-style: solid hidden hidden hidden;
+    border-color: white;
 
 }
 
 .logoutContainer{
-    background-image: linear-gradient(40deg, lightgoldenrodyellow, #FFCC72);
-    /*width: 19.2vw;*/
+    background-color: #ffede6;
     color: black;
-    font-size: 15px;
-    border-style: hidden;
+    font-size: 1vw;
     display: flex;
     align-items: center;
-    border-radius: 10px;
-    height: 6vw;
-    /*margin-left: 5px;*/
-    /*margin-top: 0.1vw;*/
+    height: 5.85vw;
+    border-style: solid hidden hidden hidden;
+    border-color: white;
+
 }
 .deleteAppUserContainer{
-    background-image: linear-gradient(40deg, lightgoldenrodyellow, #FFCC72);
-    /*width: 19.2vw;*/
+    background-color: #ffede6;
     color: black;
-    font-size: 15px;
-    border-style: hidden;
+    font-size: 1vw;
     display: flex;
     align-items: center;
-    border-radius: 10px;
-    height: 7vw;
-    /*margin-left: 5px;*/
-    /*margin-top: 0.1vw;*/
-    /*margin-bottom: 0.1vw;*/
+    height: 5.87vw;
+    border-style: solid hidden solid hidden;
+    border-color: white;
+
 }
+
 
 /*Change email view*/
 
