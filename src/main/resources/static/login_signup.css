@@ -2,7 +2,7 @@ h1 {
     padding-top: 2vw;
     font-size: 3.1vw;
     color: black;
-    margin: 40px;
+    margin: 2vw;
     text-align: center;
 
 }
@@ -10,7 +10,7 @@ h1 {
 h2 {
     font-family: Arial;
     color: white;
-    margin: 20px;
+    margin: 1.3vw;
     text-align: center;
     font-size: 1.6vw;
 }
@@ -32,7 +32,6 @@ h2 {
     position: fixed;
     left: 35.8vw;
     top: 4.1vw;
-
 }
 
 form {
@@ -41,15 +40,16 @@ form {
 
 input[type=text],[type=password] {
     border: none;
-    border-bottom: 1px solid dimgrey;
+    border-bottom: 0.06vw solid dimgrey;
     color: white;
+
     background-color: rgba(0, 0, 0, 0);
     font-family: Arial;
     width: 15vw;
     height: 1.8vw;
-    margin: 17px;
-    padding-left: 5px;
-    padding-right: 5px;
+    margin: 1vw;
+    padding-left: 0.2vw;
+    padding-right: 0.2vw;
 }
 
 .input {
@@ -59,14 +59,14 @@ input[type=text],[type=password] {
     background: transparent;
     font-family: Arial;
     width: 15vw;
-    margin: 20px;
+    margin: 1vw;
 }
 
 #terms {
     color: white;
     font-size: 0.8vw;
     text-align: center;
-    margin: 5px;
+    margin: 0.5vw;
 }
 
 #termsText{
@@ -75,8 +75,8 @@ input[type=text],[type=password] {
 
 .button {
     background: white;
-    border-radius: 28px;
-    border: 1px solid white;
+    border-radius: 1.3vw;
+    border: 0.2vw solid white;
     display: inline-block;
     cursor: pointer;
     color: orangered;
@@ -84,15 +84,13 @@ input[type=text],[type=password] {
     font-size: 0.8vw;
     padding: 0.8vw 1.5vw;
     text-decoration: none;
-    margin: 20px;
-
+    margin: 1.3vw;
 }
 
 #loginLink {
     color: white;
     text-decoration: none;
     text-align: center;
-    margin: 2.1vw;
     font-size: 1vw;
 }
 
