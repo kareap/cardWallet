@@ -109,7 +109,10 @@ a:-webkit-any-link {
 /*terms and condition view*/
 
 #textTC{
-    font-size: 14px;
+    text-align: justify;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    font-size: 0.8vw;
 }
 
 .headlineUserSettings {
