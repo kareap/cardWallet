@@ -51,6 +51,7 @@ public class GiftCardController {
         model.addAttribute("appUserId", appUserId);
 
         return "showGiftCard";
+
     }
 
     //  Add gift card

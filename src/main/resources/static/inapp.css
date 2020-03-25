@@ -2,12 +2,12 @@
     font-size: 25px;
     padding-top: 15px;
     padding-bottom: 15px;
-    background-color: #e78439;
+    background-color: #FF6E33;
     height: 45px;
 }
 
 .mainContainer {
-    background-color: white;
+    background-color:  #ffede6;
     margin: 0 auto;
     color: black;
     font-size: 18px;
@@ -52,7 +52,7 @@
     clear: both;
     font-weight: bold;
     font-size: 20px;
-    background-color: #e78439;
+    background-color: #FF6E33;
     display: flex;
     justify-content: space-around;
     align-items: center;
