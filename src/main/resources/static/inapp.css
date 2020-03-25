@@ -113,23 +113,24 @@ a:-webkit-any-link {
     font-size: 14px;
 }
 
-p {
+.headlineUserSettings {
     display: block;
     margin-block-start: 1em;
     margin-block-end: 1em;
     margin-inline-start: 0;
     margin-inline-end: 0px;
     padding-left: 20px;
-    padding-right: 0.8vw;;
+    padding-right: 15px;
     padding-top: 10px;
 }
 
 h3 {
     display: block;
-    font-size: 0.8vw;;
+    font-size: 15px;
     text-align: center;
     color: black;
 }
+
 
 /*settings view*/
 .changeEmailContainer{
@@ -138,7 +139,7 @@ h3 {
     font-size: 1vw;
     display: flex;
     align-items: center;
-    height: 5.85vw;
+    height: 6vw;
     border-style: solid hidden hidden hidden;
     border-color: white;
 
@@ -150,7 +151,7 @@ h3 {
     font-size: 1vw;
     display: flex;
     align-items: center;
-    height: 5.85vw;
+    height: 6vw;
     border-style: solid hidden hidden hidden;
     border-color: white;
 
@@ -162,7 +163,7 @@ h3 {
     font-size: 1vw;
     display: flex;
     align-items: center;
-    height: 5.85vw;
+    height: 6vw;
     border-style: solid hidden hidden hidden;
     border-color: white;
 
@@ -174,7 +175,7 @@ h3 {
     font-size: 1vw;
     display: flex;
     align-items: center;
-    height: 5.85vw;
+    height: 6vw;
     border-style: solid hidden hidden hidden;
     border-color: white;
 
@@ -185,9 +186,10 @@ h3 {
     font-size: 1vw;
     display: flex;
     align-items: center;
-    height: 5.87vw;
+    height: 5.7vw;
     border-style: solid hidden solid hidden;
     border-color: white;
+
 }
 
 /*Change email view*/
