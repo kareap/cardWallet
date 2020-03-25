@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Delete Account</title>
-    <link type="text/css" rel="stylesheet" href="inapp.css">
+    <link type="text/css" rel="stylesheet" href="/inapp.css">
+    <link type="text/css" rel="stylesheet" href="/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -12,17 +13,29 @@
 <span class="phoneContainer">
 
 <div id="header">
-    <h1>Delete Account</h1>
+   Delete Account
 </div>
+
+    <div class="mainContainer">
+    <div id="areYouSure">Are you sure you want to delete your Wallit account?</div>
+
+    <button class="dontDeleteUserButton">
+    <a href="/my-cards"> No, take me back to my cards </a>
+</button>
+
+        <button class="yesDeleteUserButton">
+    <a href="/delete-app-user"> Yes, delete my account. </a>
+</button>
+
 
            <div id="footer">
             <a href="/add-gift-card" id="addCard"><span><i class="fa fa-plus"></i></span></a>
-            <a href="/my-cards" id="myCards"><span ><i class="fa fa-credit-card"></i></span></a>
-            <a href="/settings" id="settings"><span ><i class="fa fa-cog"></i></span></a>
+            <a href="/my-cards" id="myCards"><span><i class="fa fa-credit-card"></i></span></a>
+            <a href="/settings" id="settings"><span><i class="fa fa-cog"></i></span></a>
     </div>
+        </div>
 
 </span>
 </span>
-
 </body>
 </html>

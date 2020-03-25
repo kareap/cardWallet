@@ -152,6 +152,12 @@ public class AppUserController {
         return "successfullyResetPassword";
     }
 
+
+    @GetMapping ("/sureYouWantToDeleteAccount")
+    public String sureYouWantToDeleteAccount () {
+        return "deleteAccount";
+    }
+
     @Transactional
     @GetMapping("/delete-app-user")
     public String deleteAppUser(Principal principal) {

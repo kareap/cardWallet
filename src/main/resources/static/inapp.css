@@ -415,6 +415,48 @@ h3 {
     margin: 1.3vw;
 }
 
+#areYouSure{
+    font-size: 1.3vw;
+    padding-top: 6vw;
+    padding-bottom: 6vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    text-align: center;
+}
+
+.yesDeleteUserButton{
+    width: 18.1vw;
+    height: 3vw;
+    padding-right: 1vw;
+    margin-left: 0.9vw;
+    margin-right: 0.9vw;
+    margin-top: 0.5vw;
+    border-radius: 1px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: lightgrey;
+    border-image: initial;
+    outline: 0px;
+    background-color: #FF6E33;
+}
+
+.dontDeleteUserButton{
+    width: 18.1vw;
+    height: 3vw;
+    padding-right: 1vw;
+    margin-left: 0.9vw;
+    margin-right: 0.9vw;
+    margin-top: 0.5vw;
+    border-radius: 1px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: lightgrey;
+    border-image: initial;
+    outline: 0px;
+    background-color: #BFE3BC;
+}
+
+
 
 
 
