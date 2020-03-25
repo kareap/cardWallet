@@ -1,9 +1,9 @@
 #header{
-    font-size: 25px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    font-size: 2vw;
+    padding-top: 0.7vw;
+    padding-bottom: 0.7vw;
     background-color: #FF6E33;
-    height: 45px;
+    height: 3.5vw;
 }
 
 .mainContainer {
@@ -51,7 +51,7 @@
     text-align: center;
     clear: both;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 2vw;
     background-color: #FF6E33;
     display: flex;
     justify-content: space-around;
@@ -60,19 +60,19 @@
 
 #addCard{
     width: inherit;
-    padding: 25px;
+    padding: 1vw;
     background-color: green;
 
 }
 #myCards{
     width: inherit;
-    padding: 25px;
+    padding: 1vw;
     background-color: #e78439;
 
 }
 #settings{
     width: inherit;
-    padding: 25px;
+    padding: 1vw;
     background-color: deeppink;
 
 }
