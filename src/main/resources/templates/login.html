@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Log in</title>
@@ -18,15 +18,15 @@
 
     <form autocomplete="off" method="post" th:action="@{/login}">
         <h2>Log in</h2>
-        <input class="input" type="text"  name="username"  placeholder="Email">
-        <input class="input" type="password"  name="password"  placeholder="Password">
+        <input class="input" type="text"  name="username"  placeholder="Email"/>
+        <input id="password" class="input" type="password"  name="password"  placeholder="Password"/>
+        <button id="showHide">
+            <i id="eye" class="fa fa-eye"></i>
+        </button>
         <p th:if="${#request.getParameter('error')}">Invalid email or password.</p>
-        <input class="button" type="submit" value="Log in">
+        <input class="button" type="submit" value="Log in"/>
     </form>
-
     <div id="forgotPassword" ><a id="forgotPasswordLink" href="/forgot-password">Forgot password?</a></div>
-
-
     <div id="signupLink">
         <p>Don't have an account yet?</p>
         <a th:href="'/sign-up'">Sign up</a>
@@ -38,4 +38,24 @@
     </span>
 
 </body>
+
+<script>
+    const showHide = document.getElementById("showHide");
+    showHide.addEventListener('click', function show(event) {
+        event.preventDefault();
+        const password = document.getElementById("password");
+        const eye = document.getElementById("eye");
+        if (password.type == 'text') {
+            eye.classList.add("fa-eye");
+            eye.classList.remove("fa-eye-slash");
+            password.type = 'password';
+        }
+        else {
+            eye.classList.add("fa-eye-slash");
+            eye.classList.remove("fa-eye");
+            password.type = 'text';
+        }
+    });
+</script>
+
 </html>

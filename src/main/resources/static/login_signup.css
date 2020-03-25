@@ -42,7 +42,6 @@ input[type=text],[type=password] {
     border: none;
     border-bottom: 0.06vw solid dimgrey;
     color: white;
-
     background-color: rgba(0, 0, 0, 0);
     font-family: Arial;
     width: 15vw;
@@ -132,3 +131,22 @@ a {
 ::-ms-input-placeholder { /* Microsoft Edge */
     color: white;
 }
+
+#requestPasswordToken {
+    padding-top: 7vw;
+    font-family: Arial;
+    color: white;
+    margin: 2vw;
+    text-align: center;
+    font-size: 1.45vw;
+}
+
+.backToLogin {
+    color: white;
+    font-family: Arial;
+    font-size: 0.9vw;
+    margin: 1.3vw;
+    text-decoration: none;
+    display: inline-block
+}
+
