@@ -6,7 +6,7 @@
 }
 
 .mainContainer {
-    height: 30.7vw;
+    height: 31.5vw;
     background-color:  #ffede6;
     margin: 0 auto;
     color: black;
@@ -185,7 +185,7 @@ h3 {
     font-size: 1vw;
     display: flex;
     align-items: center;
-    height: 5.7vw;
+    height: 6vw;
     border-style: solid hidden solid hidden;
     border-color: white;
 
