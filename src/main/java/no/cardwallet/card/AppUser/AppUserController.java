@@ -96,14 +96,25 @@ public class AppUserController {
     }
 
     @PostMapping("/save-changed-password")
-    public String saveChangedPassword(Model model, Principal principal, @ModelAttribute AppUser appUserPosting) {
+    public String saveChangedPassword(Model model, Principal principal, @ModelAttribute AppUser appUserPosting, BindingResult bindingResult) {
         String email = principal.getName();
         AppUser appUser = appUserRepository.findByEmail(email);
+
+        AppUserValidator appUserValidator = new AppUserValidator();
+        if (appUserValidator.supports(appUser.getClass())) {
+            appUserValidator.validatePassword(appUserPosting.getPassword(), appUserPosting.getRepeatPassword(), bindingResult);
+        }
+        if (bindingResult.hasErrors()) {
+            return "changePassword";
+        }
+
         appUser.setPassword(passwordEncoder.encode(appUserPosting.getPassword()));
         appUserRepository.save(appUser);
         model.addAttribute(appUser);
         return "successfullyChangedPassword";
     }
+
+
 
     @GetMapping("/terms-and-conditions")
     public String termsAndConditions() {
