@@ -108,7 +108,7 @@
 
 .editGiftCardButton {
     border: 1px solid orangered;
-    font-family: Arial;
+    font-family: sans-serif;
     font-size: 0.8vw;
     padding: 0.8vw 1.5vw;
     display: inline-block;
@@ -124,7 +124,7 @@
 
 .deleteGiftCardButton {
     border: 1px solid orangered;
-    font-family: Arial;
+    font-family: sans-serif;
     font-size: 0.8vw;
     padding: 0.8vw 1.5vw;
     display: inline-block;
@@ -374,7 +374,7 @@ h3 {
     color: black;
 
     background-color: rgba(0, 0, 0, 0);
-    font-family: Arial;
+    font-family: sans-serif;
     width: 15vw;
     /*height: 1.8vw;*/
     /*margin: 1vw;*/
@@ -389,7 +389,7 @@ h3 {
     color: black;
 
     background-color: rgba(0, 0, 0, 0);
-    font-family: Arial;
+    font-family: sans-serif;
     width: 15vw;
     height: 1.8vw;
     /*margin: 1vw;*/
@@ -414,9 +414,9 @@ h3 {
     font-size: 1vw;
     padding: 0.8vw 1.5vw;
     text-decoration: none;
-    margin: 1.3vw;
     background-color: #FFCAA1;
-    width: 15vw;
+    width: 15.7vw;
+    margin-top: 4vw;
     text-align: center;
 }
 
