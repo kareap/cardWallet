@@ -30,8 +30,8 @@
                 <p class="exp" th:text="'Exp: ' + ${#dates.format(giftCard.expiryDate, 'd.MM.yyyy')}"></p>
 
 <br>
-         <div class="addAndEditGiftCardButton"><a th:href="'/edit-gift-card/' + ${appUserId} + '/' + ${giftCard.id}">Edit Card</a></div>
-        <div class="addAndEditGiftCardButton"> <a th:href="'/delete-gift-card/' + ${appUserId} + '/' + ${giftCard.id}">Delete Card</a></div>
+         <div class="inShowGiftCardButton"><a th:href="'/edit-gift-card/' + ${appUserId} + '/' + ${giftCard.id}">Edit Card</a></div>
+        <div class="inShowGiftCardButton"> <a th:href="'/delete-gift-card/' + ${appUserId} + '/' + ${giftCard.id}">Delete Card</a></div>
 
 
     </div>
