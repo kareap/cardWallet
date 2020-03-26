@@ -16,9 +16,15 @@ public class AppUserValidator implements Validator {
         AppUser appUser = (AppUser) object;
         ValidationUtils.rejectIfEmpty(errors, "email", "email.empty", "Please enter a valid email address.");
         ValidationUtils.rejectIfEmpty(errors, "password", "password.empty", "Please enter a valid password.");
-
-        if (!appUser.getPassword().equals(appUser.getRepeatPassword())) {
-            errors.rejectValue("repeatPassword", "password.notEqual", "Passwords not equal.");
-        }
+        validatePassword(appUser.getPassword(), appUser.getRepeatPassword(), errors);
     }
+
+    public void validatePassword (String password, String repeatPassword, Errors errors){
+       if (!password.equals(repeatPassword)) {
+        errors.rejectValue("repeatPassword", "password.notEqual", "Passwords not equal.");
+    }
+}
+
+
+
 }
