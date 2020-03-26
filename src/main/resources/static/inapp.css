@@ -19,6 +19,7 @@
 
 #showCardContainer {
     background-color: #ffede6 !important;
+
 }
 
 .mainContainer::-webkit-scrollbar {
@@ -243,7 +244,7 @@ h3 {
 
 /*Change email view*/
 
-#emailAddress{
+#email{
     width: 16.4vw;
     height: 3vw;
     border-radius: 1px;
@@ -439,6 +440,22 @@ h3 {
 
 }
 
+.noGiftCards{
+    margin-top: 13vw;
+    margin-left: 1.2vw;
+    font-size: 1.1vw;
+}
+
+.addCardButtonFromNoCards{
+    margin-top: 4vw;
+    width: 18.1vw;
+    border-radius: 1.4vw;
+    border: solid #FFCAA1;
+    background-color: #FFCAA1;
+    height: 3vw;
+    margin-left: -0.4vw;
+    font-size: 1.7vw;
+}
 
 
 
