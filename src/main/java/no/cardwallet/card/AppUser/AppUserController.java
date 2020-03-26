@@ -59,6 +59,11 @@ public class AppUserController {
         return "login";//send to log in page
     }
 
+    @GetMapping("/terms-and-conditions")
+    public String termsAndConditions() {
+        return "termsAndConditions";
+    }
+
     @GetMapping("/login")
     public String userLogin() {
         return "login";
@@ -67,6 +72,28 @@ public class AppUserController {
     @GetMapping("/logout")
     public String logout() {
         return "login";
+    }
+
+    @GetMapping("/forgot-password")
+    public String forgotPassword() {
+        return "forgotPassword";
+    }
+
+    @PostMapping("/successfully-reset-password")
+    public String passwordReset(@ModelAttribute AppUser appUser, @RequestParam String email) {
+        if (appUserRepository.findAppUserByEmail(email) != null) {
+            appUser = appUserRepository.findAppUserByEmail(email);
+            appUser.setPassword(passwordEncoder.encode("abc"));
+            appUserRepository.save(appUser);
+        } else {
+            return "redirect:/sign-up";
+        }
+        return "successfullyResetPassword";
+    }
+
+    @GetMapping ("/sureYouWantToDeleteAccount")
+    public String sureYouWantToDeleteAccount () {
+        return "deleteAccount";
     }
 
     @GetMapping("/settings")
@@ -88,7 +115,7 @@ public class AppUserController {
         appUser.setEmail(appUserPosting.getEmail());
         appUserRepository.save(appUser);
         new SecurityContextLogoutHandler().logout(httpRequest,  httpResponse, SecurityContextHolder.getContext().getAuthentication());
-        return "redirect:/login"; //add to antMatcher.permittedAll()
+        return "successfullyChangedEmail";
     }
 
     @GetMapping("/change-password")
@@ -113,33 +140,6 @@ public class AppUserController {
         appUserRepository.save(appUser);
         model.addAttribute(appUser);
         return "successfullyChangedPassword";
-    }
-
-    @GetMapping("/terms-and-conditions")
-    public String termsAndConditions() {
-        return "termsAndConditions";
-    }
-
-    @GetMapping("/forgot-password")
-    public String forgotPassword() {
-        return "forgotPassword";
-    }
-
-    @PostMapping("/successfully-reset-password")
-    public String passwordReset(@ModelAttribute AppUser appUser, @RequestParam String email) {
-        if (appUserRepository.findAppUserByEmail(email) != null) {
-            appUser = appUserRepository.findAppUserByEmail(email);
-            appUser.setPassword(passwordEncoder.encode("abc"));
-            appUserRepository.save(appUser);
-        } else {
-            return "redirect:/sign-up"; //send tp successEmail view
-        }
-        return "successfullyResetPassword";
-    }
-
-    @GetMapping ("/sureYouWantToDeleteAccount")
-    public String sureYouWantToDeleteAccount () {
-        return "deleteAccount";
     }
 
     @Transactional

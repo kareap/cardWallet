@@ -1,34 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
+    <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link type="text/css" rel="stylesheet" href="/inapp.css">
     <link type="text/css" rel="stylesheet" href="/all.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="/login_signup.css">
 </head>
 <body>
-
-<span class="phoneCase">
-<span class="phoneContainer">
-
-    <div id="header">
-         <img th:src="wallit_w_logo.png" class="wLogo">
-        <p class="headline">Change email</p>
-    </div>
-
-    <div class="mainContainer">
-<h1>New email address been saved.</h1>
-
-           <div id="footer">
-            <a href="/add-gift-card" class="options"><span><i class="fa fa-plus"></i></span></a>
-            <a href="/my-cards" class="options"><span><i class="fa fa-credit-card"></i></span></a>
-            <a href="/settings" class="options"><span><i class="fa fa-cog"></i></span></a>
-    </div>
-
-          </div>
-</span>
-</span>
-
+    <span class="phoneCase">
+        <span class="phoneContainer">
+            <div class="image">
+                <div id="requestPasswordToken">Please log in with your new email address.</div>
+                <form method="post" th:action="@{/login}">
+                    <div><input class="button" type="submit" value="Login"></div>
+                </form>
+            </div>
+        </span>
+    </span>
 </body>
 </html>
