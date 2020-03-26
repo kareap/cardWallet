@@ -1,7 +1,6 @@
 package no.cardwallet.card.AppUser;
 
 import no.cardwallet.card.GiftCard.GiftCardRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
@@ -10,7 +9,6 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.transaction.Transactional;
@@ -20,17 +18,19 @@ import java.security.Principal;
 @Controller
 public class AppUserController {
 
-    @Autowired
+    final
     PasswordEncoder passwordEncoder;
 
-    @Autowired
+    final
     GiftCardRepository giftCardRepository;
 
     final
     AppUserRepository appUserRepository;
 
-    public AppUserController(AppUserRepository appUserRepository) {
+    public AppUserController(AppUserRepository appUserRepository, PasswordEncoder passwordEncoder, GiftCardRepository giftCardRepository) {
         this.appUserRepository = appUserRepository;
+        this.passwordEncoder = passwordEncoder;
+        this.giftCardRepository = giftCardRepository;
     }
 
     private void getAppUserByEmailAddModelAttribute(Model model, Principal principal) {
@@ -82,7 +82,7 @@ public class AppUserController {
     }
 
     @PostMapping("/save-changed-email")
-    public String saveChangedEmail (Model model, Principal principal, @ModelAttribute AppUser appUserPosting, HttpServletRequest httpRequest, HttpServletResponse httpResponse) throws ServletException {
+    public String saveChangedEmail (Model model, Principal principal, @ModelAttribute AppUser appUserPosting, HttpServletRequest httpRequest, HttpServletResponse httpResponse) {
         String email = principal.getName();
         AppUser appUser = appUserRepository.findByEmail(email);
         model.addAttribute(appUser);
