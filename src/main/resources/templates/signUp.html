@@ -27,7 +27,7 @@
         <p id="termsText"><input type="checkbox" id="terms"/>
             I hereby agree to the <a href="/terms-and-conditions" style="color: black">terms of service.</a>
         </p>
-        <div id="warningMessage"></div>
+        <div  class="popup" id="warningMessage"></div>
         <input class="button" type="submit" value="Sign up"/>
     </form>
 
@@ -42,16 +42,6 @@
 </span>
 </body>
 
-<script class="popup">
-    const checkboxElement = document.querySelector('input[type="checkbox"]');
-    const submitElement = document.querySelector('input[type="submit"]');
-    submitElement.addEventListener('click', function check(event){
-        if(!checkboxElement.checked) {
-            event.preventDefault();
-            const warningElement = document.getElementById("warningMessage");
-            warningElement.innerText="Please agree to our terms of service.";
-        }
-    });
-</script>
+<script src="/Script.js"></script>
 
 </html>
