@@ -2,7 +2,9 @@ package no.cardwallet.card.AppUser;
 
 import no.cardwallet.card.GiftCard.GiftCardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.transaction.Transactional;
 import java.security.Principal;
 
@@ -79,14 +82,14 @@ public class AppUserController {
     }
 
     @PostMapping("/save-changed-email")
-    public String saveChangedEmail (Model model, Principal principal, @ModelAttribute AppUser appUserPosting, HttpServletRequest httpRequest) throws ServletException {
+    public String saveChangedEmail (Model model, Principal principal, @ModelAttribute AppUser appUserPosting, HttpServletRequest httpRequest, HttpServletResponse httpResponse) throws ServletException {
         String email = principal.getName();
         AppUser appUser = appUserRepository.findByEmail(email);
         model.addAttribute(appUser);
         appUser.setEmail(appUserPosting.getEmail());
         appUserRepository.save(appUser);
-        httpRequest.logout();
-        return "successfullyChangedEmail";
+        new SecurityContextLogoutHandler().logout(httpRequest,  httpResponse, SecurityContextHolder.getContext().getAuthentication());
+        return "redirect:/login"; //add to antMatcher.permittedAll()
     }
 
     @GetMapping("/change-password")
@@ -128,12 +131,12 @@ public class AppUserController {
 
     @PostMapping("/successfully-reset-password")
     public String passwordReset(@ModelAttribute AppUser appUser, @RequestParam String email) {
-        if (!appUserRepository.findAppUserByEmail(email).equals(null)) {
+        if (appUserRepository.findAppUserByEmail(email) != null) {
             appUser = appUserRepository.findAppUserByEmail(email);
             appUser.setPassword(passwordEncoder.encode("abc"));
             appUserRepository.save(appUser);
         } else {
-            return "defaultView";
+            return "redirect:/sign-up";
         }
         return "successfullyResetPassword";
     }

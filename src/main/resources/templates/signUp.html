@@ -25,7 +25,7 @@
         <input type="password" th:field="*{repeatPassword}" placeholder="Confirm password"/>
             <p class="popup" th:if="${#fields.hasErrors('repeatPassword')}">Passwords are not a match.</p>
         <p id="termsText"><input type="checkbox" id="terms"/>
-            I hereby agree to the<a herf="/terms-and-conditions">terms of service.</a>
+            I hereby agree to the <a href="/terms-and-conditions">terms of service.</a>
         </p>
         <div id="warningMessage"></div>
         <input class="button" type="submit" value="Sign up"/>
