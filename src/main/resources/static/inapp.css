@@ -62,11 +62,12 @@
      font-size: 40px;
      color: black;
     text-align: center;
-    margin-top: -1vw;
+    margin-top: -0.5vw;
+    padding-bottom: 1.3vw;
  }
 
 .exp {
-    font-size: 10px;
+    font-size: 15px;
     color: black;
     text-align: center;
     margin-top: 0.4vw;
@@ -79,10 +80,10 @@
 }
 
 .strekkode {
-    height: 100px;
-    width: 240px;
-    margin-left: -1vw;
-    margin-top: -4vw;
+    height: 9vw;
+    width: 19vw;
+    margin-left: 0.5vw;
+    margin-top: -3vw;
 }
 
 .logoContainer {
@@ -421,8 +422,7 @@ h3 {
     text-decoration: none;
     background-color: #FFCAA1;
     width: 15.7vw;
-    margin-top: -0.8vw;
-    margin-bottom: 1.1vw;
+    margin-bottom: 0.5vw;
     margin-left: 0.5vw;
     text-align: center;
 }
