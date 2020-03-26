@@ -20,10 +20,10 @@
         <h2>Login</h2>
         <input class="input" type="text"  name="username"  placeholder="Email"/>
         <input id="password" class="input" type="password"  name="password"  placeholder="Password"/>
-        <p id="showHide" type="button" style="background: Transparent no-repeat; outline: none; border: none">
-            <i id="eye" class="fa fa-eye"></i>
+        <p id="showHide" style="background: Transparent no-repeat; outline: none; border: none">
+            <i id="eye" class="fa fa-eye"></i> Show password
         </p>
-        <p th:if="${#request.getParameter('error')}">Invalid email or password.</p>
+        <p id="invalidEmailOr" th:if="${#request.getParameter('error')}">Invalid email or password</p>
         <input class="button" type="submit" value="Log in"/>
     </form>
     <div id="forgotPassword" ><a id="forgotPasswordLink" href="/forgot-password">Forgot password?</a></div>
