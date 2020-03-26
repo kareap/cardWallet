@@ -1,7 +1,7 @@
 h1 {
     padding-top: 2vw;
     font-size: 3.1vw;
-    color: black;
+    color: #FFCAA1;
     margin: 2vw;
     text-align: center;
 
@@ -16,7 +16,7 @@ h2 {
 }
 
 .image {
-    background-image: url("Skjermbilde.png");
+    background-image: url("BakgrunnsbildeTurkisGradert.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -40,8 +40,8 @@ form {
 
 input[type=text],[type=password] {
     border: none;
-    border-bottom: 0.06vw solid dimgrey;
-    color: white;
+    border-bottom: 0.06vw solid #333333;
+    color: #FFCAA1;
     background-color: rgba(0, 0, 0, 0);
     font-family: Arial;
     width: 15vw;
@@ -73,13 +73,14 @@ input[type=text],[type=password] {
 }
 
 .button {
-    background: white;
+    background: #FFBB87;
     border-radius: 1.3vw;
-    border: 0.2vw solid white;
+    border: 0.2vw solid #FFBB87;
     display: inline-block;
     cursor: pointer;
     color: orangered;
     font-family: Arial;
+    font-weight: bold;
     font-size: 0.8vw;
     padding: 0.8vw 1.5vw;
     text-decoration: none;
