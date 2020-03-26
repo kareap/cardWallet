@@ -19,12 +19,9 @@ public class AppUserValidator implements Validator {
         validatePassword(appUser.getPassword(), appUser.getRepeatPassword(), errors);
     }
 
-    public void validatePassword (String password, String repeatPassword, Errors errors){
-       if (!password.equals(repeatPassword)) {
-        errors.rejectValue("repeatPassword", "password.notEqual", "Passwords not equal.");
+    public void validatePassword(String password, String repeatPassword, Errors errors) {
+        if (!password.equals(repeatPassword)) {
+            errors.rejectValue("repeatPassword", "password.notEqual", "Passwords not equal.");
+        }
     }
-}
-
-
-
 }

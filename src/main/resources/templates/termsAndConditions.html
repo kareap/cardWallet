@@ -5,6 +5,7 @@
     <title>Terms and Condition</title>
     <link type="text/css" rel="stylesheet" href="/inapp.css">
     <link type="text/css" rel="stylesheet" href="/all.css">
+    <link type="text/css" rel="stylesheet" href="/login_signup.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -19,7 +20,7 @@
 
     <div class="mainContainer" id="showCardContainer">
 
- <h1 style= "font-size: 1vw; padding-top: 1vw">WELCOME TO WALLIT!</h1>
+ <h1 style= "font-size: 1vw; padding-top: 1vw; color: black">WELCOME TO WALLIT!</h1>
 
 <div id="textTC">
 
@@ -58,8 +59,8 @@
             <a href="/settings" class="options"><span><i class="fa fa-cog"></i></span></a>
     </div>
 
-   <div id="footer" class="backToLoginFromTermsOfService" th:if="${#httpServletRequest.remoteUser == null}">
-            <a href="/login" class="backToLogin">← Back to login</a>
+   <div class="backToSignUpFooter" th:if="${#httpServletRequest.remoteUser == null}">
+            <span class="backToSignUp"><a href="/sign-up" style="color: white">← Back to Sign Up</a></span>
     </div>
             </span>
             </span>

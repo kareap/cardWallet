@@ -39,7 +39,6 @@ public class AppUserController {
         model.addAttribute(appUser);
     }
 
-
     @GetMapping("/sign-up")
     public String signUp(@ModelAttribute AppUser appUser) {
         return "signUp";
@@ -110,14 +109,11 @@ public class AppUserController {
         if (bindingResult.hasErrors()) {
             return "changePassword";
         }
-
         appUser.setPassword(passwordEncoder.encode(appUserPosting.getPassword()));
         appUserRepository.save(appUser);
         model.addAttribute(appUser);
         return "successfullyChangedPassword";
     }
-
-
 
     @GetMapping("/terms-and-conditions")
     public String termsAndConditions() {
@@ -136,11 +132,10 @@ public class AppUserController {
             appUser.setPassword(passwordEncoder.encode("abc"));
             appUserRepository.save(appUser);
         } else {
-            return "redirect:/sign-up";
+            return "redirect:/sign-up"; //send tp successEmail view
         }
         return "successfullyResetPassword";
     }
-
 
     @GetMapping ("/sureYouWantToDeleteAccount")
     public String sureYouWantToDeleteAccount () {

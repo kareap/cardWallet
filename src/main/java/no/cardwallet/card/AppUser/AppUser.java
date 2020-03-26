@@ -13,7 +13,6 @@ public class AppUser {
     @Transient
     private String repeatPassword;
 
-
     public AppUser() {}
 
     public AppUser(String email, String password, String repeatPassword) {

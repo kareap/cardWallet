@@ -140,18 +140,18 @@
 }
 
 #footer {
-    position: absolute;
-    bottom: 0px;
-    width: 20vw;
-    text-align: center;
-    clear: both;
-    font-weight: bold;
-    font-size: 2vw;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    color: green;
-}
+     position: absolute;
+     bottom: 0px;
+     width: 20vw;
+     text-align: center;
+     clear: both;
+     font-weight: bold;
+     font-size: 2vw;
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     color: green;
+ }
 
 .options {
     width: inherit;
@@ -160,12 +160,12 @@
     border: solid lightgrey 1px;
 }
 
-.backToLoginFromTermsOfService {
-    /*width: inherit;*/
+.backToSignUp {
     padding-bottom: 0.7vw;
     padding-top: 0.8vw;
     background-color: #2A7680;
     width: 20vw;
+    font-size: 0.2vw ;
 }
 
 #clickedView {

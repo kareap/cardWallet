@@ -159,6 +159,25 @@ a {
     display: inline-block;
 }
 
+.backToSignUp {
+    padding-bottom: 1.3vw;
+    padding-top: 1.5vw;
+    font-size: 0.9vw;
+    color: white !important;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: left;
+    padding-left: 1vw;
+}
+
+.backToSignUpFooter {
+    position: absolute;
+    width: 20vw;
+    text-align: center;
+    font-size: 2vw;
+    display: flex;
+    justify-content: space-around;
+}
 
 #eye {
     background: Transparent no-repeat;
