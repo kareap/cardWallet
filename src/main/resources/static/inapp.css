@@ -165,6 +165,14 @@
     border: solid lightgrey 1px;
 }
 
+.backToLoginFromTermsOfService{
+    /*width: inherit;*/
+    padding-bottom: 0.7vw;
+    padding-top: 0.8vw;
+    background-color: #2A7680;
+    width: 20vw;
+}
+
 #clickedView{
     background-color: #5da5af !important;
 }
