@@ -156,3 +156,11 @@ a {
     display: inline-block
 }
 
+
+#eye {
+    background: Transparent no-repeat;
+    border: none;
+    overflow: hidden;
+    outline: none;
+    backface-visibility: hidden;
+}

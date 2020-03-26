@@ -20,14 +20,14 @@
                   method="post">
 
                 <div class="addCardDescription"> Store Name: </div>
-                <div> <input class="addCardInput" type="text" th:field="*{storeName}"></div>
+                    <div><input class="addCardInput" required ype="text" th:field="*{storeName}"></div>
                 <div class="addCardDescription"> Card Code: </div>
-                   <div> <input class="addCardInput" type="number" th:field="*{cardCode}"></div>
-                <div class="addCardDescription"> Balance: </div>
-                <div><input class="addCardInput" type="date" th:field="*{balanceInt}" ></div>
-
+                   <div> <input class="addCardInput" required type="number" th:field="*{cardCode}"></div>
+                <div class="addCardDescription">Balance: </div>
+                    <div><input class="addCardInput" required type="number" th:field="*{balanceInt}"/></div>
+                <div class="addCardDescription"> Expiry Date: </div>
+                    <div><input class="addCardInput" required type="date" th:field="*{expiryDate}" ></div>
                 <!--    <span type="hidden" th:field="*{expiryDate}"> </span>-->
-
                 <input class="addAndEditGiftCardButton" type="submit" value="Save Changes">
             </form>
         </div>
