@@ -14,7 +14,16 @@
     color: black;
     font-size: 1vw;
     overflow: scroll;
-    background-color: #ffede6;
+    background-color: white;
+}
+
+#showCardContainer{
+    /*height: 31.5vw;*/
+    /*margin: 0 auto;*/
+    /*color: black;*/
+    /*font-size: 1vw;*/
+    /*overflow: scroll;*/
+    background-color: #ffede6 !important;
 }
 
 .mainContainer::-webkit-scrollbar {
