@@ -5,9 +5,9 @@ import java.util.List;
 
 public interface GiftCardRepository extends CrudRepository<GiftCard, Long>{
 
-    List<GiftCard> findGiftCardsByAppUserId(Long id);
+    List<GiftCard> findGiftCardsByAppUserId(Long appUserId);
 
-    GiftCard findGiftCardById(Long id);
+    GiftCard findGiftCardById(Long cardId);
 
     void deleteByAppUserId(Long appUserId);
 }
