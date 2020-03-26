@@ -4,6 +4,6 @@ submitElement.addEventListener('click', function check(event){
     if(!checkboxElement.checked) {
         event.preventDefault();
         const warningElement = document.getElementById("warningMessage");
-        warningElement.innerText="Please agree to our terms of service.";
+        warningElement.innerText="*Please agree to our terms of service.";
     }
 });
