@@ -17,7 +17,7 @@
         <p class="headline">Terms of Service</p>
     </div>
 
-    <div class="mainContainer">
+    <div class="mainContainer" id="showCardContainer">
 
  <h1 style= "font-size: 1vw; padding-top: 1vw">WELCOME TO WALLIT!</h1>
 
@@ -58,7 +58,7 @@
             <a href="/settings" class="options"><span><i class="fa fa-cog"></i></span></a>
     </div>
 
-   <div id="footer" th:if="${#httpServletRequest.remoteUser == null}">
+   <div id="footer" class="backToLoginFromTermsOfService" th:if="${#httpServletRequest.remoteUser == null}">
             <a href="/login" class="backToLogin">← Back to login</a>
     </div>
             </span>

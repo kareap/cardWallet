@@ -14,19 +14,21 @@
 
 <div id="header">Delete Account</div>
 
-    <div class="mainContainer">
+    <div class="mainContainer" id="showCardContainer" >
     <div id="areYouSure">Are you sure you want to delete your Wallit account?</div>
 
-        <button class="dontDeleteUserButton">
+        <div id="deleteButtonsPosition">
+        <button class="deleteAccountButton" id="dontDelete">
             <a href="/my-cards"> No, take me back to my cards </a>
         </button>
-        <button class="yesDeleteUserButton">
+        <button class="deleteAccountButton" id="yesDelete">
             <a href="/delete-app-user"> Yes, delete my account. </a>
         </button>
         <div id="footer">
             <a href="/add-gift-card" class="options"><span><i class="fa fa-plus"></i></span></a>
             <a href="/my-cards" class="options"><span><i class="fa fa-credit-card"></i></span></a>
             <a href="/settings" class="options"><span><i class="fa fa-cog"></i></span></a>
+        </div>
         </div>
     </div>
 
