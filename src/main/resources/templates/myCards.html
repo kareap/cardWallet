@@ -13,11 +13,14 @@
 <span class="phoneContainer">
 
     <div id="header">
-        My Cards
+         <img th:src="wallit_w_logo.png" class="wLogo">
+        <p class="headline">My Cards</p>
     </div>
 
 
 <div class="mainContainer">
+
+
 
     <div th:if="${giftCardList.size()} == 0">
         <p>You do not have any gift cards yet...</p>
