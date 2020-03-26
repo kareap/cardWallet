@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -12,9 +12,10 @@
 <span class="phoneCase">
 <span class="phoneContainer">
 
-                <div id="header">
-            Change email
-        </div>
+    <div id="header">
+         <img th:src="wallit_w_logo.png" class="wLogo">
+        <p class="headline">Change email</p>
+    </div>
 
     <div class="mainContainer">
 <h1>New email address been saved.</h1>
