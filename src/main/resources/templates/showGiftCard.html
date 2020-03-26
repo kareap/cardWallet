@@ -12,9 +12,11 @@
 <span class="phoneCase">
 <span class="phoneContainer">
 
-    <div id="header" th:text="${giftCard.storeName}">
-       My Card
+        <div id="header">
+         <img th:src="wallit_w_logo.png" class="wLogo">
+        <p class="headline" th:text="${giftCard.storeName}"></p>
     </div>
+
 <div class="mainContainer">
     <!--<p class="storeName" th:text="${giftCard.storeName}"></p>-->
 
@@ -23,7 +25,7 @@
             </div>
 
                 <p class="exp">Current Balance:</p>
-                <p class="balance" th:text="${giftCard.balanceInt} + 'kr'"></p>
+                <p class="balance" th:text="${giftCard.balanceInt} + ' NOK'"></p>
 
                 <img class="strekkode" src="/images/barcode.jpg" alt="store logo">
 
