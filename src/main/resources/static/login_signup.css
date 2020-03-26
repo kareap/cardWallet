@@ -69,8 +69,9 @@ input[type=text],[type=password] {
 }
 
 #termsText{
-    font-size: 0.9vw;
+    font-size: 0.76vw;
     color: black !important;
+    margin-left: -1.13vw;
 }
 
 .button {
@@ -118,8 +119,9 @@ a {
 }
 
 .popup {
-    font-size: 10px;
+    font-size: 1vw;
     color: orangered;
+    margin-top: -0.9vw;
 }
 
 #forgotPasswordLink {
