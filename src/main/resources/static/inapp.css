@@ -18,11 +18,6 @@
 }
 
 #showCardContainer {
-    /*height: 31.5vw;*/
-    /*margin: 0 auto;*/
-    /*color: black;*/
-    /*font-size: 1vw;*/
-    /*overflow: scroll;*/
     background-color: #ffede6 !important;
 }
 
@@ -248,8 +243,8 @@ h3 {
 
 /*Change email view*/
 
-#emailAddress {
-    width: 17vw;
+#emailAddress{
+    width: 16.4vw;
     height: 3vw;
     border-radius: 1px;
     border: 1px solid lightgray;
@@ -258,20 +253,24 @@ h3 {
     padding-left: 1vw;
     margin-left: 0.9vw;
     margin-right: 0.9vw;
-    margin-top: 6vw;
+    margin-top: 5.7vw;
 }
 
 #saveNewEmailButton {
     width: 18.1vw;
     height: 3vw;
-    border-radius: 1px;
-    border: 1px solid lightgray;
+    border: solid #FFCAA1;
     outline: 0;
     padding-right: 0.5vw;
     padding-left: 0.5vw;
     margin-left: 0.9vw;
     margin-right: 0.9vw;
     margin-top: 0.5vw;
+    border-radius: 1.4vw;
+    background-color: #FFCAA1;
+    color: black;
+
+
 }
 
 .iconEmail {
@@ -307,16 +306,16 @@ h3 {
 #saveNewPasswordButton {
     width: 18.1vw;
     height: 3vw;
-    padding-right: 1vw;
+    border-radius: 1.4vw;
     margin-left: 0.9vw;
     margin-right: 0.9vw;
     margin-top: 0.5vw;
-    border-radius: 1px;
     border-width: 1px;
     border-style: solid;
-    border-color: lightgrey;
     border-image: initial;
-    outline: 0px;
+    border: solid #FFCAA1;
+    background-color: #FFCAA1;
+    color: black;
 }
 
 .iconPassword {

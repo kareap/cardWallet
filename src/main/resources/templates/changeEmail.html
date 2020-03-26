@@ -24,7 +24,7 @@
             </div>
 
             <form th:action="'/save-changed-email/'" th:object="${appUser}" th:method="post">
-                <input id="email" type="text" th:field="*{email}"/>
+                <input id="emailAddress" type="text" th:field="*{email}"/>
                     <div id="warningMessage"></div>
                 <input type="submit" value="Save New Email" id="saveNewEmailButton">
              </form>
