@@ -1,11 +1,11 @@
 #header{
     font-size: 2vw;
     padding-top: 1.1vw;
-    background-color: #FF6E33;
+    background-color: #2A7680;
     height: 3.5vw;
     font-weight: bold;
     text-align: center;
-    color: #507A80;
+    color: white;
 }
 
 .mainContainer {
@@ -149,14 +149,23 @@
 .options{
     width: inherit;
     padding: 1vw;
-    background-color: lightsalmon;
+    background-color: #2A7680;
     border: solid lightgrey 1px;
 }
 
 #clickedView{
-    background-color: #FF6E33 !important;
-
+    background-color: #5da5af !important;
 }
+
+.fa{
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    color: white;
+}
+
 
 h1 {
     display: block;
