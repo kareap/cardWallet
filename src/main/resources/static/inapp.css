@@ -5,6 +5,7 @@
     height: 3.5vw;
     font-weight: bold;
     text-align: center;
+    color: #507A80;
 }
 
 .mainContainer {
@@ -140,7 +141,6 @@
     clear: both;
     font-weight: bold;
     font-size: 2vw;
-    background-color: #FF6E33;
     display: flex;
     justify-content: space-around;
     align-items: center;
