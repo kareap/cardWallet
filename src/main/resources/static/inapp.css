@@ -1,11 +1,11 @@
 #header {
-    font-size: 2vw;
+    font-size: 1.5vw;
     padding-top: 1.1vw;
     background-color: #2A7680;
     height: 3.5vw;
-    font-weight: bold;
     text-align: center;
     color: white;
+    font-family: Trebuchet ms;
 }
 
 .mainContainer {
@@ -436,7 +436,15 @@ h3 {
 }
 
 .headline {
-    margin-top: -3vw;
+    margin-top: -2.5vw;
+}
+
+.newHeadLine {
+     margin-top: -2.5vw;
+ }
+
+.newHeadLine2 {
+    margin-top: -2.2vw;
 }
 
 .noGiftCards{
