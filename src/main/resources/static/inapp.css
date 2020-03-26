@@ -31,12 +31,11 @@
     color: black;
     font-size: 0.8vw;
     align-items: start;
-    margin-left: 0.8vw;
+    margin-left: 0.95vw;
     margin-top: 1.1vw;
     height: 8.7vw;
     border: lightgrey solid 0.05vw;
 }
-
 
 .flexGiftCard {
     display: flex;
