@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.security.Principal;
+import java.time.LocalDate;
 import java.util.List;
+
 
 @Controller
 public class GiftCardController {
@@ -49,20 +51,46 @@ public class GiftCardController {
     @GetMapping("/my-cards")
     public String getAllCards(Model model, Principal principal) {
         List<GiftCard> giftCardList = getAllCards(principal);
-        model.addAttribute("giftCardList", giftCardList);
 
+
+        boolean isExpired = false;
+
+        for (int i = 0; i < giftCardList.size(); i++) {
+            LocalDate expDate = (giftCardList.get(i).getExpiryDate().toLocalDate());
+
+            if (LocalDate.now().isAfter(expDate)) {
+                isExpired = true;
+            }
+           giftCardList.get(i).setExpired(isExpired);
+        }
+
+        model.addAttribute("giftCardList", giftCardList);
         return "myCards";
     }
+
 
     //  Show gift card details
     @GetMapping("/show-gift-card/{appUserId}/{cardId}")
     public String showGiftCard(Model model, @PathVariable Long appUserId, @PathVariable Long cardId, Principal principal) {
         if (checkPrincipalIsCardOwner(appUserId, cardId, principal)) return "defaultView";
         GiftCard giftCard = giftCardRepository.findGiftCardById(cardId);
+
+        boolean isExpired = false;
+        LocalDate expDate = (giftCard.getExpiryDate().toLocalDate());
+        if (LocalDate.now().isAfter(expDate)) {
+            isExpired = true;
+        }
+        String timeLeft = "no rush";
+        if (LocalDate.now().plusDays(5).isAfter(giftCard.getExpiryDate().toLocalDate())){
+            timeLeft = "hurry, it's running out!";
+        }
+        giftCard.setExpired(isExpired);
         model.addAttribute("giftCard", giftCard);
         model.addAttribute("appUserId", appUserId);
+        model.addAttribute("timeLeft", timeLeft);
         return "showGiftCard";
     }
+
 
     //  Add gift card
     @GetMapping("/add-gift-card")

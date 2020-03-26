@@ -14,18 +14,28 @@ public class GiftCard {
     private int balanceInt;
     private String logoImage;
     private Long appUserId;
+    @Transient
+    private boolean isExpired;
 
 
-    public GiftCard(String storeName, String cardCode, int balanceInt, Date expiryDate, String logoImage) {
+    public GiftCard(String storeName, String cardCode, int balanceInt, Date expiryDate, String logoImage, boolean isExpired) {
         this.storeName = storeName;
         this.cardCode = cardCode;
         this.balanceInt = balanceInt;
         this.expiryDate = expiryDate;
         this.logoImage = logoImage;
-
+        this.isExpired = isExpired;
     }
 
     public GiftCard() {
+    }
+
+    public boolean isExpired() {
+        return isExpired;
+    }
+
+    public void setExpired(boolean expired) {
+        isExpired = expired;
     }
 
     public Long getAppUserId() { return appUserId; }
