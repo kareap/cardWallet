@@ -8,7 +8,7 @@ h1 {
 }
 
 h2 {
-    font-family: Arial;
+    font-family: sans-serif;
     color: white;
     margin: 1.3vw;
     text-align: center;
@@ -62,7 +62,7 @@ input[type=text],[type=password] {
 }
 
 #terms {
-    color: white;
+    color: black !important;
     font-size: 0.8vw;
     text-align: center;
     margin: 0.5vw;
@@ -70,21 +70,22 @@ input[type=text],[type=password] {
 
 #termsText{
     font-size: 0.9vw;
+    color: black !important;
 }
 
 .button {
-    background: #FFBB87;
-    border-radius: 1.3vw;
-    border: 0.2vw solid #FFBB87;
+    border-radius: 1.4vw;
+    border: 0.1vw solid  #FFCAA1;
     display: inline-block;
     cursor: pointer;
-    color: orangered;
-    font-family: Arial;
+    color: black;
+    font-family: sans-serif;
     font-weight: bold;
-    font-size: 0.8vw;
+    font-size: 1vw;
     padding: 0.8vw 1.5vw;
     text-decoration: none;
     margin: 1.3vw;
+    background-color: #FFCAA1;
 }
 
 #loginLink {
@@ -140,7 +141,7 @@ a {
 
 #requestPasswordToken {
     padding-top: 7vw;
-    font-family: Arial;
+    font-family: sans-serif;
     color: white;
     margin: 2vw;
     text-align: center;
@@ -149,7 +150,7 @@ a {
 
 .backToLogin {
     color: white;
-    font-family: Arial;
+    font-family: sans-serif;
     font-size: 0.9vw;
     margin: 1.3vw;
     text-decoration: none;

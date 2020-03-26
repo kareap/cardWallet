@@ -14,6 +14,7 @@
     color: black;
     font-size: 1vw;
     overflow: scroll;
+    background-color: white;
 }
 
 .mainContainer::-webkit-scrollbar {
@@ -118,6 +119,8 @@
     text-align: center;
     background: #ffede6;
 }
+
+
 
 .deleteGiftCardButton {
     border: 1px solid orangered;
@@ -399,17 +402,24 @@ h3 {
     padding-top: 2vw;
 }
 
+
 .addAndEditGiftCardButton {
-    border: 1px solid orangered;
-    font-family: Arial;
-    font-size: 0.8vw;
-    padding: 0.8vw 1.5vw;
+    border-radius: 1.4vw;
+    border: 0.1vw solid  #FFCAA1;
     display: inline-block;
+    cursor: pointer;
+    color: black;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 1vw;
+    padding: 0.8vw 1.5vw;
+    text-decoration: none;
+    margin: 1.3vw;
+    background-color: #FFCAA1;
     width: 15vw;
-    margin-top: 3.5vw;
     text-align: center;
-    background: #ffede6;
 }
+
 
 #areYouSure{
     font-size: 1.3vw;
