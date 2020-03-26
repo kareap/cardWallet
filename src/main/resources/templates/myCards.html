@@ -22,10 +22,14 @@
 
 
 
-    <div th:if="${giftCardList.size()} == 0">
-        <p>You do not have any gift cards yet...</p>
-        <p><a href="/add-gift-card">Add your first gift card now!</a></p>
+    <div class="noGiftCards" th:if="${giftCardList.size()} == 0">
+        <div>You do not have any gift cards yet...</div>
+        <div>Add your first gift card now!</div>
+        <a href="/add-gift-card">
+            <button class="addCardButtonFromNoCards"><i class="fa fa-plus"></i></button></a>
     </div>
+
+
 
         <div th:if="${giftCardList.size() >= 1}" th:each="giftCard : ${giftCardList}">
 

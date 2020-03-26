@@ -20,7 +20,7 @@
 
     <div class="mainContainer" id="showCardContainer">
 
- <h1 style= "font-size: 1vw; padding-top: 1vw">WELCOME TO WALLIT!</h1>
+ <h1 style= "font-size: 1vw; padding-top: 1vw; color: black">WELCOME TO WALLIT!</h1>
 
 <div id="textTC">
 
@@ -53,7 +53,7 @@
                </div>
             </div>
 
-    <div class="footer" th:if="${#httpServletRequest.remoteUser != null}">
+    <div id="footer" th:if="${#httpServletRequest.remoteUser != null}">
             <a href="/add-gift-card" class="options"><span><i class="fa fa-plus"></i></span></a>
             <a href="/my-cards" class="options"><span><i class="fa fa-credit-card"></i></span></a>
             <a href="/settings" class="options"><span><i class="fa fa-cog"></i></span></a>
