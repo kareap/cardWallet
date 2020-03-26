@@ -165,3 +165,9 @@ a {
     outline: none;
     backface-visibility: hidden;
 }
+
+.wallitLogo{
+    height: 5vw;
+    margin-left: 4.2vw;
+    margin-top: 4vw;
+}
