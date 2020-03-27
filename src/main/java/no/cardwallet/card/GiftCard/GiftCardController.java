@@ -61,10 +61,14 @@ public class GiftCardController {
             if (LocalDate.now().isAfter(expDate)) {
                 isExpired = true;
             }
-           giftCardList.get(i).setExpired(isExpired);
+            giftCardList.get(i).setExpired(isExpired);
+            isExpired = false;
         }
 
+
         model.addAttribute("giftCardList", giftCardList);
+
+
         return "myCards";
     }
 
@@ -81,7 +85,7 @@ public class GiftCardController {
             isExpired = true;
         }
         String timeLeft = "no rush";
-        if (LocalDate.now().plusDays(5).isAfter(giftCard.getExpiryDate().toLocalDate())){
+        if (LocalDate.now().plusDays(5).isAfter(giftCard.getExpiryDate().toLocalDate())) {
             timeLeft = "hurry, it's running out!";
         }
         giftCard.setExpired(isExpired);

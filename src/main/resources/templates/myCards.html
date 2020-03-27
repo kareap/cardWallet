@@ -46,7 +46,7 @@
 
             <div th:if="${giftCard.isExpired()}">
 
-                <div class="cardContainer" style="background-color: grey;" >
+                <div class="cardContainer" style="background-color: lightgrey;" >
                 <a th:href="'/show-gift-card/' + ${giftCard.appUserId} + '/' + ${giftCard.id}">
                     <div class="logoContainer" th:fragment="logo">
                         <img th:src="'/images/' + ${giftCard.storeName} + '.jpg'" alt="store logo" class="logoMyCards">
@@ -54,7 +54,7 @@
                     <div class="infoMyCardsContainer">
                         <p th:text="${giftCard.storeName}" style="font-weight: bold"></p>
                         <p th:text="'Balance: ' + ${giftCard.balanceInt} + ' NOK'"></p>
-                        <p th:text="'Exp: ' + ${#dates.format(giftCard.expiryDate, 'd.MM.yyyy')}"></p>
+                        <p>  <p style="color: orangered;" th:text="'Exp: ' + ${#dates.format(giftCard.expiryDate, 'd.MM.yyyy')}"> </p></p>
                         <p>
                     </div>
                 </a>
