@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.security.Principal;
+import java.time.LocalDate;
 import java.util.List;
 
 @Controller
@@ -44,13 +45,20 @@ public class GiftCardController {
         return !giftCardList.contains(giftCardRepository.findGiftCardById(cardId)) || !principalUserId.equals(appUserId);
     }
 
-
     //  Main page - Show all gift cards of user, by id
     @GetMapping("/my-cards")
     public String getAllCards(Model model, Principal principal) {
         List<GiftCard> giftCardList = getAllCards(principal);
+        boolean isExpired = false;
+        for (int i = 0; i < giftCardList.size(); i++) {
+            LocalDate expDate = (giftCardList.get(i).getExpiryDate().toLocalDate());
+            if (LocalDate.now().isAfter(expDate)) {
+                isExpired = true;
+            }
+            giftCardList.get(i).setExpired(isExpired);
+            isExpired = false;
+        }
         model.addAttribute("giftCardList", giftCardList);
-
         return "myCards";
     }
 
@@ -59,8 +67,17 @@ public class GiftCardController {
     public String showGiftCard(Model model, @PathVariable Long appUserId, @PathVariable Long cardId, Principal principal) {
         if (checkPrincipalIsCardOwner(appUserId, cardId, principal)) return "defaultView";
         GiftCard giftCard = giftCardRepository.findGiftCardById(cardId);
+
+        boolean isExpired = false;
+        LocalDate expDate = (giftCard.getExpiryDate().toLocalDate());
+        if (LocalDate.now().isAfter(expDate)) {
+            isExpired = true;
+        }
+
+        giftCard.setExpired(isExpired);
         model.addAttribute("giftCard", giftCard);
         model.addAttribute("appUserId", appUserId);
+
         return "showGiftCard";
     }
 
