@@ -13,9 +13,10 @@
 <span class="phoneContainer">
 
        <div id="header">
-         <img th:src="wallit_w_logo.png" class="wLogo">
+         <img th:src="'/wallit_w_logo.png'" class="wLogo">
         <p class="headline">Edit Card</p>
     </div>
+
 
         <div class="mainContainer" id="addCardContainer">
             <form th:action="'/save-edited-gift-card/' + ${appUserId} + '/' + ${cardId} " th:object="${giftCard}"

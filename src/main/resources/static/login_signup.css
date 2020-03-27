@@ -4,7 +4,6 @@ h1 {
     color: #FFCAA1;
     margin: 2vw;
     text-align: center;
-
 }
 
 h2 {
@@ -53,7 +52,7 @@ input[type=text],[type=password] {
 
 .input {
     border: none;
-    border-bottom: 1px solid dimgrey;
+    border-bottom: 1px solid #333333;
     color: white;
     background: transparent;
     font-family: Arial;
@@ -124,10 +123,6 @@ a {
     margin-top: -0.9vw;
 }
 
-#forgotPasswordLink {
-    text-decoration: none;
-}
-
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: white;
     opacity: 1; /* Firefox */
@@ -139,6 +134,11 @@ a {
 
 ::-ms-input-placeholder { /* Microsoft Edge */
     color: white;
+}
+
+#invalidEmailOr {
+    font-size: 1.1vw;
+    color: orangered;
 }
 
 #requestPasswordToken {

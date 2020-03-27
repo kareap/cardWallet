@@ -12,10 +12,14 @@
 <span class="phoneCase">
 <span class="phoneContainer">
 
-<div id="header">Delete Account</div>
+<div id="header">
+         <img th:src="'/wallit_w_logo.png'" class="wLogo">
+        <p class="newHeadLine2">Delete account</p>
+    </div>
 
     <div class="mainContainer" id="showCardContainer" >
     <div id="areYouSure">Are you sure you want to delete your Wallit account?</div>
+
 
         <a href="/my-cards">
             <div id="deleteButtonsPosition"></div>
@@ -25,6 +29,8 @@
          <a href="/delete-app-user">
         <button class="deleteAccountButton" id="yesDelete">Yes, delete my account.</button>
          </a>
+
+
         <div id="footer">
             <a href="/add-gift-card" class="options"><span><i class="fa fa-plus"></i></span></a>
             <a href="/my-cards" class="options"><span><i class="fa fa-credit-card"></i></span></a>
