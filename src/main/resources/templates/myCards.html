@@ -28,7 +28,9 @@
 
         <div th:if="${giftCardList.size() >= 1}" th:each="giftCard : ${giftCardList}">
 
+
                <div th:if="${!giftCard.isExpired()}">
+
                 <div class="cardContainer">
                 <a th:href="'/show-gift-card/' + ${giftCard.appUserId} + '/' + ${giftCard.id}">
                     <div class="logoContainer" th:fragment="logo">
