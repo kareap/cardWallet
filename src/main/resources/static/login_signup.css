@@ -40,7 +40,7 @@ form {
 input[type=text],[type=password] {
     border: none;
     border-bottom: 0.06vw solid #333333;
-    color: #FFCAA1;
+    color: white;
     background-color: rgba(0, 0, 0, 0);
     font-family: Arial;
     width: 15vw;
@@ -48,6 +48,7 @@ input[type=text],[type=password] {
     margin: 1vw;
     padding-left: 0.2vw;
     padding-right: 0.2vw;
+    font-size: 1.1vw;
 }
 
 .input {
@@ -104,7 +105,7 @@ input[type=text],[type=password] {
 }
 
 #showHide {
-    font-size: 10px;
+    font-size: 0.9vw;
     margin-top: 0;
 }
 

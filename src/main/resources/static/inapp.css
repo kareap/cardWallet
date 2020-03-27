@@ -431,6 +431,12 @@ h3 {
     border: 0.1vw solid #2A7680;
 }
 
+.popupInapp{
+font-size: 1vw;
+color: orangered;
+margin-left: 1vw;
+margin-bottom: -0.1vw;
+}
 
 #deleteButtonsPosition {
     display: flex;
