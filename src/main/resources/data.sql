@@ -29,7 +29,7 @@ INSERT INTO gift_card (store_name, card_code, balance_int, app_user_id, expiry_d
 VALUES ('Intersport', '9934356738', 90000, 3, TO_DATE('13/05/2022', 'dd/mm/yyyy'), '(Insert image URL here)');
 
 INSERT INTO gift_card (store_name, card_code, balance_int, app_user_id, expiry_date, logo_image)
-VALUES ('Nille', '87654321', 70000, 3, TO_DATE('19/09/2021', 'dd/mm/yyyy'), '(Insert image URL here)');
+VALUES ('Nille', '87654321', 70000, 3, TO_DATE('19/09/2019', 'dd/mm/yyyy'), '(Insert image URL here)');
 
 INSERT INTO gift_card (store_name, card_code, balance_int, app_user_id, expiry_date, logo_image)
 VALUES ('Cubus', '87654321', 70000, 3, TO_DATE('19/09/2021', 'dd/mm/yyyy'), '(Insert image URL here)');
