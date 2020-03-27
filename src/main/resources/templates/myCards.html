@@ -33,7 +33,7 @@
 
         <div th:if="${giftCardList.size() >= 1}" th:each="giftCard : ${giftCardList}">
 
-                <div class="cardContainer" >
+                <div class="cardContainer">
                 <a th:href="'/show-gift-card/' + ${giftCard.appUserId} + '/' + ${giftCard.id}">
                     <div class="logoContainer" th:fragment="logo">
                         <img th:src="'/images/' + ${giftCard.storeName} + '.jpg'" alt="store logo" class="logoMyCards">

@@ -18,7 +18,7 @@
 }
 
 #showCardContainer {
-    background-color: #ffede6 !important;
+    background-color: #F6F6F6 !important;
 
 }
 
@@ -39,7 +39,7 @@
     margin-left: 0.95vw;
     margin-top: 1.1vw;
     height: 8.7vw;
-    border: lightgrey solid 0.05vw;
+    border: #FFCAA1 solid 0.1vw;
 }
 
 .flexGiftCard {
@@ -230,7 +230,7 @@ h3 {
 
 /*settings view*/
 .settingsContainer {
-    background-color: #ffede6;
+    background-color: #F6F6F6;
     color: black;
     font-size: 1.2vw;
     display: flex;
@@ -410,6 +410,7 @@ h3 {
     background-color: #FFCAA1;
     width: 15.7vw;
     margin-top: 2vw;
+    margin-left: 2vw;
     text-align: center;
 }
 
