@@ -50,12 +50,12 @@ public class GiftCardController {
     public String getAllCards(Model model, Principal principal) {
         List<GiftCard> giftCardList = getAllCards(principal);
         boolean isExpired = false;
-        for (int i = 0; i < giftCardList.size(); i++) {
-            LocalDate expDate = (giftCardList.get(i).getExpiryDate().toLocalDate());
+        for (GiftCard giftCard : giftCardList) {
+            LocalDate expDate = (giftCard.getExpiryDate().toLocalDate());
             if (LocalDate.now().isAfter(expDate)) {
                 isExpired = true;
             }
-            giftCardList.get(i).setExpired(isExpired);
+            giftCard.setExpired(isExpired);
             isExpired = false;
         }
         model.addAttribute("giftCardList", giftCardList);

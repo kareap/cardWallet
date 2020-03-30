@@ -16,4 +16,3 @@ FOREIGN KEY (app_user_id) REFERENCES app_user(id)
 );
 
 
-

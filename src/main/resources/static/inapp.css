@@ -19,15 +19,10 @@
 
 #showCardContainer {
     background-color: #F6F6F6 !important;
-
 }
 
 .mainContainer::-webkit-scrollbar {
     display: none;
-}
-
-.mainContainerGiftCard {
-
 }
 
 .cardContainer {
@@ -125,7 +120,6 @@
     background: #ffede6;
 }
 
-
 .deleteGiftCardButton {
     border: 1px solid orangered;
     font-family: sans-serif;
@@ -198,7 +192,6 @@ a:-webkit-any-link {
     cursor: pointer;
     text-decoration: unset;
     text-align: center;
-
 }
 
 /*terms and condition view*/
@@ -228,7 +221,6 @@ h3 {
     color: black;
 }
 
-
 /*settings view*/
 .settingsContainer {
     background-color: #F6F6F6;
@@ -242,9 +234,7 @@ h3 {
 
 }
 
-
 /*Change email view*/
-
 #email {
     width: 16.4vw;
     height: 3vw;
@@ -271,8 +261,6 @@ h3 {
     border-radius: 1.4vw;
     background-color: #FFCAA1;
     color: black;
-
-
 }
 
 .iconEmail {
@@ -286,9 +274,7 @@ h3 {
     padding-top: 6vw;
 }
 
-
 /*Change password view*/
-
 .password {
     width: 17vw;
     height: 3vw;
@@ -402,7 +388,6 @@ h3 {
     text-align: center;
 }
 
-
 .passwordDeletedButton {
     border-radius: 1.4vw;
     font-weight: bold;
@@ -453,7 +438,6 @@ margin-bottom: -0.1vw;
     border: 0.1vw solid orangered;
 }
 
-
 .wLogo {
     height: 3vw;
     margin-left: -14vw;
@@ -498,7 +482,3 @@ margin-bottom: -0.1vw;
     -webkit-font-smoothing: antialiased;
     color: black;
 }
-
-
-
-
