@@ -2,7 +2,7 @@ INSERT INTO app_user (email, password)
 VALUES ('geir.karlsen@hotmail.com', '$2a$10$.TfieO7U8dAd3v4IXpIr8.5ltZJLFHc1NFAMUcC51VuZqY1WHq932');
 
 INSERT INTO app_user (email, password)
-VALUES ('elise.norvik@hotmail.com', '$2a$10$.TfieO7U8dAd3v4IXpIr8.5ltZJLFHc1NFAMUcC51VuZqY1WHq932'); -- passord = 123
+VALUES ('elise.norvik@hotmail.com', '$2a$10$.TfieO7U8dAd3v4IXpIr8.5ltZJLFHc1NFAMUcC51VuZqY1WHq932'); -- passord = 123; must change to meet new requirements!
 
 INSERT INTO app_user (email, password)
 VALUES ('nils.nordmann@hotmail.com', '$2a$10$.TfieO7U8dAd3v4IXpIr8.5ltZJLFHc1NFAMUcC51VuZqY1WHq932');

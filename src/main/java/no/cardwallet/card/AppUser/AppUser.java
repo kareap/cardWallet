@@ -1,6 +1,7 @@
 package no.cardwallet.card.AppUser;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 
 @Entity
 public class AppUser {
@@ -14,12 +15,6 @@ public class AppUser {
     private String repeatPassword;
 
     public AppUser() {}
-
-    public AppUser(String email, String password, String repeatPassword) {
-        this.email = email;
-        this.password = password;
-        this.repeatPassword = repeatPassword;
-    }
 
     public Long getId() {
         return id;
@@ -49,7 +44,6 @@ public class AppUser {
         return repeatPassword;
     }
 
-    public void setRepeatPassword(String repeatPassword) {
-        this.repeatPassword = repeatPassword;
-    }
+    //used by @ModelAttribute
+    public void setRepeatPassword(String repeatPassword) { this.repeatPassword = repeatPassword; }
 }

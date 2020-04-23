@@ -45,9 +45,8 @@ public class AppUserController {
     }
 
     @PostMapping("/save-user")
-    public String validateUser(@ModelAttribute AppUser appUser, BindingResult bindingResult, @RequestParam String email, @RequestParam String password, @RequestParam String repeatPassword) {
+    public String validateUser(@ModelAttribute AppUser appUser, BindingResult bindingResult) {
         AppUserValidator appUserValidator = new AppUserValidator();
-        appUser = new AppUser(email, password, repeatPassword);
         if (appUserValidator.supports(appUser.getClass())) {
             appUserValidator.validate(appUser, bindingResult);
         }
@@ -55,9 +54,12 @@ public class AppUserController {
             return "signUp";
         }
         appUser.setPassword(passwordEncoder.encode(appUser.getPassword()));
-        appUserRepository.save(appUser);
-        return "login";//send to log in page
+        appUserRepository.save(appUser); //felt på user isActiv (automatisk satt på 'false', blir satt til 'true' når brukeren trykker på lenken & oppretter kontakt). opprett også et felt 'token'.
+        return "login"; //"en epost har litt sendt til din adresse" istedenfor login viewet.
     }
+
+    ///activate-user/<randomstring> --> send her! token er en random string m fast lengde
+    //@GetMapping('/activate-user/{token}')
 
     @GetMapping("/terms-and-conditions")
     public String termsAndConditions() {
@@ -80,10 +82,10 @@ public class AppUserController {
     }
 
     @PostMapping("/successfully-reset-password")
-    public String passwordReset(@ModelAttribute AppUser appUser, @RequestParam String email) {
+    public String passwordReset(@RequestParam String email) {
         if (appUserRepository.findAppUserByEmail(email) != null) {
-            appUser = appUserRepository.findAppUserByEmail(email);
-            appUser.setPassword(passwordEncoder.encode("abc"));
+            AppUser appUser = appUserRepository.findAppUserByEmail(email);
+            appUser.setPassword(passwordEncoder.encode("Alphab3t")); // TODO: generate link & send with email
             appUserRepository.save(appUser);
         } else {
             return "redirect:/sign-up";
@@ -131,7 +133,7 @@ public class AppUserController {
 
         AppUserValidator appUserValidator = new AppUserValidator();
         if (appUserValidator.supports(appUser.getClass())) {
-            appUserValidator.validatePassword(appUserPosting.getPassword(), appUserPosting.getRepeatPassword(), bindingResult);
+            appUserValidator.validateRepeatPassword(appUserPosting.getPassword(), appUserPosting.getRepeatPassword(), bindingResult);
         }
         if (bindingResult.hasErrors()) {
             return "changePassword";

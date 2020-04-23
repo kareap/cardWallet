@@ -1,4 +1,4 @@
-package no.cardwallet.card;
+package no.cardwallet.card.AppUser;
 
 import no.cardwallet.card.AppUser.AppUserDetailService;
 import org.springframework.context.annotation.Bean;
